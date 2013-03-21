@@ -8,7 +8,7 @@ onii
 		any
 		...
 	physic
-		constante
+		constant
 		unit
 		position
 		force
