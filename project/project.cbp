@@ -33,12 +33,28 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="onii/physic/constant.hpp" />
 		<Unit filename="onii/physic/position.hpp" />
+		<Unit filename="onii/physic/unit.hpp" />
+		<Unit filename="onii/physic/unit/angle.hpp" />
+		<Unit filename="onii/physic/unit/length.hpp" />
+		<Unit filename="onii/physic/unit/mass.hpp" />
+		<Unit filename="onii/physic/unit/time.hpp" />
+		<Unit filename="onii/physic/unit/unit_base.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="5" line="2" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
