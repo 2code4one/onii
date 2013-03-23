@@ -1,5 +1,5 @@
-#ifndef ONII_PHYSIC_UNIT_UNIT_BASE_HPP
-#define ONII_PHYSIC_UNIT_UNIT_BASE_HPP
+#ifndef ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP
+#define ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP
 
 namespace onii
 {
@@ -83,4 +83,4 @@ DerivedClass operator/(unit_base<DerivedClass, ValueType> const &a, typename uni
 } // namespace physic
 } // namespace onii
 
-#endif // ONII_PHYSIC_UNIT_UNIT_BASE_HPP
+#endif // ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP

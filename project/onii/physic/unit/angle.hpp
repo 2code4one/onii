@@ -1,7 +1,7 @@
 #ifndef ONII_PHYSIC_UNIT_ANGLE_HPP
 #define ONII_PHYSIC_UNIT_ANGLE_HPP
 
-#include "unit_base.hpp"
+#include "detail/unit_base.hpp"
 
 namespace onii
 {
@@ -23,24 +23,24 @@ public:
         unit_base(degree)
     {}
 
-    degree_type degree() const
+    degree_type deg() const
     {
         return m_value;
     }
 
-    radian_type radian() const
+    radian_type rad() const
     {
-        return degree() * pi / 180.f;
+        return deg() * pi / 180.f;
     }
 
-    static angle degree(degree_type degree)
+    static angle deg(degree_type degree)
     {
         return {degree % 360};
     }
 
-    static angle radian(radian_type radian)
+    static angle rad(radian_type radian)
     {
-        return degree(radian * 180.f / pi);
+        return deg(radian * 180.f / pi);
     }
 };
 } // namespace unit

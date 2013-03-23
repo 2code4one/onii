@@ -33,14 +33,16 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="onii/onii.hpp" />
+		<Unit filename="onii/physic.hpp" />
 		<Unit filename="onii/physic/constant.hpp" />
 		<Unit filename="onii/physic/position.hpp" />
 		<Unit filename="onii/physic/unit.hpp" />
 		<Unit filename="onii/physic/unit/angle.hpp" />
+		<Unit filename="onii/physic/unit/detail/unit_base.hpp" />
 		<Unit filename="onii/physic/unit/length.hpp" />
 		<Unit filename="onii/physic/unit/mass.hpp" />
 		<Unit filename="onii/physic/unit/time.hpp" />
-		<Unit filename="onii/physic/unit/unit_base.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
