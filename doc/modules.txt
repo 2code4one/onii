@@ -7,6 +7,10 @@ onii
 		config file
 		any
 		lexical_cast
+		range
+		debug
+		linux cut, sed, grep, ...
+		timer
 		...
 	physic
 		constant
