@@ -6,6 +6,7 @@ onii
 		config
 		config file
 		any
+		lexical_cast
 		...
 	physic
 		constant
