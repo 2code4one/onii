@@ -10,13 +10,13 @@ onii
 		range
 		debug
 		linux cut, sed, grep, ...
-		timer, scoped_timer, ...
+		timer, scoped_timer, sleep (physic.unit.time)
 		file system
 		memoization
 		...
 	physic
 		constant
-		unit
+		unit (TODO comparaison)
 		position
 		force
 		body
