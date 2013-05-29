@@ -13,6 +13,7 @@ onii
 		timer, scoped_timer, sleep (physic.unit.time)
 		file system
 		memoization
+		random
 		...
 	physic
 		constant
