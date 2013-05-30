@@ -21,9 +21,9 @@ public:
 
     splitter &by_separators(std::string const &sep)
     {
-        split_results copy = m_results;
+        split_results save = m_results;
         m_results.clear();
-        for(std::string const &str : copy)
+        for(std::string const &str : save)
         {
             size_t last = 0;
             for(size_t i = last; i < str.size(); ++i)
@@ -44,11 +44,20 @@ public:
 
     splitter &by_string(std::string const &sep)
     {
-        split_results copy = m_results;
+        split_results save = m_results;
         m_results.clear();
-        for(std::string const &str : copy)
+        for(std::string const &str : save)
         {
-#warning todo
+            m_results.push_back(str);
+            auto pos = str.find(sep);
+            while(pos != std::string::npos)
+            {
+                std::string temp = m_results.back();
+                m_results.pop_back();
+                m_results.push_back(temp.substr(0, pos));
+                m_results.push_back(temp.substr(pos + sep.size()));
+                pos = m_results.back().find(sep);
+            }
         }
         return *this;
     }

@@ -3,15 +3,8 @@
 
 int main()
 {
-    onii::core::split_results results;
-
-    results = onii::core::splitter("My name is Patrick.")
-                    .by_separators(" .")
-                    .remove_empty()
-                    .results();
-
-    for(auto it : results)
-        std::cout << "-> \"" << it << "\"" << std::endl;
+    for(int i = 0; i < 10; ++i)
+        std::cout << onii::core::random<float>() << std::endl;
 
     return 0;
 }

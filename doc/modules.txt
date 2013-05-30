@@ -1,6 +1,6 @@
 onii
 	core
-		split
+		split + by_regex?
 		percent
 		serialize
 		config
