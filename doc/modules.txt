@@ -1,6 +1,6 @@
 onii
-	core
-		split + by_regex?
+	core (util ?)
+		split
 		percent
 		serialize
 		config
@@ -10,16 +10,19 @@ onii
 		range
 		debug
 		linux cut, sed, grep, ...
-		timer
+		timer, scoped_timer, sleep (physic.unit.time)
 		file system
+		memoization
+		random
+		finite state machine
 		...
 	physic
 		constant
-		unit
+		unit (TODO comparaison)
 		position
 		force
 		body
-		shape
+		shape / polygon (centroid, ...)
 		world
 		...
 	graphic
