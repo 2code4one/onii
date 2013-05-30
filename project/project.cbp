@@ -34,6 +34,9 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="onii/core.hpp" />
+		<Unit filename="onii/core/detail/random/type.hpp" />
+		<Unit filename="onii/core/random.hpp" />
+		<Unit filename="onii/core/sleep.hpp" />
 		<Unit filename="onii/core/split.hpp" />
 		<Unit filename="onii/onii.hpp" />
 		<Unit filename="onii/physic.hpp" />
