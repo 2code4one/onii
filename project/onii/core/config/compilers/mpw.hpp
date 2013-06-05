@@ -1,8 +1,8 @@
-#ifndef ONII_CORE_CONFIG_COMPILERS__HPP
-#define ONII_CORE_CONFIG_COMPILERS__HPP
+#ifndef ONII_CORE_CONFIG_COMPILERS_MPW_HPP
+#define ONII_CORE_CONFIG_COMPILERS_MPW_HPP
 
-#if defined() || defined()
-#define ONII_COMPILER_ 1
+#if defined(__MRC__) || defined(MPW_C) || defined(MPW_CPLUS)
+# define ONII_COMPILER_MPW 1
 #endif
 
-#endif // ONII_CORE_CONFIG_COMPILERS__HPP
+#endif // ONII_CORE_CONFIG_COMPILERS_MPW_HPP

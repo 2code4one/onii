@@ -1,8 +1,8 @@
-#ifndef ONII_CORE_CONFIG_COMPILERS__HPP
-#define ONII_CORE_CONFIG_COMPILERS__HPP
+#ifndef ONII_CORE_CONFIG_COMPILERS_INTEL_HPP
+#define ONII_CORE_CONFIG_COMPILERS_INTEL_HPP
 
-#if defined() || defined()
-#define ONII_COMPILER_ 1
+#if defined(__INTEL_COMPILER) || defined(__ICC) || defined(__ECC) || defined(__ICL)
+# define ONII_COMPILER_INTEL 1
 #endif
 
-#endif // ONII_CORE_CONFIG_COMPILERS__HPP
+#endif // ONII_CORE_CONFIG_COMPILERS_INTEL_HPP

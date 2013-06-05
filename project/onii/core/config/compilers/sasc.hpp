@@ -1,8 +1,8 @@
-#ifndef ONII_CORE_CONFIG_COMPILERS__HPP
-#define ONII_CORE_CONFIG_COMPILERS__HPP
+#ifndef ONII_CORE_CONFIG_COMPILERS_SASC_HPP
+#define ONII_CORE_CONFIG_COMPILERS_SASC_HPP
 
-#if defined() || defined()
-#define ONII_COMPILER_ 1
+#if defined(SASC) || defined(__SASC) || defined(__SASC__)
+# define ONII_COMPILER_SASC 1
 #endif
 
-#endif // ONII_CORE_CONFIG_COMPILERS__HPP
+#endif // ONII_CORE_CONFIG_COMPILERS_SASC_HPP
