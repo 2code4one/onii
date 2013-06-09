@@ -202,6 +202,7 @@
 		<Unit filename="onii/core/random.hpp" />
 		<Unit filename="onii/core/sleep.hpp" />
 		<Unit filename="onii/core/split.hpp" />
+		<Unit filename="onii/core/timer.hpp" />
 		<Unit filename="onii/onii.hpp" />
 		<Unit filename="onii/physic.hpp" />
 		<Unit filename="onii/physic/constant.hpp" />
