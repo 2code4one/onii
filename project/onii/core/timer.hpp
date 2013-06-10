@@ -72,6 +72,22 @@ private:
 
     physic::unit::time &m_time;
 };
+
+class global_timer
+{
+public:
+
+    static physic::unit::time elapsed()
+    {
+        return m_timer.elapsed();
+    }
+
+private:
+
+    static timer m_timer;
+};
+
+timer global_timer::m_timer = timer(true);
 }
 }
 
