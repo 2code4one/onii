@@ -541,11 +541,11 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1381679013 source:f:\documents\dev\onii\project\main.cpp
+1381688367 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
-	<vector>
-	<map>
+	<fstream>
+	<list>
 
 1381670411 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
@@ -1618,18 +1618,22 @@
 	<chrono>
 	"physic/unit/time.hpp"
 
-1381679464 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1381686502 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
 1381669107 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
-1381679572 f:\documents\dev\onii\project\onii\log.hpp
-	"thread_safe.hpp"
+1381686682 f:\documents\dev\onii\project\onii\log.hpp
 	"detail/log/containers_output.hpp"
+	"detail/log/logger.hpp"
 
-1381679071 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
+1381688243 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
 	<sstream>
 	<string>
 	<utility>
+
+1381688418 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
+	<iostream>
+	"../../thread_safe.hpp"
 

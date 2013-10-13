@@ -48,7 +48,7 @@ template<typename InputIterator>
 std::string format_iterator(InputIterator first, InputIterator last)
 {
     std::ostringstream oss;
-    oss << '[';
+    oss << '{';
     for(;;)
     {
         add_value(*first, oss);
@@ -56,7 +56,7 @@ std::string format_iterator(InputIterator first, InputIterator last)
             oss << ", ";
         else break;
     }
-    oss << ']';
+    oss << '}';
     return oss.str();
 }
 }
