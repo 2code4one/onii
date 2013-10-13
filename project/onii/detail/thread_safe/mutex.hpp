@@ -9,7 +9,7 @@ namespace detail
 {
 namespace thread_safe
 {
-typedef std::mutex mutex_type;
+typedef std::recursive_mutex mutex_type;
 mutex_type mutex;
 }
 }
