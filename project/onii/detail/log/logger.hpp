@@ -17,7 +17,7 @@ public:
 
     base_logger(char const *level, char const *tag, int indent_level)
     {
-        ONII_THREAD_SAFE
+        ONII_THREAD_SAFE_LOCK
         if(active())
         {
             for(int i = 0; i < indent_level; ++i)
@@ -31,20 +31,21 @@ public:
 
     ~base_logger()
     {
-        ONII_THREAD_SAFE
         try
         {
             if(active())
                 stream() << std::endl;
+            ONII_THREAD_SAFE_UNLOCK
         }
         catch(...)
-        {}
+        {
+            ONII_THREAD_SAFE_UNLOCK
+        }
     }
 
     template<typename T>
     base_logger &operator<<(T const &value)
     {
-        ONII_THREAD_SAFE
         if(active())
             stream() << value;
         return *this;
@@ -52,7 +53,6 @@ public:
 
     static void active(bool active)
     {
-        ONII_THREAD_SAFE
         m_active = active;
     }
 
@@ -63,7 +63,6 @@ public:
 
     static void redirect(std::ostream &os)
     {
-        ONII_THREAD_SAFE
         stream().rdbuf(os.rdbuf());
     }
 
