@@ -541,12 +541,15 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1381666585 source:f:\documents\dev\onii\project\main.cpp
+1381679013 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
+	<vector>
+	<map>
 
-1381669107 f:\documents\dev\onii\project\onii\onii.hpp
+1381670411 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
+	"log.hpp"
 	"physic.hpp"
 	"random.hpp"
 	"sleep.hpp"
@@ -1620,4 +1623,12 @@
 
 1381669107 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
+
+1381679158 f:\documents\dev\onii\project\onii\log.hpp
+	"detail/log/containers_output.hpp"
+
+1381679071 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
+	<sstream>
+	<string>
+	<utility>
 
