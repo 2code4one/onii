@@ -201,6 +201,9 @@
 		<Unit filename="onii/detail/log/logger.hpp" />
 		<Unit filename="onii/detail/random/type.hpp" />
 		<Unit filename="onii/detail/thread_safe/mutex.hpp" />
+		<Unit filename="onii/hash.hpp" />
+		<Unit filename="onii/hash/detail/md5.hpp" />
+		<Unit filename="onii/hash/md5.hpp" />
 		<Unit filename="onii/log.hpp" />
 		<Unit filename="onii/onii.hpp" />
 		<Unit filename="onii/physic.hpp" />
