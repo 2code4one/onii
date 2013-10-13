@@ -2,6 +2,7 @@
 #define ONII_ONII_HPP
 
 #include "config.hpp"
+#include "hash.hpp"
 #include "log.hpp"
 #include "physic.hpp"
 #include "random.hpp"

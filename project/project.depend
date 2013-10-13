@@ -541,14 +541,14 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1381688367 source:f:\documents\dev\onii\project\main.cpp
+1381702222 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 	<fstream>
-	<list>
 
-1381670411 f:\documents\dev\onii\project\onii\onii.hpp
+1381692568 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
+	"hash.hpp"
 	"log.hpp"
 	"physic.hpp"
 	"random.hpp"
@@ -1618,22 +1618,35 @@
 	<chrono>
 	"physic/unit/time.hpp"
 
-1381686502 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1381688504 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
 1381669107 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
-1381686682 f:\documents\dev\onii\project\onii\log.hpp
+1381688504 f:\documents\dev\onii\project\onii\log.hpp
 	"detail/log/containers_output.hpp"
 	"detail/log/logger.hpp"
 
-1381688243 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
+1381688504 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
 	<sstream>
 	<string>
 	<utility>
 
-1381688418 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
+1381688504 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
 	<iostream>
 	"../../thread_safe.hpp"
+
+1381692610 f:\documents\dev\onii\project\onii\hash.hpp
+	"hash/md5.hpp"
+
+1381702750 f:\documents\dev\onii\project\onii\hash\md5.hpp
+	<sstream>
+	<iomanip>
+	<string>
+	"detail/md5.hpp"
+
+1381701601 f:\documents\dev\onii\project\onii\hash\detail\md5.hpp
+	<vector>
+	<cstdint>
 
