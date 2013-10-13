@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_AZTEC_C_HPP
+#define ONII_CONFIG_COMPILERS_AZTEC_C_HPP
+
+#if defined(AZTEC_C) || defined(__AZTEC_C__)
+# define ONII_COMPILER_AZTECC 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_AZTEC_C_HPP

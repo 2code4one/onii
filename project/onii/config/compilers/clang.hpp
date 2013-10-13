@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_CLANG_HPP
+#define ONII_CONFIG_COMPILERS_CLANG_HPP
+
+#if defined(__clang__)
+# define ONII_COMPILER_CLANG 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_CLANG_HPP

@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_ARCHITECTURES_SPARC_HPP
+#define ONII_CONFIG_ARCHITECTURES_SPARC_HPP
+
+#if defined(__sparc__) || defined(__sparc)
+# define ONII_ARCH_SPARC 1
+#endif
+
+#endif // ONII_CONFIG_ARCHITECTURES_SPARC_HPP

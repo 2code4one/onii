@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_CONVEX_HPP
+#define ONII_CONFIG_COMPILERS_CONVEX_HPP
+
+#if defined(__convexc__)
+# define ONII_COMPILER_CONVEXC 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_CONVEX_HPP

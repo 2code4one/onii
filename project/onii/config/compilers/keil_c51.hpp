@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_KEIL_C51_HPP
+#define ONII_CONFIG_COMPILERS_KEIL_C51_HPP
+
+#if defined(__C51__) || defined(__CX51__)
+# define ONII_COMPILER_KEILC51 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_KEIL_C51_HPP

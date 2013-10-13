@@ -1,8 +1,0 @@
-#ifndef ONII_CORE_CONFIG_OPERATING_SYSTEMS_ZOS_HPP
-#define ONII_CORE_CONFIG_OPERATING_SYSTEMS_ZOS_HPP
-
-#if defined(__MVS__) || defined(__HOS_MVS__) || defined(__TOS_MVS__)
-# define ONII_OS_ZOS 1
-#endif
-
-#endif // ONII_CORE_CONFIG_OPERATING_SYSTEMS_ZOS_HPP

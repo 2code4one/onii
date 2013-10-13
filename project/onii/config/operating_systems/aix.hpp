@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_OPERATING_SYSTEMS_AIX_HPP
+#define ONII_CONFIG_OPERATING_SYSTEMS_AIX_HPP
+
+#if defined(_AIX) || defined(__TOS_AIX__)
+# define ONII_OS_AIX 1
+#endif
+
+#endif // ONII_CONFIG_OPERATING_SYSTEMS_AIX_HPP

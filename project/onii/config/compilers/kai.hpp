@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_KAI_HPP
+#define ONII_CONFIG_COMPILERS_KAI_HPP
+
+#if defined(__KCC)
+# define ONII_COMPILER_KAI 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_KAI_HPP

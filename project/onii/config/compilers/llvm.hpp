@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_LLVM_HPP
+#define ONII_CONFIG_COMPILERS_LLVM_HPP
+
+#if defined(__llvm__)
+# define ONII_COMPILER_LLVM 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_LLVM_HPP

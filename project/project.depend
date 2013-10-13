@@ -541,13 +541,17 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1370799601 source:f:\documents\dev\onii\project\main.cpp
+1381666585 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1370348598 f:\documents\dev\onii\project\onii\onii.hpp
+1381666234 f:\documents\dev\onii\project\onii\onii.hpp
+	"config.hpp"
 	"physic.hpp"
-	"core.hpp"
+	"random.hpp"
+	"sleep.hpp"
+	"split.hpp"
+	"timer.hpp"
 
 1370348598 f:\documents\dev\onii\project\onii\physic.hpp
 	"physic/constant.hpp"
@@ -1098,4 +1102,515 @@
 1371146483 f:\documents\dev\onii\project\onii\core\timer.hpp
 	<chrono>
 	"../physic/unit/time.hpp"
+
+1381666314 f:\documents\dev\onii\project\onii\config.hpp
+	"config/architectures.hpp"
+	"config/compilers.hpp"
+	"config/environments.hpp"
+	"config/libraries.hpp"
+	"config/operating_systems.hpp"
+	"config/standards.hpp"
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures.hpp
+	"architectures/alpha.hpp"
+	"architectures/amd64.hpp"
+	"architectures/arm.hpp"
+	"architectures/arm64.hpp"
+	"architectures/blackfin.hpp"
+	"architectures/convex.hpp"
+	"architectures/epiphany.hpp"
+	"architectures/hppa_risc.hpp"
+	"architectures/intel_itanium.hpp"
+	"architectures/intel_x86.hpp"
+	"architectures/mips.hpp"
+	"architectures/motorola_68k.hpp"
+	"architectures/powerpc.hpp"
+	"architectures/pyramid_9810.hpp"
+	"architectures/rs6000.hpp"
+	"architectures/sparc.hpp"
+	"architectures/superh.hpp"
+	"architectures/systemz.hpp"
+	"architectures/tms320.hpp"
+	"architectures/tms470.hpp"
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\alpha.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\amd64.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\arm.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\arm64.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\blackfin.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\convex.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\epiphany.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\hppa_risc.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\intel_itanium.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\intel_x86.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\mips.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\motorola_68k.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\powerpc.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\pyramid_9810.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\rs6000.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\sparc.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\superh.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\systemz.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\architectures\tms320.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\architectures\tms470.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers.hpp
+	"compilers/acc.hpp"
+	"compilers/altium_c_to_hardware.hpp"
+	"compilers/altium_microblaze_c.hpp"
+	"compilers/amsterdam_compiler_kit.hpp"
+	"compilers/arm_compiler.hpp"
+	"compilers/aztec_c.hpp"
+	"compilers/borland.hpp"
+	"compilers/cc65.hpp"
+	"compilers/clang.hpp"
+	"compilers/comeau.hpp"
+	"compilers/compaq.hpp"
+	"compilers/convex.hpp"
+	"compilers/cray_c.hpp"
+	"compilers/diab.hpp"
+	"compilers/dice_c.hpp"
+	"compilers/digital_mars.hpp"
+	"compilers/dignus_systems.hpp"
+	"compilers/djgpp.hpp"
+	"compilers/edg_frontend.hpp"
+	"compilers/ekopath.hpp"
+	"compilers/fujitsu.hpp"
+	"compilers/gcc.hpp"
+	"compilers/green_hill.hpp"
+	"compilers/hp_acpp.hpp"
+	"compilers/hp_ansi.hpp"
+	"compilers/iar.hpp"
+	"compilers/ibm_xl.hpp"
+	"compilers/ibm_zos.hpp"
+	"compilers/imagecraft_c.hpp"
+	"compilers/intel.hpp"
+	"compilers/kai.hpp"
+	"compilers/keil_c166.hpp"
+	"compilers/keil_c51.hpp"
+	"compilers/keil_carm.hpp"
+	"compilers/lcc.hpp"
+	"compilers/llvm.hpp"
+	"compilers/metaware_high.hpp"
+	"compilers/metrowerks_codewarrior.hpp"
+	"compilers/microsoft_visual.hpp"
+	"compilers/microtec.hpp"
+	"compilers/microway_ndp_c.hpp"
+	"compilers/mingw.hpp"
+	"compilers/mingw_w64.hpp"
+	"compilers/mipspro.hpp"
+	"compilers/miracle_c.hpp"
+	"compilers/mpw.hpp"
+	"compilers/norcroft_c.hpp"
+	"compilers/nwcc.hpp"
+	"compilers/open64.hpp"
+	"compilers/pacific_c.hpp"
+	"compilers/palm.hpp"
+	"compilers/pelles_c.hpp"
+	"compilers/portland_group.hpp"
+	"compilers/renesas.hpp"
+	"compilers/sasc.hpp"
+	"compilers/sco_openserver.hpp"
+	"compilers/small_device_c_compiler.hpp"
+	"compilers/sn_compiler.hpp"
+	"compilers/stratus_vos_c.hpp"
+	"compilers/sun_studio.hpp"
+	"compilers/symantec.hpp"
+	"compilers/tendra.hpp"
+	"compilers/texas_instruments_compiler.hpp"
+	"compilers/think_c.hpp"
+	"compilers/tiny_c.hpp"
+	"compilers/turbo.hpp"
+	"compilers/ultimate.hpp"
+	"compilers/usl_c.hpp"
+	"compilers/watcom.hpp"
+	"compilers/zortech.hpp"
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\acc.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\altium_c_to_hardware.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\altium_microblaze_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\amsterdam_compiler_kit.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\arm_compiler.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\aztec_c.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\borland.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\cc65.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\clang.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\comeau.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\compaq.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\convex.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\cray_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\diab.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\dice_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\digital_mars.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\dignus_systems.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\djgpp.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\edg_frontend.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\ekopath.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\fujitsu.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\gcc.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\green_hill.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\hp_acpp.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\hp_ansi.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\iar.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\ibm_xl.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\ibm_zos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\imagecraft_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\intel.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\kai.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\keil_c166.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\keil_c51.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\keil_carm.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\lcc.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\llvm.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\metaware_high.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\metrowerks_codewarrior.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\microsoft_visual.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\microtec.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\microway_ndp_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\mingw.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\mingw_w64.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\mipspro.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\miracle_c.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\mpw.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\norcroft_c.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\nwcc.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\open64.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\pacific_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\palm.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\pelles_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\portland_group.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\renesas.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\sasc.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\sco_openserver.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\small_device_c_compiler.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\sn_compiler.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\stratus_vos_c.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\sun_studio.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\symantec.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\tendra.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\texas_instruments_compiler.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\think_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\tiny_c.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\turbo.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\ultimate.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\usl_c.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\compilers\watcom.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\compilers\zortech.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\environments.hpp
+	"environments/bsd.hpp"
+	"environments/cygwin.hpp"
+	"environments/emx.hpp"
+	"environments/interix.hpp"
+	"environments/svr4.hpp"
+	"environments/unix.hpp"
+	"environments/uwin.hpp"
+	"environments/windu.hpp"
+
+1381666314 f:\documents\dev\onii\project\onii\config\environments\bsd.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\environments\cygwin.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\environments\emx.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\environments\interix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\environments\svr4.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\environments\unix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\environments\uwin.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\environments\windu.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\libraries.hpp
+	"libraries/microsoft_foundation_classes.hpp"
+
+1381666314 f:\documents\dev\onii\project\onii\config\libraries\microsoft_foundation_classes.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems.hpp
+	"operating_systems/aix.hpp"
+	"operating_systems/amdahl_uts.hpp"
+	"operating_systems/amigaos.hpp"
+	"operating_systems/android.hpp"
+	"operating_systems/apollo_aegis.hpp"
+	"operating_systems/apollo_domainos.hpp"
+	"operating_systems/bada.hpp"
+	"operating_systems/beos.hpp"
+	"operating_systems/blue_gene.hpp"
+	"operating_systems/bsdos.hpp"
+	"operating_systems/convexos.hpp"
+	"operating_systems/dgux.hpp"
+	"operating_systems/dragonfly.hpp"
+	"operating_systems/dynixptx.hpp"
+	"operating_systems/ecos.hpp"
+	"operating_systems/freebsd.hpp"
+	"operating_systems/gnu.hpp"
+	"operating_systems/hiux_mpp.hpp"
+	"operating_systems/hpux.hpp"
+	"operating_systems/ibm_os400.hpp"
+	"operating_systems/integrity.hpp"
+	"operating_systems/irix.hpp"
+	"operating_systems/kfreebsd.hpp"
+	"operating_systems/linux.hpp"
+	"operating_systems/lynxos.hpp"
+	"operating_systems/macos.hpp"
+	"operating_systems/microware_os9.hpp"
+	"operating_systems/minix.hpp"
+	"operating_systems/morphos.hpp"
+	"operating_systems/mpeix.hpp"
+	"operating_systems/msdos.hpp"
+	"operating_systems/netbsd.hpp"
+	"operating_systems/nonstop.hpp"
+	"operating_systems/nucleus_rtos.hpp"
+	"operating_systems/openbsd.hpp"
+	"operating_systems/os2.hpp"
+	"operating_systems/palm_os.hpp"
+	"operating_systems/pyramid_dcosx.hpp"
+	"operating_systems/qnx.hpp"
+	"operating_systems/reliant_unix.hpp"
+	"operating_systems/sco_openserver.hpp"
+	"operating_systems/solaris.hpp"
+	"operating_systems/stratus_vos.hpp"
+	"operating_systems/syllable.hpp"
+	"operating_systems/symbian_os.hpp"
+	"operating_systems/tru64.hpp"
+	"operating_systems/ultrix.hpp"
+	"operating_systems/unicos.hpp"
+	"operating_systems/unicosmp.hpp"
+	"operating_systems/unixware.hpp"
+	"operating_systems/vms.hpp"
+	"operating_systems/windows.hpp"
+	"operating_systems/windowsce.hpp"
+	"operating_systems/zos.hpp"
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\aix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\amdahl_uts.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\amigaos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\android.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_aegis.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_domainos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\bada.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\beos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\blue_gene.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\bsdos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\convexos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\dgux.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\dragonfly.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\dynixptx.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\ecos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\freebsd.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\gnu.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\hiux_mpp.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\hpux.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\ibm_os400.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\integrity.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\irix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\kfreebsd.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\linux.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\lynxos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\macos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\microware_os9.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\minix.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\morphos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\mpeix.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\msdos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\netbsd.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\nonstop.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\nucleus_rtos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\openbsd.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\os2.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\palm_os.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\pyramid_dcosx.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\qnx.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\reliant_unix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\sco_openserver.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\solaris.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\stratus_vos.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\syllable.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\symbian_os.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\tru64.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\ultrix.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\unicos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\unicosmp.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\unixware.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\vms.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\windows.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\windowsce.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\zos.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\standards.hpp
+	"standards/language.hpp"
+	"standards/posix.hpp"
+	"standards/xopen.hpp"
+
+1381666314 f:\documents\dev\onii\project\onii\config\standards\language.hpp
+
+1381666313 f:\documents\dev\onii\project\onii\config\standards\posix.hpp
+
+1381666314 f:\documents\dev\onii\project\onii\config\standards\xopen.hpp
+
+1381666714 f:\documents\dev\onii\project\onii\random.hpp
+	"detail/random/type.hpp"
+
+1381666632 f:\documents\dev\onii\project\onii\detail\random\type.hpp
+	<limits>
+	<random>
+	<type_traits>
+
+1381666581 f:\documents\dev\onii\project\onii\sleep.hpp
+	"physic/unit/time.hpp"
+	"config/operating_systems/windows.hpp"
+	<windows.h>
+	<unistd.h>
+
+1381666640 f:\documents\dev\onii\project\onii\split.hpp
+	<vector>
+	<string>
+	<algorithm>
+
+1381666502 f:\documents\dev\onii\project\onii\timer.hpp
+	<chrono>
+	"physic/unit/time.hpp"
 

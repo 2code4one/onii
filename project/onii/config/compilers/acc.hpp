@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_ACC_HPP
+#define ONII_CONFIG_COMPILERS_ACC_HPP
+
+#if defined(_ACC_)
+# define ONII_COMPILER_ACC 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_ACC_HPP

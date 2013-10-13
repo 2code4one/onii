@@ -1,8 +1,0 @@
-#ifndef ONII_CORE_CONFIG_OPERATING_SYSTEMS_MSDOS_HPP
-#define ONII_CORE_CONFIG_OPERATING_SYSTEMS_MSDOS_HPP
-
-#if defined(MSDOS) || defined(__MSDOS__) || defined(_MSDOS) || defined(__DOS__)
-# define ONII_OS_MSDOS 1
-#endif
-
-#endif // ONII_CORE_CONFIG_OPERATING_SYSTEMS_MSDOS_HPP

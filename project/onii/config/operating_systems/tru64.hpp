@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_OPERATING_SYSTEMS_TRU64_HPP
+#define ONII_CONFIG_OPERATING_SYSTEMS_TRU64_HPP
+
+#if defined(__osf__) || defined(__osf)
+# define ONII_OS_TRU64 1
+#endif
+
+#endif // ONII_CONFIG_OPERATING_SYSTEMS_TRU64_HPP

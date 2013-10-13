@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_IBM_ZOS_HPP
+#define ONII_CONFIG_COMPILERS_IBM_ZOS_HPP
+
+#if defined(__IBMC__) || defined(__IBMCPP__)
+# define ONII_COMPILER_IBMZOS 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_IBM_ZOS_HPP

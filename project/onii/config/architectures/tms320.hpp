@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_ARCHITECTURES_TMS320_HPP
+#define ONII_CONFIG_ARCHITECTURES_TMS320_HPP
+
+#if defined(_TMS320C2XX) || defined(__TMS320C2000__) || defined(_TMS320C5X) || defined(__TMS320C55X__) || defined(_TMS320C6X) || defined(__TMS320C6X__)
+# define ONII_ARCH_TMS320 1
+#endif
+
+#endif // ONII_CONFIG_ARCHITECTURES_TMS320_HPP

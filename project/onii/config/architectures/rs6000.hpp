@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_ARCHITECTURES_RS6000_HPP
+#define ONII_CONFIG_ARCHITECTURES_RS6000_HPP
+
+#if defined(__THW_RS6000) || defined(_IBMR2) || defined(_POWER) || defined(_ARCH_PWR) || defined(_ARCH_PWR2) || defined(_ARCH_PWR3) || defined(_ARCH_PWR4)
+# define ONII_ARCH_RS6000 1
+#endif
+
+#endif // ONII_CONFIG_ARCHITECTURES_RS6000_HPP

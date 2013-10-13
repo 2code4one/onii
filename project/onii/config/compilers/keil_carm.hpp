@@ -1,0 +1,8 @@
+#ifndef ONII_CONFIG_COMPILERS_KEIL_CARM_HPP
+#define ONII_CONFIG_COMPILERS_KEIL_CARM_HPP
+
+#if defined(__CA__) || defined(__KEIL__)
+# define ONII_COMPILER_KEILCARM 1
+#endif
+
+#endif // ONII_CONFIG_COMPILERS_KEIL_CARM_HPP
