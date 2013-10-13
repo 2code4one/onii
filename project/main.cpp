@@ -45,5 +45,7 @@ int main()
     onii::core::sleep(1);
     std::cout << timer.elapsed().s() << std::endl;
 
+    std::cout << "total time: " << onii::core::global_timer::elapsed().s() << " s" << std::endl;
+
     return 0;
 }

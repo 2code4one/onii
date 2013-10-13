@@ -541,7 +541,7 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1370454525 source:f:\documents\dev\onii\project\main.cpp
+1370799601 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
@@ -581,11 +581,12 @@
 1370348598 f:\documents\dev\onii\project\onii\physic\unit\angle.hpp
 	"detail/unit_base.hpp"
 
-1370348598 f:\documents\dev\onii\project\onii\core.hpp
+1370798361 f:\documents\dev\onii\project\onii\core.hpp
 	"core/split.hpp"
 	"core/random.hpp"
 	"core/sleep.hpp"
 	"core/config.hpp"
+	"core/timer.hpp"
 
 1370348598 f:\documents\dev\onii\project\onii\core\split.hpp
 	<vector>
@@ -1093,4 +1094,8 @@
 1370452877 f:\documents\dev\onii\project\onii\core\config\standards\xopen.hpp
 
 1370453660 f:\documents\dev\onii\project\onii\core\config\libraries\microsoft_foundation_classes.hpp
+
+1371146483 f:\documents\dev\onii\project\onii\core\timer.hpp
+	<chrono>
+	"../physic/unit/time.hpp"
 
