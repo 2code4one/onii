@@ -1618,13 +1618,14 @@
 	<chrono>
 	"physic/unit/time.hpp"
 
-1381669672 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1381679464 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
 1381669107 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
-1381679158 f:\documents\dev\onii\project\onii\log.hpp
+1381679572 f:\documents\dev\onii\project\onii\log.hpp
+	"thread_safe.hpp"
 	"detail/log/containers_output.hpp"
 
 1381679071 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
