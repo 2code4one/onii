@@ -6,6 +6,7 @@
 #include "random.hpp"
 #include "sleep.hpp"
 #include "split.hpp"
+#include "thread_safe.hpp"
 #include "timer.hpp"
 
 #endif // ONII_ONII_HPP
