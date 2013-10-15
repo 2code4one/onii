@@ -1,0 +1,7 @@
+#ifndef ONII_HASH_DETAIL_LEFTROTATE_HPP
+#define ONII_HASH_DETAIL_LEFTROTATE_HPP
+
+#define ONII_HASH_DETAIL_LEFTROTATE(x, c)  \
+    (((x) << (c)) | ((x) >> (32 - (c))))
+
+#endif // ONII_HASH_DETAIL_LEFTROTATE_HPP

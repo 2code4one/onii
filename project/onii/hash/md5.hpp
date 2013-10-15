@@ -1,10 +1,10 @@
 #ifndef ONII_HASH_MD5_HPP
 #define ONII_HASH_MD5_HPP
 
-#include <sstream>
-#include <iomanip>
-#include <string>
-#include "detail/md5.hpp"
+#include "detail/add_bytes.hpp"
+#include "detail/to_uint.hpp"
+#include "detail/leftrotate.hpp"
+#include "detail/to_string.hpp"
 
 namespace onii
 {
@@ -67,8 +67,8 @@ std::string md5(std::string const &message)
         digest[i] = 0;
 
     // append the size in bits at the end of the buffer
-    detail::md5::add_bytes(message.size() * 8, digest);
-    detail::md5::add_bytes(message.size() >> 29, digest);
+    detail::add_bytes(static_cast<uint32_t>(message.size() * 8), digest);
+    detail::add_bytes(static_cast<uint32_t>(message.size() >> 29), digest);
 
     // process the message in successive 512-bit chunks:
     for(uint32_t o = 0; o < digest.size(); o += (512/8))
@@ -76,7 +76,7 @@ std::string md5(std::string const &message)
         // break chunk into sixteen 32-bit words w[j], 0 = j = 15
         uint32_t w[16];
         for(uint32_t j = 0; j < 16; ++j)
-            w[j] = detail::md5::to_uint32(digest, o + j*4);
+            w[j] = detail::to_uint<uint32_t>(digest, o + j*4);
 
         // initialize hash value for this chunk
         uint32_t a = h0;
@@ -112,7 +112,7 @@ std::string md5(std::string const &message)
             uint32_t tmp = d;
             d = c;
             c = b;
-            b = b + ONII_HASH_DETAIL_MD5_LEFTROTATE((a + f + k[i] + w[g]), r[i]);
+            b = b + ONII_HASH_DETAIL_LEFTROTATE((a + f + k[i] + w[g]), r[i]);
             a = tmp;
         }
 
@@ -127,17 +127,13 @@ std::string md5(std::string const &message)
     digest.clear();
 
     // get the hash
-    detail::md5::add_bytes(h0, digest);
-    detail::md5::add_bytes(h1, digest);
-    detail::md5::add_bytes(h2, digest);
-    detail::md5::add_bytes(h3, digest);
+    detail::add_bytes(h0, digest);
+    detail::add_bytes(h1, digest);
+    detail::add_bytes(h2, digest);
+    detail::add_bytes(h3, digest);
 
     // prepare result
-    std::ostringstream oss;
-    oss << std::right << std::setfill('0') << std::hex;
-    for(uint8_t bit : digest)
-        oss << std::setw(2) << static_cast<uint32_t>(bit);
-    return oss.str();
+    return detail::to_string(digest);
 }
 }
 }
