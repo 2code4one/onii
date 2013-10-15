@@ -541,7 +541,7 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1381702927 source:f:\documents\dev\onii\project\main.cpp
+1381851451 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 	<fstream>
@@ -1618,10 +1618,10 @@
 	<chrono>
 	"physic/unit/time.hpp"
 
-1381704943 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1381705269 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
-1381704733 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
+1381705269 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
 1381688504 f:\documents\dev\onii\project\onii\log.hpp
@@ -1633,20 +1633,44 @@
 	<string>
 	<utility>
 
-1381705101 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
+1381705269 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
 	<iostream>
 	"../../thread_safe.hpp"
 
-1381702927 f:\documents\dev\onii\project\onii\hash.hpp
+1381850085 f:\documents\dev\onii\project\onii\hash.hpp
 	"hash/md5.hpp"
+	"hash/sha1.hpp"
 
-1381702927 f:\documents\dev\onii\project\onii\hash\md5.hpp
+1381857163 f:\documents\dev\onii\project\onii\hash\md5.hpp
+	"detail/add_bytes.hpp"
+	"detail/to_uint.hpp"
+	"detail/leftrotate.hpp"
+	"detail/to_string.hpp"
+
+1381850286 f:\documents\dev\onii\project\onii\hash\detail\md5.hpp
+	<vector>
+	<cstdint>
+
+1381850261 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
+
+1381858363 f:\documents\dev\onii\project\onii\hash\sha1.hpp
+	"detail/add_bytes.hpp"
+	"detail/to_uint.hpp"
+	"detail/leftrotate.hpp"
+	"detail/to_string.hpp"
+
+1381850823 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
 	<sstream>
 	<iomanip>
 	<string>
-	"detail/md5.hpp"
+	<vector>
+	<cstdint>
 
-1381702927 f:\documents\dev\onii\project\onii\hash\detail\md5.hpp
+1381858418 f:\documents\dev\onii\project\onii\hash\detail\add_bytes.hpp
+	<vector>
+	<cstdint>
+
+1381858432 f:\documents\dev\onii\project\onii\hash\detail\to_uint.hpp
 	<vector>
 	<cstdint>
 
