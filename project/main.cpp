@@ -7,7 +7,7 @@ template<typename FuncT>
 void check(std::string const &msg, std::string const &exp, FuncT F)
 {
     std::cout << "message : " << msg << std::endl;
-    std::cout << "hash    : " << F(msg) << std::endl;
+    std::cout << "hash    : " << onii::do_hash(msg, F) << std::endl;
     std::cout << "expected: " << exp << std::endl << std::endl;
 }
 
