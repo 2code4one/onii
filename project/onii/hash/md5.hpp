@@ -18,6 +18,27 @@ std::string md5(std::string const &message)
     /*  Thanks http://en.wikipedia.org/wiki/MD5
         and http://www.ietf.org/rfc/rfc1321.txt */
 
+    // prepare the message
+    std::vector<uint8_t> digest(std::begin(message), std::end(message));
+    {
+        // find new size
+        uint32_t new_size = message.size() + 1;
+        while(new_size % (512/8) != 448/8)
+            ++new_size;
+        digest.resize(new_size);
+    }
+
+    // append the '1' bit; most significant bit is "first"
+    digest[message.size()] = 0x80;
+
+    // append "0" bits
+    for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
+        digest[i] = 0;
+
+    // append the size in bits at the end of the buffer
+    detail::add_bytes(static_cast<uint32_t>(message.size() * 8), digest);
+    detail::add_bytes(static_cast<uint32_t>(message.size() >> 29), digest);
+
     // r specifies the per-round shift amounts
     uint32_t r[64] = {
         7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22,  7, 12, 17, 22,
@@ -51,27 +72,6 @@ std::string md5(std::string const &message)
     uint32_t h1 = 0xefcdab89;
     uint32_t h2 = 0x98badcfe;
     uint32_t h3 = 0x10325476;
-
-    // prepare the message
-    std::vector<uint8_t> digest(std::begin(message), std::end(message));
-    {
-        // find new size
-        uint32_t new_size = message.size() + 1;
-        while(new_size % (512/8) != 448/8)
-            ++new_size;
-        digest.resize(new_size);
-    }
-
-    // append the '1' bit; most significant bit is "first"
-    digest[message.size()] = 0x80;
-
-    // append "0" bits
-    for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
-        digest[i] = 0;
-
-    // append the size in bits at the end of the buffer
-    detail::add_bytes(static_cast<uint32_t>(message.size() * 8), digest);
-    detail::add_bytes(static_cast<uint32_t>(message.size() >> 29), digest);
 
     // process the message in successive 512-bit chunks:
     for(uint32_t o = 0; o < digest.size(); o += (512/8))

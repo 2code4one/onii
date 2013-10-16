@@ -541,7 +541,7 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1381859992 source:f:\documents\dev\onii\project\main.cpp
+1381932824 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 	<fstream>
@@ -1628,7 +1628,7 @@
 	"detail/log/containers_output.hpp"
 	"detail/log/logger.hpp"
 
-1381688504 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
+1381933494 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
 	<sstream>
 	<string>
 	<utility>
@@ -1641,41 +1641,54 @@
 	"hash/md5.hpp"
 	"hash/sha1.hpp"
 
-1381922861 f:\documents\dev\onii\project\onii\hash\md5.hpp
+1381947306 f:\documents\dev\onii\project\onii\hash\md5.hpp
 	"detail/add_bytes.hpp"
 	"detail/to_uint.hpp"
-	"detail/leftrotate.hpp"
+	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/parity.hpp"
 	"do_hash.hpp"
 
 1381850286 f:\documents\dev\onii\project\onii\hash\detail\md5.hpp
 	<vector>
 	<cstdint>
 
-1381850261 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
+1381942743 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
 
-1381922860 f:\documents\dev\onii\project\onii\hash\sha1.hpp
+1381947306 f:\documents\dev\onii\project\onii\hash\sha1.hpp
 	"detail/add_bytes.hpp"
 	"detail/to_uint.hpp"
-	"detail/leftrotate.hpp"
+	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/parity.hpp"
+	"detail/maj.hpp"
 	"do_hash.hpp"
 	"../log.hpp"
 
-1381850823 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
+1381939411 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
 	<sstream>
 	<iomanip>
 	<string>
 	<vector>
 	<cstdint>
 
-1381858418 f:\documents\dev\onii\project\onii\hash\detail\add_bytes.hpp
+1381942866 f:\documents\dev\onii\project\onii\hash\detail\add_bytes.hpp
 	<vector>
-	<cstdint>
 
-1381858432 f:\documents\dev\onii\project\onii\hash\detail\to_uint.hpp
+1381944736 f:\documents\dev\onii\project\onii\hash\detail\to_uint.hpp
 	<vector>
 	<cstdint>
 
 1381922843 f:\documents\dev\onii\project\onii\hash\do_hash.hpp
+
+1381944743 f:\documents\dev\onii\project\onii\hash\detail\circular_shift.hpp
+	<cstdint>
+
+1381943175 f:\documents\dev\onii\project\onii\hash\detail\ch.hpp
+
+1381943229 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
+
+1381943265 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
 
