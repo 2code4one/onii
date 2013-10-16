@@ -3,8 +3,10 @@
 
 #include "detail/add_bytes.hpp"
 #include "detail/to_uint.hpp"
-#include "detail/leftrotate.hpp"
+#include "detail/circular_shift.hpp"
 #include "detail/to_string.hpp"
+#include "detail/ch.hpp"
+#include "detail/parity.hpp"
 #include "do_hash.hpp"
 
 namespace onii
@@ -91,17 +93,17 @@ std::string md5(std::string const &message)
         {
             if (i < 16)
             {
-                f = (b & c) | ((~b) & d);
+                f = detail::ch(b, c, d);
                 g = i;
             }
             else if (i < 32)
             {
-                f = (d & b) | ((~d) & c);
+                f = detail::ch(d, b, c);
                 g = (5*i + 1) % 16;
             }
             else if (i < 48)
             {
-                f = b ^ c ^ d;
+                f = detail::parity(b, c, d);
                 g = (3*i + 5) % 16;
             }
             else
@@ -113,7 +115,7 @@ std::string md5(std::string const &message)
             uint32_t tmp = d;
             d = c;
             c = b;
-            b = b + ONII_HASH_DETAIL_LEFTROTATE((a + f + k[i] + w[g]), r[i]);
+            b = b + detail::circular_shift(a + f + k[i] + w[g], r[i]);
             a = tmp;
         }
 

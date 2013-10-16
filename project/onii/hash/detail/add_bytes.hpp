@@ -2,7 +2,6 @@
 #define ONII_HASH_DETAIL_ADD_BYTES_HPP
 
 #include <vector>
-#include <cstdint>
 
 namespace onii
 {
