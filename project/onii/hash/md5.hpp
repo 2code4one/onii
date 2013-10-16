@@ -5,6 +5,7 @@
 #include "detail/to_uint.hpp"
 #include "detail/leftrotate.hpp"
 #include "detail/to_string.hpp"
+#include "do_hash.hpp"
 
 namespace onii
 {
