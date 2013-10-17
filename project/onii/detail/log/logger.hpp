@@ -29,7 +29,7 @@ public:
         }
     }
 
-    ~base_logger()
+    virtual ~base_logger()
     {
         try
         {

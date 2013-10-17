@@ -36,7 +36,7 @@ std::string sha1(std::string const &message)
 
     // append "0" bits
     for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
-        digest[i] = 0;
+        digest[i] = 0x00;
 
     // append the size in 64 bits at the end of the buffer
     detail::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);

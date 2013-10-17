@@ -33,11 +33,10 @@ std::string md5(std::string const &message)
 
     // append "0" bits
     for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
-        digest[i] = 0;
+        digest[i] = 0x00;
 
     // append the size in bits at the end of the buffer
-    detail::add_bytes(static_cast<uint32_t>(message.size() * 8), digest);
-    detail::add_bytes(static_cast<uint32_t>(message.size() >> 29), digest);
+    detail::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
 
     // r specifies the per-round shift amounts
     uint32_t r[64] = {

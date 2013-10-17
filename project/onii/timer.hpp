@@ -11,11 +11,16 @@ class timer
 public:
 
     timer(bool start_timer = false) :
-        m_running(false)
+        m_running(false),
+        m_start(),
+        m_end()
     {
         if(start_timer)
             start();
     }
+
+    virtual ~timer()
+    {}
 
     void start()
     {
