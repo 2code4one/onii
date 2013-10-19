@@ -46,6 +46,9 @@ protected:
         m_value(value)
     {}
 
+    virtual ~unit_base()
+    {}
+
     ValueType m_value;
 };
 

@@ -1,10 +1,13 @@
 #ifndef ONII_HASH_MD5_HPP
 #define ONII_HASH_MD5_HPP
 
-#include <sstream>
-#include <iomanip>
-#include <string>
-#include "detail/md5.hpp"
+#include "detail/md5/add_bytes.hpp"
+#include "detail/md5/to_uint.hpp"
+#include "detail/circular_shift.hpp"
+#include "detail/to_string.hpp"
+#include "detail/ch.hpp"
+#include "detail/parity.hpp"
+#include "do_hash.hpp"
 
 namespace onii
 {
@@ -14,6 +17,26 @@ std::string md5(std::string const &message)
 {
     /*  Thanks http://en.wikipedia.org/wiki/MD5
         and http://www.ietf.org/rfc/rfc1321.txt */
+
+    // prepare the message
+    std::vector<uint8_t> digest(std::begin(message), std::end(message));
+    {
+        // find new size
+        uint32_t new_size = message.size() + 1;
+        while(new_size % (512/8) != 448/8)
+            ++new_size;
+        digest.resize(new_size);
+    }
+
+    // append the '1' bit; most significant bit is "first"
+    digest[message.size()] = 0x80;
+
+    // append "0" bits
+    for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
+        digest[i] = 0x00;
+
+    // append the size in bits at the end of the buffer
+    detail::md5::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
 
     // r specifies the per-round shift amounts
     uint32_t r[64] = {
@@ -49,34 +72,13 @@ std::string md5(std::string const &message)
     uint32_t h2 = 0x98badcfe;
     uint32_t h3 = 0x10325476;
 
-    // prepare the message
-    std::vector<uint8_t> digest(std::begin(message), std::end(message));
-    {
-        // find new size
-        uint32_t new_size = message.size() + 1;
-        while(new_size % (512/8) != 448/8)
-            ++new_size;
-        digest.resize(new_size);
-    }
-
-    // append the '1' bit; most significant bit is "first"
-    digest[message.size()] = 0x80;
-
-    // append "0" bits
-    for(uint32_t i = message.size() + 1; i < digest.size(); ++i)
-        digest[i] = 0;
-
-    // append the size in bits at the end of the buffer
-    detail::md5::add_bytes(message.size() * 8, digest);
-    detail::md5::add_bytes(message.size() >> 29, digest);
-
     // process the message in successive 512-bit chunks:
     for(uint32_t o = 0; o < digest.size(); o += (512/8))
     {
         // break chunk into sixteen 32-bit words w[j], 0 = j = 15
         uint32_t w[16];
         for(uint32_t j = 0; j < 16; ++j)
-            w[j] = detail::md5::to_uint32(digest, o + j*4);
+            w[j] = detail::md5::to_uint<uint32_t>(digest, o + j*4);
 
         // initialize hash value for this chunk
         uint32_t a = h0;
@@ -90,17 +92,17 @@ std::string md5(std::string const &message)
         {
             if (i < 16)
             {
-                f = (b & c) | ((~b) & d);
+                f = detail::ch(b, c, d);
                 g = i;
             }
             else if (i < 32)
             {
-                f = (d & b) | ((~d) & c);
+                f = detail::ch(d, b, c);
                 g = (5*i + 1) % 16;
             }
             else if (i < 48)
             {
-                f = b ^ c ^ d;
+                f = detail::parity(b, c, d);
                 g = (3*i + 5) % 16;
             }
             else
@@ -112,7 +114,7 @@ std::string md5(std::string const &message)
             uint32_t tmp = d;
             d = c;
             c = b;
-            b = b + ONII_HASH_DETAIL_MD5_LEFTROTATE((a + f + k[i] + w[g]), r[i]);
+            b = b + detail::circular_shift(a + f + k[i] + w[g], r[i]);
             a = tmp;
         }
 
@@ -133,11 +135,7 @@ std::string md5(std::string const &message)
     detail::md5::add_bytes(h3, digest);
 
     // prepare result
-    std::ostringstream oss;
-    oss << std::right << std::setfill('0') << std::hex;
-    for(uint8_t bit : digest)
-        oss << std::setw(2) << static_cast<uint32_t>(bit);
-    return oss.str();
+    return detail::to_string(digest);
 }
 }
 }
