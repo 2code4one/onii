@@ -541,7 +541,7 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1382086337 source:f:\documents\dev\onii\project\main.cpp
+1382182166 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
@@ -1640,9 +1640,9 @@
 	"hash/md5.hpp"
 	"hash/sha1.hpp"
 
-1382035316 f:\documents\dev\onii\project\onii\hash\md5.hpp
-	"detail/add_bytes.hpp"
-	"detail/to_uint.hpp"
+1382182543 f:\documents\dev\onii\project\onii\hash\md5.hpp
+	"detail/md5/add_bytes.hpp"
+	"detail/md5/to_uint.hpp"
 	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
 	"detail/ch.hpp"
@@ -1655,16 +1655,15 @@
 
 1381942743 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
 
-1382035816 f:\documents\dev\onii\project\onii\hash\sha1.hpp
-	"detail/add_bytes.hpp"
-	"detail/to_uint.hpp"
+1382182582 f:\documents\dev\onii\project\onii\hash\sha1.hpp
+	"detail/sha1/add_bytes.hpp"
+	"detail/sha1/to_uint.hpp"
 	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
 	"detail/ch.hpp"
 	"detail/parity.hpp"
 	"detail/maj.hpp"
 	"do_hash.hpp"
-	"../log.hpp"
 
 1382030508 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
 	<sstream>
@@ -1690,4 +1689,18 @@
 1382032870 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
 
 1382032850 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
+
+1382182441 f:\documents\dev\onii\project\onii\hash\detail\md5\add_bytes.hpp
+	<vector>
+
+1382182439 f:\documents\dev\onii\project\onii\hash\detail\md5\to_uint.hpp
+	<vector>
+	<cstdint>
+
+1382182502 f:\documents\dev\onii\project\onii\hash\detail\sha1\add_bytes.hpp
+	<vector>
+
+1382182503 f:\documents\dev\onii\project\onii\hash\detail\sha1\to_uint.hpp
+	<vector>
+	<cstdint>
 

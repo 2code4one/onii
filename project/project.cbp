@@ -215,13 +215,15 @@
 		<Unit filename="onii/detail/random/type.hpp" />
 		<Unit filename="onii/detail/thread_safe/mutex.hpp" />
 		<Unit filename="onii/hash.hpp" />
-		<Unit filename="onii/hash/detail/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/ch.hpp" />
 		<Unit filename="onii/hash/detail/circular_shift.hpp" />
 		<Unit filename="onii/hash/detail/maj.hpp" />
+		<Unit filename="onii/hash/detail/md5/add_bytes.hpp" />
+		<Unit filename="onii/hash/detail/md5/to_uint.hpp" />
 		<Unit filename="onii/hash/detail/parity.hpp" />
+		<Unit filename="onii/hash/detail/sha1/add_bytes.hpp" />
+		<Unit filename="onii/hash/detail/sha1/to_uint.hpp" />
 		<Unit filename="onii/hash/detail/to_string.hpp" />
-		<Unit filename="onii/hash/detail/to_uint.hpp" />
 		<Unit filename="onii/hash/do_hash.hpp" />
 		<Unit filename="onii/hash/md5.hpp" />
 		<Unit filename="onii/hash/sha1.hpp" />
