@@ -1,6 +1,10 @@
 #ifndef ONII_ONII_HPP
 #define ONII_ONII_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/onii.hpp
+/////////////////////////////////////////////////
+
 #include "config.hpp"
 #include "hash.hpp"
 #include "log.hpp"

@@ -1,22 +1,47 @@
 #ifndef ONII_SPLIT_HPP
 #define ONII_SPLIT_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/split.hpp
+/////////////////////////////////////////////////
+
 #include <vector>
 #include <string>
 #include <algorithm>
 
+/////////////////////////////////////////////////
+/// @namespace onii
+/////////////////////////////////////////////////
 namespace onii
 {
+/////////////////////////////////////////////////
+/// @brief Results of a splitted string
+/////////////////////////////////////////////////
 typedef std::vector<std::string> split_results;
 
+/////////////////////////////////////////////////
+/// @class splitter
+/// @brief String splitter
+/////////////////////////////////////////////////
 class splitter
 {
 public:
 
+    /////////////////////////////////////////////////
+    /// @brief Constructor
+    ///
+    /// @param[in] str - string to split
+    /////////////////////////////////////////////////
     splitter(std::string const &str = "") :
         m_results(1, str)
     {}
 
+    /////////////////////////////////////////////////
+    /// @brief Split by separators
+    ///
+    /// @param[in] sep - separators
+    /// @return *this
+    /////////////////////////////////////////////////
     splitter &by_separators(std::string const &sep)
     {
         split_results save = m_results;
@@ -40,6 +65,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Split by a complete string
+    ///
+    /// @param[in] sep - string separator
+    /// @return *this
+    /////////////////////////////////////////////////
     splitter &by_string(std::string const &sep)
     {
         split_results save = m_results;
@@ -60,6 +91,11 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Remove the empty results
+    ///
+    /// @return *this
+    /////////////////////////////////////////////////
     splitter &remove_empty()
     {
         m_results.erase(std::remove_if(m_results.begin(),
@@ -70,6 +106,11 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get the splitted string
+    ///
+    /// @return The splitted string as a onii::split_results
+    /////////////////////////////////////////////////
     split_results const &results() const
     {
         return m_results;

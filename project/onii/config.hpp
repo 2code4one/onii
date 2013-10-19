@@ -1,6 +1,10 @@
 #ifndef ONII_CONFIG_HPP
 #define ONII_CONFIG_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/config.hpp
+/////////////////////////////////////////////////
+
 #include "config/architectures.hpp"
 #include "config/compilers.hpp"
 #include "config/environments.hpp"
