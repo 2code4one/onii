@@ -1,8 +1,8 @@
 #ifndef ONII_HASH_SHA1_HPP
 #define ONII_HASH_SHA1_HPP
 
-#include "detail/sha1/add_bytes.hpp"
-#include "detail/sha1/to_uint.hpp"
+#include "detail/big_endian/add_bytes.hpp"
+#include "detail/big_endian/to_uint.hpp"
 #include "detail/circular_shift.hpp"
 #include "detail/to_string.hpp"
 #include "detail/ch.hpp"
@@ -37,7 +37,7 @@ std::string sha1(std::string const &message)
         digest[i] = 0x00;
 
     // append the size in 64 bits at the end of the buffer
-    detail::sha1::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
+    detail::big_endian::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
 
     // these vars will contain the hash
     uint32_t h0 = 0x67452301;
@@ -60,7 +60,7 @@ std::string sha1(std::string const &message)
         // break chunk into sixteen 32-bit words w[j]
         uint32_t w[80];
         for(uint32_t j = 0; j < 16; ++j)
-            w[j] = detail::sha1::to_uint<uint32_t>(digest, o + j*4);
+            w[j] = detail::big_endian::to_uint<uint32_t>(digest, o + j*4);
 
         // extend the sixteen 32-bit words into eighty 32-bit words
         for(uint32_t j = 16; j < 80; ++j)
@@ -100,11 +100,11 @@ std::string sha1(std::string const &message)
     digest.clear();
 
     // get the hash
-    detail::sha1::add_bytes(h0, digest);
-    detail::sha1::add_bytes(h1, digest);
-    detail::sha1::add_bytes(h2, digest);
-    detail::sha1::add_bytes(h3, digest);
-    detail::sha1::add_bytes(h4, digest);
+    detail::big_endian::add_bytes(h0, digest);
+    detail::big_endian::add_bytes(h1, digest);
+    detail::big_endian::add_bytes(h2, digest);
+    detail::big_endian::add_bytes(h3, digest);
+    detail::big_endian::add_bytes(h4, digest);
 
     // prepare result
     return detail::to_string(digest);

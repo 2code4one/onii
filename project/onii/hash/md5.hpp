@@ -1,8 +1,8 @@
 #ifndef ONII_HASH_MD5_HPP
 #define ONII_HASH_MD5_HPP
 
-#include "detail/md5/add_bytes.hpp"
-#include "detail/md5/to_uint.hpp"
+#include "detail/little_endian/add_bytes.hpp"
+#include "detail/little_endian/to_uint.hpp"
 #include "detail/circular_shift.hpp"
 #include "detail/to_string.hpp"
 #include "detail/ch.hpp"
@@ -36,7 +36,7 @@ std::string md5(std::string const &message)
         digest[i] = 0x00;
 
     // append the size in bits at the end of the buffer
-    detail::md5::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
+    detail::little_endian::add_bytes(static_cast<uint64_t>(message.size() * 8), digest);
 
     // r specifies the per-round shift amounts
     uint32_t r[64] = {
@@ -78,7 +78,7 @@ std::string md5(std::string const &message)
         // break chunk into sixteen 32-bit words w[j], 0 = j = 15
         uint32_t w[16];
         for(uint32_t j = 0; j < 16; ++j)
-            w[j] = detail::md5::to_uint<uint32_t>(digest, o + j*4);
+            w[j] = detail::little_endian::to_uint<uint32_t>(digest, o + j*4);
 
         // initialize hash value for this chunk
         uint32_t a = h0;
@@ -129,10 +129,10 @@ std::string md5(std::string const &message)
     digest.clear();
 
     // get the hash
-    detail::md5::add_bytes(h0, digest);
-    detail::md5::add_bytes(h1, digest);
-    detail::md5::add_bytes(h2, digest);
-    detail::md5::add_bytes(h3, digest);
+    detail::little_endian::add_bytes(h0, digest);
+    detail::little_endian::add_bytes(h1, digest);
+    detail::little_endian::add_bytes(h2, digest);
+    detail::little_endian::add_bytes(h3, digest);
 
     // prepare result
     return detail::to_string(digest);

@@ -1,5 +1,5 @@
-#ifndef ONII_HASH_DETAIL_MD5_ADD_BYTES_HPP
-#define ONII_HASH_DETAIL_MD5_ADD_BYTES_HPP
+#ifndef ONII_HASH_DETAIL_LITTLE_ENDIAN_ADD_BYTES_HPP
+#define ONII_HASH_DETAIL_LITTLE_ENDIAN_ADD_BYTES_HPP
 
 #include <vector>
 
@@ -9,7 +9,7 @@ namespace hash
 {
 namespace detail
 {
-namespace md5
+namespace little_endian
 {
 template<typename ValueUintT, typename DigestUintT>
 void add_bytes(ValueUintT value, std::vector<DigestUintT> &bytes)
@@ -22,4 +22,4 @@ void add_bytes(ValueUintT value, std::vector<DigestUintT> &bytes)
 }
 }
 
-#endif // ONII_HASH_DETAIL_MD5_ADD_BYTES_HPP
+#endif // ONII_HASH_DETAIL_LITTLE_ENDIAN_ADD_BYTES_HPP

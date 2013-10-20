@@ -1,5 +1,5 @@
-#ifndef ONII_HASH_DETAIL_MD5_TO_UINT_HPP
-#define ONII_HASH_DETAIL_MD5_TO_UINT_HPP
+#ifndef ONII_HASH_DETAIL_LITTLE_ENDIAN_TO_UINT_HPP
+#define ONII_HASH_DETAIL_LITTLE_ENDIAN_TO_UINT_HPP
 
 #include <vector>
 #include <cstdint>
@@ -10,7 +10,7 @@ namespace hash
 {
 namespace detail
 {
-namespace md5
+namespace little_endian
 {
 template<typename UintT, typename DigestUintT>
 UintT to_uint(std::vector<DigestUintT> const &bytes, uint32_t index)
@@ -25,4 +25,4 @@ UintT to_uint(std::vector<DigestUintT> const &bytes, uint32_t index)
 }
 }
 
-#endif // ONII_HASH_DETAIL_MD5_TO_UINT_HPP
+#endif // ONII_HASH_DETAIL_LITTLE_ENDIAN_TO_UINT_HPP

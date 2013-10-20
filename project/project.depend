@@ -541,11 +541,11 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1382182166 source:f:\documents\dev\onii\project\main.cpp
+1382182844 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1381702927 f:\documents\dev\onii\project\onii\onii.hpp
+1382202251 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
 	"hash.hpp"
 	"log.hpp"
@@ -556,7 +556,7 @@
 	"thread_safe.hpp"
 	"timer.hpp"
 
-1370348598 f:\documents\dev\onii\project\onii\physic.hpp
+1382202195 f:\documents\dev\onii\project\onii\physic.hpp
 	"physic/constant.hpp"
 	"physic/unit.hpp"
 
@@ -577,7 +577,7 @@
 1370348598 f:\documents\dev\onii\project\onii\physic\unit\length.hpp
 	"detail/unit_base.hpp"
 
-1382036016 f:\documents\dev\onii\project\onii\physic\unit\detail\unit_base.hpp
+1382182793 f:\documents\dev\onii\project\onii\physic\unit\detail\unit_base.hpp
 
 1370348598 f:\documents\dev\onii\project\onii\physic\unit\time.hpp
 	"detail/unit_base.hpp"
@@ -1106,7 +1106,7 @@
 	<chrono>
 	"../physic/unit/time.hpp"
 
-1381666314 f:\documents\dev\onii\project\onii\config.hpp
+1382206483 f:\documents\dev\onii\project\onii\config.hpp
 	"config/architectures.hpp"
 	"config/compilers.hpp"
 	"config/environments.hpp"
@@ -1594,7 +1594,7 @@
 
 1381666314 f:\documents\dev\onii\project\onii\config\standards\xopen.hpp
 
-1381666714 f:\documents\dev\onii\project\onii\random.hpp
+1382201997 f:\documents\dev\onii\project\onii\random.hpp
 	"detail/random/type.hpp"
 
 1381666757 f:\documents\dev\onii\project\onii\detail\random\type.hpp
@@ -1602,28 +1602,28 @@
 	<random>
 	<type_traits>
 
-1381666581 f:\documents\dev\onii\project\onii\sleep.hpp
+1382201262 f:\documents\dev\onii\project\onii\sleep.hpp
 	"physic/unit/time.hpp"
 	"config/operating_systems/windows.hpp"
 	<windows.h>
 	<unistd.h>
 
-1381666640 f:\documents\dev\onii\project\onii\split.hpp
+1382200397 f:\documents\dev\onii\project\onii\split.hpp
 	<vector>
 	<string>
 	<algorithm>
 
-1382036106 f:\documents\dev\onii\project\onii\timer.hpp
+1382200423 f:\documents\dev\onii\project\onii\timer.hpp
 	<chrono>
 	"physic/unit/time.hpp"
 
-1381705269 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1382199682 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
 1381705269 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
-1381688504 f:\documents\dev\onii\project\onii\log.hpp
+1382206270 f:\documents\dev\onii\project\onii\log.hpp
 	"detail/log/containers_output.hpp"
 	"detail/log/logger.hpp"
 
@@ -1632,17 +1632,17 @@
 	<string>
 	<utility>
 
-1382035979 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
+1382182793 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
 	<iostream>
 	"../../thread_safe.hpp"
 
-1382030508 f:\documents\dev\onii\project\onii\hash.hpp
+1382206471 f:\documents\dev\onii\project\onii\hash.hpp
 	"hash/md5.hpp"
 	"hash/sha1.hpp"
 
-1382182543 f:\documents\dev\onii\project\onii\hash\md5.hpp
-	"detail/md5/add_bytes.hpp"
-	"detail/md5/to_uint.hpp"
+1382260883 f:\documents\dev\onii\project\onii\hash\md5.hpp
+	"detail/little_endian/add_bytes.hpp"
+	"detail/little_endian/to_uint.hpp"
 	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
 	"detail/ch.hpp"
@@ -1655,9 +1655,9 @@
 
 1381942743 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
 
-1382182582 f:\documents\dev\onii\project\onii\hash\sha1.hpp
-	"detail/sha1/add_bytes.hpp"
-	"detail/sha1/to_uint.hpp"
+1382260909 f:\documents\dev\onii\project\onii\hash\sha1.hpp
+	"detail/big_endian/add_bytes.hpp"
+	"detail/big_endian/to_uint.hpp"
 	"detail/circular_shift.hpp"
 	"detail/to_string.hpp"
 	"detail/ch.hpp"
@@ -1665,7 +1665,7 @@
 	"detail/maj.hpp"
 	"do_hash.hpp"
 
-1382030508 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
 	<sstream>
 	<iomanip>
 	<string>
@@ -1679,16 +1679,16 @@
 	<vector>
 	<cstdint>
 
-1382030508 f:\documents\dev\onii\project\onii\hash\do_hash.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\do_hash.hpp
 
-1382032827 f:\documents\dev\onii\project\onii\hash\detail\circular_shift.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\detail\circular_shift.hpp
 	<cstdint>
 
-1382032840 f:\documents\dev\onii\project\onii\hash\detail\ch.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\detail\ch.hpp
 
-1382032870 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
 
-1382032850 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
+1382182793 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
 
 1382182441 f:\documents\dev\onii\project\onii\hash\detail\md5\add_bytes.hpp
 	<vector>
@@ -1701,6 +1701,20 @@
 	<vector>
 
 1382182503 f:\documents\dev\onii\project\onii\hash\detail\sha1\to_uint.hpp
+	<vector>
+	<cstdint>
+
+1382260846 f:\documents\dev\onii\project\onii\hash\detail\little_endian\add_bytes.hpp
+	<vector>
+
+1382260845 f:\documents\dev\onii\project\onii\hash\detail\little_endian\to_uint.hpp
+	<vector>
+	<cstdint>
+
+1382260805 f:\documents\dev\onii\project\onii\hash\detail\big_endian\add_bytes.hpp
+	<vector>
+
+1382260804 f:\documents\dev\onii\project\onii\hash\detail\big_endian\to_uint.hpp
 	<vector>
 	<cstdint>
 
