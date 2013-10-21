@@ -1,6 +1,10 @@
 #ifndef ONII_HASH_MD5_HPP
 #define ONII_HASH_MD5_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/hash/md5.hpp
+/////////////////////////////////////////////////
+
 #include "detail/little_endian/add_bytes.hpp"
 #include "detail/little_endian/to_uint.hpp"
 #include "detail/circular_shift.hpp"
@@ -9,10 +13,22 @@
 #include "detail/parity.hpp"
 #include "do_hash.hpp"
 
+/////////////////////////////////////////////////
+/// @namespace onii
+/////////////////////////////////////////////////
 namespace onii
 {
+/////////////////////////////////////////////////
+/// @namespace onii::hash
+/////////////////////////////////////////////////
 namespace hash
 {
+/////////////////////////////////////////////////
+/// @brief Calculate the MD5 hash of a string
+///
+/// @param[in] message - string to calculate
+/// @return The MD5 hash
+/////////////////////////////////////////////////
 std::string md5(std::string const &message)
 {
     /*  Thanks http://en.wikipedia.org/wiki/MD5

@@ -1,6 +1,10 @@
 #ifndef ONII_CONFIG_COMPILERS_HPP
 #define ONII_CONFIG_COMPILERS_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/config/compilers.hpp
+/////////////////////////////////////////////////
+
 #include "compilers/acc.hpp"
 #include "compilers/altium_c_to_hardware.hpp"
 #include "compilers/altium_microblaze_c.hpp"

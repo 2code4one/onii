@@ -1,6 +1,10 @@
 #ifndef ONII_CONFIG_OPERATING_SYSTEMS_HPP
 #define ONII_CONFIG_OPERATING_SYSTEMS_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/config/operating_systems.hpp
+/////////////////////////////////////////////////
+
 #include "operating_systems/aix.hpp"
 #include "operating_systems/amdahl_uts.hpp"
 #include "operating_systems/amigaos.hpp"

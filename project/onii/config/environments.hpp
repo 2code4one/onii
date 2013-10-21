@@ -1,6 +1,10 @@
 #ifndef ONII_CONFIG_ENVIRONMENTS_HPP
 #define ONII_CONFIG_ENVIRONMENTS_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/config/environments.hpp
+/////////////////////////////////////////////////
+
 #include "environments/bsd.hpp"
 #include "environments/cygwin.hpp"
 #include "environments/emx.hpp"

@@ -124,6 +124,7 @@ Typedefs</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a33edf0971d34a58898c0e210e3de6467"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceonii.html#a33edf0971d34a58898c0e210e3de6467">do_hash</a> (std::string const &amp;message, std::string(*hash_function)(std::string const &amp;))</td></tr>
+<tr class="memdesc:a33edf0971d34a58898c0e210e3de6467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the hash of a string.  <a href="#a33edf0971d34a58898c0e210e3de6467">More...</a><br/></td></tr>
 <tr class="separator:a33edf0971d34a58898c0e210e3de6467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae4141c6751f0dc5a54685d487f73fd5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aae4141c6751f0dc5a54685d487f73fd5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceonii.html#aae4141c6751f0dc5a54685d487f73fd5">random</a> (T min_value, T max_value)</td></tr>
@@ -188,6 +189,17 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Calculate the hash of a string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>- string to calculate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash_function</td><td>- hash function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>hash_function(message); </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="namespaceonii_1_1hash.html">onii::hash</a> for some hash functions </dd></dl>
 
 </div>
 </div>
@@ -309,7 +321,7 @@ Return between 0 and 1 for floating point type </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 19 2013 20:15:06 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Oct 21 2013 16:37:39 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

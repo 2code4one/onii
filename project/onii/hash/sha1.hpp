@@ -1,6 +1,10 @@
 #ifndef ONII_HASH_SHA1_HPP
 #define ONII_HASH_SHA1_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/hash/sha1.hpp
+/////////////////////////////////////////////////
+
 #include "detail/big_endian/add_bytes.hpp"
 #include "detail/big_endian/to_uint.hpp"
 #include "detail/circular_shift.hpp"
@@ -10,10 +14,22 @@
 #include "detail/maj.hpp"
 #include "do_hash.hpp"
 
+/////////////////////////////////////////////////
+/// @namespace onii
+/////////////////////////////////////////////////
 namespace onii
 {
+/////////////////////////////////////////////////
+/// @namespace onii::hash
+/////////////////////////////////////////////////
 namespace hash
 {
+/////////////////////////////////////////////////
+/// @brief Calculate the SHA-1 hash of a string
+///
+/// @param[in] message - string to calculate
+/// @return The SHA-1 hash
+/////////////////////////////////////////////////
 std::string sha1(std::string const &message)
 {
     /*  Thanks http://en.wikipedia.org/wiki/SHA-1

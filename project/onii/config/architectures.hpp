@@ -1,6 +1,10 @@
 #ifndef ONII_CONFIG_ARCHITECTURES_HPP
 #define ONII_CONFIG_ARCHITECTURES_HPP
 
+/////////////////////////////////////////////////
+/// @file onii/config/architectures.hpp
+/////////////////////////////////////////////////
+
 #include "architectures/alpha.hpp"
 #include "architectures/amd64.hpp"
 #include "architectures/arm.hpp"
