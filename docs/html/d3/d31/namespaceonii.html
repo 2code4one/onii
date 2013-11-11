@@ -123,6 +123,10 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad9c45a1f6deeedb2f62b86f28eb1c5fa"><td class="memTemplParams" colspan="2">template&lt;typename NumericT &gt; </td></tr>
+<tr class="memitem:ad9c45a1f6deeedb2f62b86f28eb1c5fa"><td class="memTemplItemLeft" align="right" valign="top">NumericT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d31/namespaceonii.html#ad9c45a1f6deeedb2f62b86f28eb1c5fa">sto</a> (std::string const &amp;str)</td></tr>
+<tr class="memdesc:ad9c45a1f6deeedb2f62b86f28eb1c5fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string to a NumericT.  <a href="#ad9c45a1f6deeedb2f62b86f28eb1c5fa">More...</a><br/></td></tr>
+<tr class="separator:ad9c45a1f6deeedb2f62b86f28eb1c5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33edf0971d34a58898c0e210e3de6467"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d31/namespaceonii.html#a33edf0971d34a58898c0e210e3de6467">do_hash</a> (std::string const &amp;message, std::string(*hash_function)(std::string const &amp;))</td></tr>
 <tr class="memdesc:a33edf0971d34a58898c0e210e3de6467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the hash of a string.  <a href="#a33edf0971d34a58898c0e210e3de6467">More...</a><br/></td></tr>
 <tr class="separator:a33edf0971d34a58898c0e210e3de6467"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,6 +162,35 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="ad9c45a1f6deeedb2f62b86f28eb1c5fa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename NumericT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">NumericT onii::sto </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a string to a NumericT. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>- the string to convert </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the numeric value </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Work only with these types:<div class="fragment"><div class="line">int, long, <span class="keywordtype">long</span> long, <span class="keywordtype">unsigned</span> long, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> long, float, double, <span class="keywordtype">long</span> <span class="keywordtype">double</span> </div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a33edf0971d34a58898c0e210e3de6467"></a>
 <div class="memitem">
 <div class="memproto">
@@ -321,7 +354,7 @@ Return between 0 and 1 for floating point type </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 11 2013 11:52:48 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 11 2013 13:14:21 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

@@ -20,6 +20,7 @@ var searchData=
   ['splitter',['splitter',['../dc/d52/classonii_1_1splitter.html#a9db6792f1b241aff6b9b7bbc8e3f132b',1,'onii::splitter']]],
   ['standards_2ehpp',['standards.hpp',['../d5/dbf/standards_8hpp.html',1,'']]],
   ['start',['start',['../d6/dc8/classonii_1_1timer.html#ae8fdb38e643e97cbde831f317fe34965',1,'onii::timer']]],
+  ['sto',['sto',['../d3/d31/namespaceonii.html#ad9c45a1f6deeedb2f62b86f28eb1c5fa',1,'onii']]],
   ['stop',['stop',['../d6/dc8/classonii_1_1timer.html#a3e6160cde59e48d34c47c140b11c3280',1,'onii::timer']]],
   ['stratus_5fvos_2ehpp',['stratus_vos.hpp',['../d2/d45/stratus__vos_8hpp.html',1,'']]],
   ['stratus_5fvos_5fc_2ehpp',['stratus_vos_c.hpp',['../db/d22/stratus__vos__c_8hpp.html',1,'']]],

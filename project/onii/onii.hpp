@@ -6,6 +6,7 @@
 /////////////////////////////////////////////////
 
 #include "config.hpp"
+#include "from_string.hpp"
 #include "hash.hpp"
 #include "log.hpp"
 #include "physic.hpp"

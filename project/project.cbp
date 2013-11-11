@@ -214,6 +214,7 @@
 		<Unit filename="onii/detail/log/logger.hpp" />
 		<Unit filename="onii/detail/random/type.hpp" />
 		<Unit filename="onii/detail/thread_safe/mutex.hpp" />
+		<Unit filename="onii/from_string.hpp" />
 		<Unit filename="onii/hash.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/to_uint.hpp" />

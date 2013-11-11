@@ -6,5 +6,6 @@ var searchData=
   ['sleep',['sleep',['../d3/d31/namespaceonii.html#a1bbfd043a69c5386e0c615a4eaec1956',1,'onii']]],
   ['splitter',['splitter',['../dc/d52/classonii_1_1splitter.html#a9db6792f1b241aff6b9b7bbc8e3f132b',1,'onii::splitter']]],
   ['start',['start',['../d6/dc8/classonii_1_1timer.html#ae8fdb38e643e97cbde831f317fe34965',1,'onii::timer']]],
+  ['sto',['sto',['../d3/d31/namespaceonii.html#ad9c45a1f6deeedb2f62b86f28eb1c5fa',1,'onii']]],
   ['stop',['stop',['../d6/dc8/classonii_1_1timer.html#a3e6160cde59e48d34c47c140b11c3280',1,'onii::timer']]]
 ];
