@@ -11,6 +11,7 @@
 #include "log.hpp"
 #include "physic.hpp"
 #include "random.hpp"
+#include "settings.hpp"
 #include "sleep.hpp"
 #include "split.hpp"
 #include "thread_safe.hpp"
