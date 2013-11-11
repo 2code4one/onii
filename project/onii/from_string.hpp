@@ -35,14 +35,14 @@ NumericT sto(std::string const &str);
 
 /////////////////////////////////////////////////
 /// @cond IGNORE
-ONII_FROM_STRING_SPEC(int, stoi)
-ONII_FROM_STRING_SPEC(long, stol)
-ONII_FROM_STRING_SPEC(long long, stoll)
-ONII_FROM_STRING_SPEC(unsigned long, stoul)
-ONII_FROM_STRING_SPEC(unsigned long long, stoull)
-ONII_FROM_STRING_SPEC(float, stof)
-ONII_FROM_STRING_SPEC(double, stod)
-ONII_FROM_STRING_SPEC(long double, stold)
+ONII_FROM_STRING_SPEC(int, std::stoi)
+ONII_FROM_STRING_SPEC(long, std::stol)
+ONII_FROM_STRING_SPEC(long long, std::stoll)
+ONII_FROM_STRING_SPEC(unsigned long, std::stoul)
+ONII_FROM_STRING_SPEC(unsigned long long, std::stoull)
+ONII_FROM_STRING_SPEC(float, std::stof)
+ONII_FROM_STRING_SPEC(double, std::stod)
+ONII_FROM_STRING_SPEC(long double, std::stold)
 /// @endcond
 /////////////////////////////////////////////////
 }

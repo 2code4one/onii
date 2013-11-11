@@ -541,12 +541,13 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1382358957 source:f:\documents\dev\onii\project\main.cpp
+1384172007 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1382202251 f:\documents\dev\onii\project\onii\onii.hpp
+1384171686 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
+	"from_string.hpp"
 	"hash.hpp"
 	"log.hpp"
 	"physic.hpp"
@@ -556,36 +557,36 @@
 	"thread_safe.hpp"
 	"timer.hpp"
 
-1382202195 f:\documents\dev\onii\project\onii\physic.hpp
+1384167428 f:\documents\dev\onii\project\onii\physic.hpp
 	"physic/constant.hpp"
 	"physic/unit.hpp"
 
-1382359196 f:\documents\dev\onii\project\onii\physic\constant.hpp
+1384167428 f:\documents\dev\onii\project\onii\physic\constant.hpp
 	"constant/density.hpp"
 	"constant/gravity.hpp"
 
-1382361281 f:\documents\dev\onii\project\onii\physic\constant\density.hpp
+1384167428 f:\documents\dev\onii\project\onii\physic\constant\density.hpp
 
-1382361278 f:\documents\dev\onii\project\onii\physic\constant\gravity.hpp
+1384167428 f:\documents\dev\onii\project\onii\physic\constant\gravity.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\physic\unit.hpp
+1384167429 f:\documents\dev\onii\project\onii\physic\unit.hpp
 	"unit/length.hpp"
 	"unit/time.hpp"
 	"unit/mass.hpp"
 	"unit/angle.hpp"
 
-1382360815 f:\documents\dev\onii\project\onii\physic\unit\length.hpp
+1384167429 f:\documents\dev\onii\project\onii\physic\unit\length.hpp
 	"detail/unit_base.hpp"
 
-1382182793 f:\documents\dev\onii\project\onii\physic\unit\detail\unit_base.hpp
+1382179193 f:\documents\dev\onii\project\onii\physic\unit\detail\unit_base.hpp
 
-1382360815 f:\documents\dev\onii\project\onii\physic\unit\time.hpp
+1384167429 f:\documents\dev\onii\project\onii\physic\unit\time.hpp
 	"detail/unit_base.hpp"
 
-1382360815 f:\documents\dev\onii\project\onii\physic\unit\mass.hpp
+1384167429 f:\documents\dev\onii\project\onii\physic\unit\mass.hpp
 	"detail/unit_base.hpp"
 
-1382360815 f:\documents\dev\onii\project\onii\physic\unit\angle.hpp
+1384167429 f:\documents\dev\onii\project\onii\physic\unit\angle.hpp
 	"detail/unit_base.hpp"
 
 1370798361 f:\documents\dev\onii\project\onii\core.hpp
@@ -1106,7 +1107,7 @@
 	<chrono>
 	"../physic/unit/time.hpp"
 
-1382206483 f:\documents\dev\onii\project\onii\config.hpp
+1384167427 f:\documents\dev\onii\project\onii\config.hpp
 	"config/architectures.hpp"
 	"config/compilers.hpp"
 	"config/environments.hpp"
@@ -1114,7 +1115,7 @@
 	"config/operating_systems.hpp"
 	"config/standards.hpp"
 
-1382359196 f:\documents\dev\onii\project\onii\config\architectures.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures.hpp
 	"architectures/alpha.hpp"
 	"architectures/amd64.hpp"
 	"architectures/arm.hpp"
@@ -1136,47 +1137,47 @@
 	"architectures/tms320.hpp"
 	"architectures/tms470.hpp"
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\alpha.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\alpha.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\amd64.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\amd64.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\arm.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\arm.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\arm64.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\arm64.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\blackfin.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\blackfin.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\convex.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\convex.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\epiphany.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\epiphany.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\hppa_risc.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\hppa_risc.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\intel_itanium.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\intel_itanium.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\intel_x86.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\intel_x86.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\mips.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\mips.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\motorola_68k.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\motorola_68k.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\powerpc.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\powerpc.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\pyramid_9810.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\pyramid_9810.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\rs6000.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\rs6000.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\sparc.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\sparc.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\superh.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\superh.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\systemz.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\systemz.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\architectures\tms320.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\tms320.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\architectures\tms470.hpp
+1384167427 f:\documents\dev\onii\project\onii\config\architectures\tms470.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\config\compilers.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers.hpp
 	"compilers/acc.hpp"
 	"compilers/altium_c_to_hardware.hpp"
 	"compilers/altium_microblaze_c.hpp"
@@ -1248,147 +1249,147 @@
 	"compilers/watcom.hpp"
 	"compilers/zortech.hpp"
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\acc.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\acc.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\altium_c_to_hardware.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\altium_c_to_hardware.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\altium_microblaze_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\altium_microblaze_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\amsterdam_compiler_kit.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\amsterdam_compiler_kit.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\arm_compiler.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\arm_compiler.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\aztec_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\aztec_c.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\borland.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\borland.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\cc65.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\cc65.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\clang.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\clang.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\comeau.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\comeau.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\compaq.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\compaq.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\convex.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\convex.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\cray_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\cray_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\diab.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\diab.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\dice_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\dice_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\digital_mars.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\digital_mars.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\dignus_systems.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\dignus_systems.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\djgpp.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\djgpp.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\edg_frontend.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\edg_frontend.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\ekopath.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\ekopath.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\fujitsu.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\fujitsu.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\gcc.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\gcc.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\green_hill.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\green_hill.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\hp_acpp.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\hp_acpp.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\hp_ansi.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\hp_ansi.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\iar.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\iar.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\ibm_xl.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\ibm_xl.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\ibm_zos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\ibm_zos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\imagecraft_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\imagecraft_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\intel.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\intel.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\kai.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\kai.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\keil_c166.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\keil_c166.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\keil_c51.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\keil_c51.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\keil_carm.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\keil_carm.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\lcc.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\lcc.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\llvm.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\llvm.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\metaware_high.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\metaware_high.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\metrowerks_codewarrior.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\metrowerks_codewarrior.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\microsoft_visual.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\microsoft_visual.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\microtec.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\microtec.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\microway_ndp_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\microway_ndp_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\mingw.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\mingw.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\mingw_w64.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\mingw_w64.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\mipspro.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\mipspro.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\miracle_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\miracle_c.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\mpw.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\mpw.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\norcroft_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\norcroft_c.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\nwcc.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\nwcc.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\open64.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\open64.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\pacific_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\pacific_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\palm.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\palm.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\pelles_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\pelles_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\portland_group.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\portland_group.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\renesas.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\renesas.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\sasc.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\sasc.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\sco_openserver.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\sco_openserver.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\small_device_c_compiler.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\small_device_c_compiler.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\sn_compiler.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\sn_compiler.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\stratus_vos_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\stratus_vos_c.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\sun_studio.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\sun_studio.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\symantec.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\symantec.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\tendra.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\tendra.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\texas_instruments_compiler.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\texas_instruments_compiler.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\think_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\think_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\tiny_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\tiny_c.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\turbo.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\turbo.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\ultimate.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\ultimate.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\usl_c.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\usl_c.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\compilers\watcom.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\watcom.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\compilers\zortech.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\compilers\zortech.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\config\environments.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments.hpp
 	"environments/bsd.hpp"
 	"environments/cygwin.hpp"
 	"environments/emx.hpp"
@@ -1398,28 +1399,28 @@
 	"environments/uwin.hpp"
 	"environments/windu.hpp"
 
-1381666314 f:\documents\dev\onii\project\onii\config\environments\bsd.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\bsd.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\environments\cygwin.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\cygwin.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\environments\emx.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\emx.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\environments\interix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\interix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\environments\svr4.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\svr4.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\environments\unix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\unix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\environments\uwin.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\uwin.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\environments\windu.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\environments\windu.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\config\libraries.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\libraries.hpp
 	"libraries/microsoft_foundation_classes.hpp"
 
-1381666314 f:\documents\dev\onii\project\onii\config\libraries\microsoft_foundation_classes.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\libraries\microsoft_foundation_classes.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\config\operating_systems.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems.hpp
 	"operating_systems/aix.hpp"
 	"operating_systems/amdahl_uts.hpp"
 	"operating_systems/amigaos.hpp"
@@ -1475,172 +1476,172 @@
 	"operating_systems/windowsce.hpp"
 	"operating_systems/zos.hpp"
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\aix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\aix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\amdahl_uts.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\amdahl_uts.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\amigaos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\amigaos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\android.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\android.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_aegis.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_aegis.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_domainos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\apollo_domainos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\bada.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\bada.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\beos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\beos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\blue_gene.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\blue_gene.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\bsdos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\bsdos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\convexos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\convexos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\dgux.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\dgux.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\dragonfly.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\dragonfly.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\dynixptx.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\dynixptx.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\ecos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\ecos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\freebsd.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\freebsd.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\gnu.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\gnu.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\hiux_mpp.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\hiux_mpp.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\hpux.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\hpux.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\ibm_os400.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\ibm_os400.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\integrity.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\integrity.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\irix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\irix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\kfreebsd.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\kfreebsd.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\linux.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\linux.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\lynxos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\lynxos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\macos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\macos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\microware_os9.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\microware_os9.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\minix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\minix.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\morphos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\morphos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\mpeix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\mpeix.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\msdos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\msdos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\netbsd.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\netbsd.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\nonstop.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\nonstop.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\nucleus_rtos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\nucleus_rtos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\openbsd.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\openbsd.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\os2.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\os2.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\palm_os.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\palm_os.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\pyramid_dcosx.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\pyramid_dcosx.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\qnx.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\qnx.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\reliant_unix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\reliant_unix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\sco_openserver.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\sco_openserver.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\solaris.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\solaris.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\stratus_vos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\stratus_vos.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\syllable.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\syllable.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\symbian_os.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\symbian_os.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\tru64.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\tru64.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\ultrix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\ultrix.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\unicos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\unicos.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\unicosmp.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\unicosmp.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\unixware.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\unixware.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\vms.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\vms.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\windows.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\windows.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\operating_systems\windowsce.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\windowsce.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\operating_systems\zos.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\operating_systems\zos.hpp
 
-1382359196 f:\documents\dev\onii\project\onii\config\standards.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\standards.hpp
 	"standards/language.hpp"
 	"standards/posix.hpp"
 	"standards/xopen.hpp"
 
-1381666314 f:\documents\dev\onii\project\onii\config\standards\language.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\standards\language.hpp
 
-1381666313 f:\documents\dev\onii\project\onii\config\standards\posix.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\standards\posix.hpp
 
-1381666314 f:\documents\dev\onii\project\onii\config\standards\xopen.hpp
+1384167428 f:\documents\dev\onii\project\onii\config\standards\xopen.hpp
 
-1382201997 f:\documents\dev\onii\project\onii\random.hpp
+1384167429 f:\documents\dev\onii\project\onii\random.hpp
 	"detail/random/type.hpp"
 
-1381666757 f:\documents\dev\onii\project\onii\detail\random\type.hpp
+1381663157 f:\documents\dev\onii\project\onii\detail\random\type.hpp
 	<limits>
 	<random>
 	<type_traits>
 
-1382201262 f:\documents\dev\onii\project\onii\sleep.hpp
+1384167429 f:\documents\dev\onii\project\onii\sleep.hpp
 	"physic/unit/time.hpp"
 	"config/operating_systems/windows.hpp"
 	<windows.h>
 	<unistd.h>
 
-1382200397 f:\documents\dev\onii\project\onii\split.hpp
+1384167429 f:\documents\dev\onii\project\onii\split.hpp
 	<vector>
 	<string>
 	<algorithm>
 
-1382360477 f:\documents\dev\onii\project\onii\timer.hpp
+1384167429 f:\documents\dev\onii\project\onii\timer.hpp
 	<chrono>
 	"physic/unit/time.hpp"
 
-1382199682 f:\documents\dev\onii\project\onii\thread_safe.hpp
+1384167429 f:\documents\dev\onii\project\onii\thread_safe.hpp
 	"detail/thread_safe/mutex.hpp"
 
-1381705269 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
+1381701669 f:\documents\dev\onii\project\onii\detail\thread_safe\mutex.hpp
 	<mutex>
 
-1382206270 f:\documents\dev\onii\project\onii\log.hpp
+1384167428 f:\documents\dev\onii\project\onii\log.hpp
 	"detail/log/containers_output.hpp"
 	"detail/log/logger.hpp"
 
-1381933494 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
+1381929894 f:\documents\dev\onii\project\onii\detail\log\containers_output.hpp
 	<sstream>
 	<string>
 	<utility>
 
-1382182793 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
+1382179193 f:\documents\dev\onii\project\onii\detail\log\logger.hpp
 	<iostream>
 	"../../thread_safe.hpp"
 
-1382206471 f:\documents\dev\onii\project\onii\hash.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash.hpp
 	"hash/md5.hpp"
 	"hash/sha1.hpp"
 
-1382359583 f:\documents\dev\onii\project\onii\hash\md5.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\md5.hpp
 	"detail/little_endian/add_bytes.hpp"
 	"detail/little_endian/to_uint.hpp"
 	"detail/circular_shift.hpp"
@@ -1655,7 +1656,7 @@
 
 1381942743 f:\documents\dev\onii\project\onii\hash\detail\leftrotate.hpp
 
-1382359583 f:\documents\dev\onii\project\onii\hash\sha1.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\sha1.hpp
 	"detail/big_endian/add_bytes.hpp"
 	"detail/big_endian/to_uint.hpp"
 	"detail/circular_shift.hpp"
@@ -1665,7 +1666,7 @@
 	"detail/maj.hpp"
 	"do_hash.hpp"
 
-1382182793 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
+1382179193 f:\documents\dev\onii\project\onii\hash\detail\to_string.hpp
 	<sstream>
 	<iomanip>
 	<string>
@@ -1679,16 +1680,16 @@
 	<vector>
 	<cstdint>
 
-1382359699 f:\documents\dev\onii\project\onii\hash\do_hash.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\do_hash.hpp
 
-1382182793 f:\documents\dev\onii\project\onii\hash\detail\circular_shift.hpp
+1382179193 f:\documents\dev\onii\project\onii\hash\detail\circular_shift.hpp
 	<cstdint>
 
-1382182793 f:\documents\dev\onii\project\onii\hash\detail\ch.hpp
+1382179193 f:\documents\dev\onii\project\onii\hash\detail\ch.hpp
 
-1382182793 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
+1382179193 f:\documents\dev\onii\project\onii\hash\detail\parity.hpp
 
-1382182793 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
+1382179193 f:\documents\dev\onii\project\onii\hash\detail\maj.hpp
 
 1382182441 f:\documents\dev\onii\project\onii\hash\detail\md5\add_bytes.hpp
 	<vector>
@@ -1704,17 +1705,20 @@
 	<vector>
 	<cstdint>
 
-1382260846 f:\documents\dev\onii\project\onii\hash\detail\little_endian\add_bytes.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\detail\little_endian\add_bytes.hpp
 	<vector>
 
-1382260845 f:\documents\dev\onii\project\onii\hash\detail\little_endian\to_uint.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\detail\little_endian\to_uint.hpp
 	<vector>
 	<cstdint>
 
-1382260805 f:\documents\dev\onii\project\onii\hash\detail\big_endian\add_bytes.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\detail\big_endian\add_bytes.hpp
 	<vector>
 
-1382260804 f:\documents\dev\onii\project\onii\hash\detail\big_endian\to_uint.hpp
+1384167428 f:\documents\dev\onii\project\onii\hash\detail\big_endian\to_uint.hpp
 	<vector>
 	<cstdint>
+
+1384172510 f:\documents\dev\onii\project\onii\from_string.hpp
+	<string>
 
