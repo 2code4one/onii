@@ -541,21 +541,23 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1384172007 source:f:\documents\dev\onii\project\main.cpp
+1384273796 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1384171686 f:\documents\dev\onii\project\onii\onii.hpp
+1384272038 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
 	"from_string.hpp"
 	"hash.hpp"
 	"log.hpp"
 	"physic.hpp"
 	"random.hpp"
+	"settings.hpp"
 	"sleep.hpp"
 	"split.hpp"
 	"thread_safe.hpp"
 	"timer.hpp"
+	"to_string.hpp"
 
 1384167428 f:\documents\dev\onii\project\onii\physic.hpp
 	"physic/constant.hpp"
@@ -1719,6 +1721,28 @@
 	<vector>
 	<cstdint>
 
-1384172510 f:\documents\dev\onii\project\onii\from_string.hpp
+1384271992 f:\documents\dev\onii\project\onii\from_string.hpp
+	<string>
+
+1384272777 f:\documents\dev\onii\project\onii\settings.hpp
+	"to_string.hpp"
+	"from_string.hpp"
+	"detail/settings/ini.hpp"
+	"detail/settings/json.hpp"
+
+1384275367 f:\documents\dev\onii\project\onii\detail\settings\ini.hpp
+	"base.hpp"
+	"../../split.hpp"
+
+1384272187 f:\documents\dev\onii\project\onii\detail\settings\base.hpp
+	<map>
+	<vector>
+	<string>
+	<fstream>
+
+1384269356 f:\documents\dev\onii\project\onii\detail\settings\json.hpp
+	"base.hpp"
+
+1384271914 f:\documents\dev\onii\project\onii\to_string.hpp
 	<string>
 

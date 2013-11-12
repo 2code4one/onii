@@ -16,5 +16,6 @@
 #include "split.hpp"
 #include "thread_safe.hpp"
 #include "timer.hpp"
+#include "to_string.hpp"
 
 #endif // ONII_ONII_HPP

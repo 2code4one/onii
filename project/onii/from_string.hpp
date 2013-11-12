@@ -11,7 +11,7 @@
 /// @cond IGNORE
 #define ONII_FROM_STRING_SPEC(type, func)  \
     template<>  \
-    type sto<type>(std::string const &str)  \
+    type from_string<type>(std::string const &str)  \
     {  \
         return func(str);  \
     }
@@ -28,10 +28,11 @@ namespace onii
 ///
 /// @param[in] str - the string to convert
 /// @return the numeric value
-/// @remarks Work only with these types: @code int, long, long long, unsigned long, unsigned long long, float, double, long double @endcode
+/// @remarks Work only with these types: @code bool, int, long, long long, unsigned long, unsigned long long, float, double, long double, std::string @endcode
+/// @remarks These boolean values will work: @code 0, [1; infinite[, false, true @endcode
 /////////////////////////////////////////////////
 template<typename NumericT>
-NumericT sto(std::string const &str);
+NumericT from_string(std::string const &str);
 
 /////////////////////////////////////////////////
 /// @cond IGNORE
@@ -43,6 +44,23 @@ ONII_FROM_STRING_SPEC(unsigned long long, std::stoull)
 ONII_FROM_STRING_SPEC(float, std::stof)
 ONII_FROM_STRING_SPEC(double, std::stod)
 ONII_FROM_STRING_SPEC(long double, std::stold)
+
+template<>
+bool from_string<bool>(std::string const &str)
+{
+    if(str.find("false") != std::string::npos)
+        return false;
+    else if(str.find("true") != std::string::npos)
+        return true;
+    else
+        return from_string<int>(str);
+}
+
+template<>
+std::string from_string<std::string>(std::string const &str)
+{
+    return str;
+}
 /// @endcond
 /////////////////////////////////////////////////
 }
