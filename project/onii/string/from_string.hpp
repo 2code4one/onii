@@ -1,8 +1,8 @@
-#ifndef ONII_FROM_STRING_HPP
-#define ONII_FROM_STRING_HPP
+#ifndef ONII_STRING_FROM_STRING_HPP
+#define ONII_STRING_FROM_STRING_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/from_string.hpp
+/// @file onii/string/from_string.hpp
 /////////////////////////////////////////////////
 
 #include <string>
@@ -67,4 +67,4 @@ std::string from_string<std::string>(std::string const &str)
 
 #undef ONII_FROM_STRING_SPEC
 
-#endif // ONII_FROM_STRING_HPP
+#endif // ONII_STRING_FROM_STRING_HPP

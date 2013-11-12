@@ -170,6 +170,7 @@ var searchData=
   ['open64_2ehpp',['open64.hpp',['../d4/d3d/open64_8hpp.html',1,'']]],
   ['openbsd_2ehpp',['openbsd.hpp',['../dc/db2/openbsd_8hpp.html',1,'']]],
   ['operating_5fsystems_2ehpp',['operating_systems.hpp',['../d7/d45/operating__systems_8hpp.html',1,'']]],
+  ['operator_3d',['operator=',['../da/d65/classonii_1_1settings.html#ab4ff9fc1cddb8858c99bc7e0cc0a077f',1,'onii::settings']]],
   ['os2_2ehpp',['os2.hpp',['../de/d76/os2_8hpp.html',1,'']]],
   ['physic',['physic',['../df/d59/namespaceonii_1_1physic.html',1,'onii']]],
   ['sco_5fopenserver_2ehpp',['sco_openserver.hpp',['../d4/da3/operating__systems_2sco__openserver_8hpp.html',1,'']]],

@@ -217,7 +217,6 @@
 		<Unit filename="onii/detail/settings/ini.hpp" />
 		<Unit filename="onii/detail/settings/json.hpp" />
 		<Unit filename="onii/detail/thread_safe/mutex.hpp" />
-		<Unit filename="onii/from_string.hpp" />
 		<Unit filename="onii/hash.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/to_uint.hpp" />
@@ -247,9 +246,12 @@
 		<Unit filename="onii/settings.hpp" />
 		<Unit filename="onii/sleep.hpp" />
 		<Unit filename="onii/split.hpp" />
+		<Unit filename="onii/string.hpp" />
+		<Unit filename="onii/string/from_string.hpp" />
+		<Unit filename="onii/string/to_string.hpp" />
+		<Unit filename="onii/string/trim.hpp" />
 		<Unit filename="onii/thread_safe.hpp" />
 		<Unit filename="onii/timer.hpp" />
-		<Unit filename="onii/to_string.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

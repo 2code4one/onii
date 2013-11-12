@@ -14,12 +14,12 @@ class json :
 {
 protected:
 
-    virtual void do_read(std::ifstream &ifs, data &datas)
+    virtual void do_read(std::ifstream &, data &)
     {
 
     }
 
-    virtual void do_write(std::ofstream &ofs, data const &datas) const
+    virtual void do_write(std::ofstream &, data const &) const
     {
 
     }

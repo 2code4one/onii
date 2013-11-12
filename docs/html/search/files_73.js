@@ -1,6 +1,7 @@
 var searchData=
 [
   ['sasc_2ehpp',['sasc.hpp',['../dd/d1c/sasc_8hpp.html',1,'']]],
+  ['settings_2ehpp',['settings.hpp',['../d5/d0f/settings_8hpp.html',1,'']]],
   ['sha1_2ehpp',['sha1.hpp',['../d3/d68/sha1_8hpp.html',1,'']]],
   ['sleep_2ehpp',['sleep.hpp',['../d0/d8d/sleep_8hpp.html',1,'']]],
   ['small_5fdevice_5fc_5fcompiler_2ehpp',['small_device_c_compiler.hpp',['../da/d51/small__device__c__compiler_8hpp.html',1,'']]],
@@ -11,6 +12,7 @@ var searchData=
   ['standards_2ehpp',['standards.hpp',['../d5/dbf/standards_8hpp.html',1,'']]],
   ['stratus_5fvos_2ehpp',['stratus_vos.hpp',['../d2/d45/stratus__vos_8hpp.html',1,'']]],
   ['stratus_5fvos_5fc_2ehpp',['stratus_vos_c.hpp',['../db/d22/stratus__vos__c_8hpp.html',1,'']]],
+  ['string_2ehpp',['string.hpp',['../d4/da0/string_8hpp.html',1,'']]],
   ['sun_5fstudio_2ehpp',['sun_studio.hpp',['../d0/dad/sun__studio_8hpp.html',1,'']]],
   ['superh_2ehpp',['superh.hpp',['../d8/d92/superh_8hpp.html',1,'']]],
   ['svr4_2ehpp',['svr4.hpp',['../d3/db0/svr4_8hpp.html',1,'']]],

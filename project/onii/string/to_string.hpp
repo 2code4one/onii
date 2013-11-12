@@ -1,8 +1,8 @@
-#ifndef ONII_TO_STRING_HPP
-#define ONII_TO_STRING_HPP
+#ifndef ONII_STRING_TO_STRING_HPP
+#define ONII_STRING_TO_STRING_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/to_string.hpp
+/// @file onii/string/to_string.hpp
 /////////////////////////////////////////////////
 
 #include <string>
@@ -62,4 +62,4 @@ std::string to_string<std::string const&>(std::string const &value)
 
 #undef ONII_TO_STRING_SPEC
 
-#endif // ONII_TO_STRING_HPP
+#endif // ONII_STRING_TO_STRING_HPP

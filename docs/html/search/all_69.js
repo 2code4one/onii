@@ -7,6 +7,7 @@ var searchData=
   ['ice',['ice',['../d1/dc7/classonii_1_1physic_1_1constant_1_1density.html#a0b3c9d88446cb737d51745bf40fcc156',1,'onii::physic::constant::density']]],
   ['imagecraft_5fc_2ehpp',['imagecraft_c.hpp',['../d9/d65/imagecraft__c_8hpp.html',1,'']]],
   ['info',['info',['../dc/dea/classonii_1_1log_1_1info.html',1,'onii::log']]],
+  ['ini',['ini',['../da/d65/classonii_1_1settings.html#a8646a5d3e1af38ecf89b0ce59bf645d8a4d90362d661461e558408e982aaa49d3',1,'onii::settings']]],
   ['integrity_2ehpp',['integrity.hpp',['../da/da7/integrity_8hpp.html',1,'']]],
   ['intel_2ehpp',['intel.hpp',['../db/db5/intel_8hpp.html',1,'']]],
   ['intel_5fitanium_2ehpp',['intel_itanium.hpp',['../d9/d34/intel__itanium_8hpp.html',1,'']]],

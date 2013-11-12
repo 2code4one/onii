@@ -12,7 +12,19 @@ namespace detail
 {
 namespace settings
 {
-typedef std::map<std::string, std::vector<std::string>> data;
+// data type, compare modified to put the no-group property before
+struct data_key_compare
+{
+    bool operator()(std::string const &lhs, std::string const &rhs) const
+    {
+        bool rhsdot = rhs.find(".") != std::string::npos;
+        if((lhs.find(".") != std::string::npos) == rhsdot)
+            return std::less<std::string>()(lhs, rhs);
+        else
+            return rhsdot;
+    }
+};
+typedef std::map<std::string, std::vector<std::string>, data_key_compare> data;
 
 class format
 {

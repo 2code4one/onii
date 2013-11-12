@@ -6,7 +6,6 @@
 /////////////////////////////////////////////////
 
 #include "config.hpp"
-#include "from_string.hpp"
 #include "hash.hpp"
 #include "log.hpp"
 #include "physic.hpp"
@@ -14,8 +13,8 @@
 #include "settings.hpp"
 #include "sleep.hpp"
 #include "split.hpp"
+#include "string.hpp"
 #include "thread_safe.hpp"
 #include "timer.hpp"
-#include "to_string.hpp"
 
 #endif // ONII_ONII_HPP
