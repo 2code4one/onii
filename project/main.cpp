@@ -6,12 +6,14 @@ int main()
     onii::settings settings(onii::settings::format::ini);
 
     settings.read("test/settings.ini");
-    settings.write("test/settings.copy.ini");
+    settings.debug();
 
-    std::string buf;
-    std::ifstream ifs("test/settings.copy.ini");
-    while(std::getline(ifs, buf))
-        std::cout << buf << std::endl;
+    std::cout << std::endl;
+    settings.write("test/settings.copy.ini");
+    settings.read("test/settings.copy.ini");
+    settings.debug();
+
+    std::cout << std::endl;
 
     return 0;
 }

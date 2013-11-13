@@ -24,7 +24,7 @@ struct data_key_compare
             return rhsdot;
     }
 };
-typedef std::map<std::string, std::vector<std::string>, data_key_compare> data;
+typedef std::map<std::string, std::string, data_key_compare> data;
 
 class format
 {
@@ -44,7 +44,6 @@ public:
 
     void read(std::string const &filename, data &datas)
     {
-        datas.clear();
         std::ifstream ifs(filename.c_str());
         if(ifs)
             do_read(ifs, datas);

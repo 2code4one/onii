@@ -5,8 +5,11 @@
 /// @file onii/settings.hpp
 /////////////////////////////////////////////////
 
+#include <algorithm>
 #include "detail/settings/ini.hpp"
 #include "detail/settings/json.hpp"
+
+#include "log.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -20,6 +23,11 @@ namespace onii
 class settings
 {
 public:
+
+    void debug() const {
+        for(auto const &it : m_datas)
+            log::debug() << it.first << " = " << it.second;
+    }
 
     /////////////////////////////////////////////////
     /// @enum format
@@ -43,17 +51,15 @@ public:
     /// Key1=Value1
     /// [Group1]
     /// Key2=Value2
-    /// >ListKey3
-    /// Value3
-    /// Value4
-    /// < ; End of the list
+    /// ListKey3[]=Value3
+    /// ListKey3[]=Value4
     /// @endcode
-    /// Will become after reading (Key / Index / Value):
+    /// Will become after reading (Key / Value):
     /// @code
-    /// Key1 / 0 / Value1
-    /// Group1.Key2 / 0 / Value2
-    /// Group1.ListKey3 / 0 / Value3
-    /// Group1.ListKey3 / 1 / Value4
+    /// Key1 / Value1
+    /// Group1.Key2 / Value2
+    /// Group1.ListKey3[0] / Value3
+    /// Group1.ListKey3[1] / Value4
     /// @endcode
     ///
     /// @b JSON file format:
@@ -65,6 +71,7 @@ public:
         m_format(nullptr),
         m_datas()
     {
+        // get the good format
         if(file_format == format::ini)
             m_format = new detail::settings::ini;
         else if(file_format == format::json)
@@ -76,6 +83,7 @@ public:
     /////////////////////////////////////////////////
     ~settings()
     {
+        // free memory
         delete m_format;
     }
 
@@ -109,8 +117,37 @@ public:
     /////////////////////////////////////////////////
     unsigned int count(std::string const &key) const
     {
-        auto it = m_datas.find(key);
-        return it != m_datas.end() ? it->second.size() : 0;
+        // is the property a list ?
+        auto tab = key.find("[]");
+        if(tab != std::string::npos)
+        {
+            // get the key without the "[]"
+            std::string k = key.substr(0, tab);
+
+            // count property
+            return std::count_if(
+                m_datas.cbegin(),
+                m_datas.cend(),
+                [&k] (detail::settings::data::value_type const &value) {
+                    return value.first.find(k) != std::string::npos;
+                }
+            );
+        }
+
+        // else it's a simple property
+        else
+            return m_datas.find(key) != m_datas.cend() ? 1 : 0;
+    }
+
+    /////////////////////////////////////////////////
+    /// @brief Swap the values of two keys
+    ///
+    /// @param[in] key1 - first key
+    /// @param[in] key2 - second key
+    /////////////////////////////////////////////////
+    void swap(std::string const &key1, std::string const &key2)
+    {
+        std::swap(m_datas[key1], m_datas[key2]);
     }
 
     /////////////////////////////////////////////////
@@ -118,9 +155,11 @@ public:
     ///
     /// @param[in] filename - path to the file
     /// @remarks Use the file format defined by settings::settings
+    /// @remarks This function call settings::clear before reading
     /////////////////////////////////////////////////
     void read(std::string const &filename)
     {
+        clear();
         m_format->read(filename, m_datas);
     }
 
@@ -139,13 +178,12 @@ public:
     /// @brief Return a property value
     ///
     /// @param[in] key - property name
-    /// @param[in] index - property index (default: 0)
     /// @return the property value casted into T
     /////////////////////////////////////////////////
     template<typename T = std::string>
-    T get(std::string const &key, unsigned int index = 0) const
+    T get(std::string const &key) const
     {
-        return from_string<T>(m_datas.find(key)->second[index]);
+        return from_string<T>(m_datas.find(key)->second);
     }
 
     /////////////////////////////////////////////////
@@ -153,64 +191,58 @@ public:
     ///
     /// @param[in] key - property name
     /// @param[in] value - property value
-    /// @remarks Call the function @code settings::set(key, 0, value); @endcode
+    /// @remarks If the property doesn't exists, this function create a new one
     /////////////////////////////////////////////////
     template<typename T>
     void set(std::string const &key, T const &value)
     {
-        set(key, 0, value);
-    }
+        // is the key a list ?
+        auto tab = key.find("[]");
+        if(tab != std::string::npos)
+        {
+            unsigned int num = count(key);
 
-    /////////////////////////////////////////////////
-    /// @brief Modifiy a property value
-    ///
-    /// @param[in] key - property name
-    /// @param[in] index - property index
-    /// @param[in] value - property value
-    /// @remarks If the property doesn't exists, this function call @code settings::add(key, value); @endcode
-    /////////////////////////////////////////////////
-    template<typename T>
-    void set(std::string const &key, unsigned int index, T const &value)
-    {
-        if(count(key) > 0)
-            m_datas[key][index] = to_string(value);
+            // the list exists, add a new value
+            if(num > 0)
+                m_datas[key.substr(0, tab + 1) + to_string(num) + "]"] = to_string(value);
+
+            // create a new list at [0]
+            else
+                m_datas[key.substr(0, tab + 1) + "0]"] = to_string(value);
+        }
+
+        // else it's a simple property
         else
-            add(key, value);
-    }
-
-    /////////////////////////////////////////////////
-    /// @brief Add a property value
-    ///
-    /// @param[in] key - property name
-    /// @param[in] value - property value
-    /////////////////////////////////////////////////
-    template<typename T>
-    void add(std::string const &key, T const &value)
-    {
-        m_datas[key].push_back(to_string(value));
+            m_datas[key] = to_string(value);
     }
 
     /////////////////////////////////////////////////
     /// @brief Erase a specific property
     ///
     /// @param[in] key - property name
-    /// @param[in] index - property index (default: 0)
     /////////////////////////////////////////////////
-    void erase(std::string const &key, unsigned int index = 0)
+    void erase(std::string const &key)
     {
-        m_datas[key].erase(m_datas[key].begin() + index);
-        if(count(key) == 0)
-            erase_all(key);
-    }
+        // is the key a list ?
+        auto tab = key.find("[]");
+        if(tab != std::string::npos)
+        {
+            // get the key without the "[]"
+            std::string k = key.substr(0, tab);
 
-    /////////////////////////////////////////////////
-    /// @brief Erase all properties matched by name
-    ///
-    /// @param[in] key - property name
-    /////////////////////////////////////////////////
-    void erase_all(std::string const &key)
-    {
-        m_datas.erase(key);
+            // erase the complete list
+            for(auto it = m_datas.begin(); it != m_datas.end(); )
+            {
+                if(it->first.find(k) != std::string::npos)
+                    m_datas.erase(it++);
+                else
+                    ++it;
+            }
+        }
+
+        // else it's a simple property
+        else
+            m_datas.erase(key);
     }
 
     /////////////////////////////////////////////////

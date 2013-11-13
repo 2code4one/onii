@@ -541,11 +541,11 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1384285944 source:f:\documents\dev\onii\project\main.cpp
+1384348162 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1384284451 f:\documents\dev\onii\project\onii\onii.hpp
+1384292265 f:\documents\dev\onii\project\onii\onii.hpp
 	"config.hpp"
 	"hash.hpp"
 	"log.hpp"
@@ -1723,39 +1723,41 @@
 1384271992 f:\documents\dev\onii\project\onii\from_string.hpp
 	<string>
 
-1384289924 f:\documents\dev\onii\project\onii\settings.hpp
+1384348141 f:\documents\dev\onii\project\onii\settings.hpp
+	<algorithm>
 	"detail/settings/ini.hpp"
 	"detail/settings/json.hpp"
+	"log.hpp"
 
-1384288606 f:\documents\dev\onii\project\onii\detail\settings\ini.hpp
+1384347792 f:\documents\dev\onii\project\onii\detail\settings\ini.hpp
 	"base.hpp"
 	"../../split.hpp"
 	"../../string.hpp"
 
-1384288663 f:\documents\dev\onii\project\onii\detail\settings\base.hpp
+1384348044 f:\documents\dev\onii\project\onii\detail\settings\base.hpp
 	<map>
 	<vector>
 	<string>
 	<fstream>
 
-1384288759 f:\documents\dev\onii\project\onii\detail\settings\json.hpp
+1384292265 f:\documents\dev\onii\project\onii\detail\settings\json.hpp
 	"base.hpp"
 
 1384271914 f:\documents\dev\onii\project\onii\to_string.hpp
 	<string>
 
-1384284527 f:\documents\dev\onii\project\onii\string.hpp
+1384292265 f:\documents\dev\onii\project\onii\string.hpp
 	"string/from_string.hpp"
 	"string/to_string.hpp"
 	"string/trim.hpp"
 
-1384284364 f:\documents\dev\onii\project\onii\string\from_string.hpp
+1384292265 f:\documents\dev\onii\project\onii\string\from_string.hpp
 	<string>
 
-1384284362 f:\documents\dev\onii\project\onii\string\to_string.hpp
+1384292265 f:\documents\dev\onii\project\onii\string\to_string.hpp
 	<string>
 
-1384288280 f:\documents\dev\onii\project\onii\string\trim.hpp
+1384292265 f:\documents\dev\onii\project\onii\string\trim.hpp
 	<string>
 	<cctype>
 

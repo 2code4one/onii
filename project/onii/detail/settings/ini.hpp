@@ -18,7 +18,8 @@ protected:
 
     virtual void do_read(std::ifstream &ifs, data &datas)
     {
-        std::string buf, key, grp;
+        unsigned long index = 0;
+        std::string buf, key, grp, tmp;
         while(std::getline(ifs, buf))
         {
             // clear comments
@@ -28,26 +29,29 @@ protected:
             if(buf[0] == '[')
                 grp = trim(buf.substr(1, buf.find(']') - 1)) + ".";
 
-            // new list
-            else if(buf[0] == '>')
-                key = trim(buf.substr(1));
-
-            // end of the list
-            else if(buf[0] == '<')
-                key.clear();
+            // continue if empty line
+            if(buf.find("=") == std::string::npos)
+                continue;
 
             // property
-            else if(key.empty() && buf.find("=") != std::string::npos)
+            split_results property = splitter(buf).by_separators("=").results();
+
+            // is a list ?
+            key = trim(property[0]);
+            if(key[key.size() - 1] == ']')
             {
-                split_results property = splitter(buf).by_separators("=").results();
-                property[0] = trim(property[0]);
-                datas[grp + property[0]].resize(1);
-                datas[grp + property[0]][0] = trim(property[1]);
+                if(tmp != key)
+                {
+                    tmp = key;
+                    index = 0;
+                }
+                key = trim(key.substr(0, key.rfind("[")));
+                datas[grp + key + "[" + to_string(index++) + "]"] = trim(property[1]);
             }
 
-            // list property
-            else if(!key.empty())
-                datas[grp + key].push_back(trim(buf));
+            // else it's a simple property
+            else
+                datas[grp + key] = trim(property[1]);
         }
     }
 
@@ -73,15 +77,10 @@ protected:
                 dot = 0;
 
             // list
-            if(it.second.size() > 1)
-            {
-                ofs << ">" << it.first.substr(dot) << std::endl;
-                for(auto const &value : it.second)
-                    ofs << value << std::endl;
-                ofs << "<" << std::endl;
-            }
+            if(it.first[it.first.size() - 1] == ']')
+                ofs << it.first.substr(dot, it.first.rfind("[") - dot) << "[]=" << it.second << std::endl;
             else // property
-                ofs << it.first.substr(dot) << "=" << it.second[0] << std::endl;
+                ofs << it.first.substr(dot) << "=" << it.second << std::endl;
         }
     }
 };
