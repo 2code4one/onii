@@ -5,6 +5,7 @@
 /// @file onii/string/from_string.hpp
 /////////////////////////////////////////////////
 
+#include <sstream>
 #include <string>
 
 /////////////////////////////////////////////////
@@ -28,11 +29,17 @@ namespace onii
 ///
 /// @param[in] str - the string to convert
 /// @return the numeric value
-/// @remarks Work only with these types: @code bool, int, long, long long, unsigned long, unsigned long long, float, double, long double, std::string @endcode
+/// @remarks Work for sure with these types: @code bool, int, long, long long, unsigned long, unsigned long long, float, double, long double, std::string @endcode
 /// @remarks These boolean values will work: @code 0, [1; infinite[, false, true @endcode
 /////////////////////////////////////////////////
 template<typename NumericT>
-NumericT from_string(std::string const &str);
+NumericT from_string(std::string const &str)
+{
+    NumericT ret = NumericT();
+    std::istringstream iss(str);
+    iss >> ret;
+    return ret;
+}
 
 /////////////////////////////////////////////////
 /// @cond IGNORE
