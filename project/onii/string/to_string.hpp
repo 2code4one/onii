@@ -28,7 +28,7 @@ namespace onii
 ///
 /// @param[in] value - the numeric to convert
 /// @return the string
-/// @remarks Work only with these types: @code bool, int, long, long long, unsigned long, unsigned long long, float, double, long double, std::string const& @endcode
+/// @remarks Work only with these types: @code bool, int, long, long long, unsigned long, unsigned long long, float, double, long double, std::string const&, char const* @endcode
 /// @remarks Boolean values will be converted to "false" and "true"
 /////////////////////////////////////////////////
 template<typename NumericT>
@@ -49,6 +49,12 @@ template<>
 std::string to_string<bool>(bool value)
 {
     return value ? "true" : "false";
+}
+
+template<>
+std::string to_string<char const*>(char const *value)
+{
+    return value;
 }
 
 template<>

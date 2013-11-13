@@ -9,8 +9,6 @@
 #include "detail/settings/ini.hpp"
 #include "detail/settings/json.hpp"
 
-#include "log.hpp"
-
 /////////////////////////////////////////////////
 /// @namespace onii
 /////////////////////////////////////////////////
@@ -23,11 +21,6 @@ namespace onii
 class settings
 {
 public:
-
-    void debug() const {
-        for(auto const &it : m_datas)
-            log::debug() << it.first << " = " << it.second;
-    }
 
     /////////////////////////////////////////////////
     /// @enum format
@@ -200,7 +193,7 @@ public:
         auto tab = key.find("[]");
         if(tab != std::string::npos)
         {
-            unsigned int num = count(key);
+            int num = count(key);
 
             // the list exists, add a new value
             if(num > 0)
