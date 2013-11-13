@@ -1,7 +1,6 @@
 var searchData=
 [
   ['acc_2ehpp',['acc.hpp',['../d4/d86/acc_8hpp.html',1,'']]],
-  ['add',['add',['../da/d65/classonii_1_1settings.html#a91edefddd682cab63b9df85923452ab7',1,'onii::settings']]],
   ['aix_2ehpp',['aix.hpp',['../d9/d37/aix_8hpp.html',1,'']]],
   ['alpha_2ehpp',['alpha.hpp',['../d8/db5/alpha_8hpp.html',1,'']]],
   ['altium_5fc_5fto_5fhardware_2ehpp',['altium_c_to_hardware.hpp',['../d4/d3b/altium__c__to__hardware_8hpp.html',1,'']]],

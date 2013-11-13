@@ -107,6 +107,7 @@ public:
     /// @param[in] key - key to search
     /// @return the number of property
     /// @remarks Useful to check if a key exists
+    /// @remarks If key finish by "[]", it will return the size of the list
     /////////////////////////////////////////////////
     unsigned int count(std::string const &key) const
     {
@@ -185,6 +186,7 @@ public:
     /// @param[in] key - property name
     /// @param[in] value - property value
     /// @remarks If the property doesn't exists, this function create a new one
+    /// @remarks If key finish by "[]", it will create a new index in the list
     /////////////////////////////////////////////////
     template<typename T>
     void set(std::string const &key, T const &value)
@@ -213,6 +215,7 @@ public:
     /// @brief Erase a specific property
     ///
     /// @param[in] key - property name
+    /// @remarks If key finish by "[]", it will erase the complete list
     /////////////////////////////////////////////////
     void erase(std::string const &key)
     {
