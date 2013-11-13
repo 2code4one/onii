@@ -541,11 +541,12 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1384353943 source:f:\documents\dev\onii\project\main.cpp
+1384367393 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
-1384292265 f:\documents\dev\onii\project\onii\onii.hpp
+1384358922 f:\documents\dev\onii\project\onii\onii.hpp
+	"big_number.hpp"
 	"config.hpp"
 	"hash.hpp"
 	"log.hpp"
@@ -1723,18 +1724,17 @@
 1384271992 f:\documents\dev\onii\project\onii\from_string.hpp
 	<string>
 
-1384353707 f:\documents\dev\onii\project\onii\settings.hpp
+1384354467 f:\documents\dev\onii\project\onii\settings.hpp
 	<algorithm>
 	"detail/settings/ini.hpp"
 	"detail/settings/json.hpp"
-	"log.hpp"
 
-1384347792 f:\documents\dev\onii\project\onii\detail\settings\ini.hpp
+1384354467 f:\documents\dev\onii\project\onii\detail\settings\ini.hpp
 	"base.hpp"
 	"../../split.hpp"
 	"../../string.hpp"
 
-1384348044 f:\documents\dev\onii\project\onii\detail\settings\base.hpp
+1384354467 f:\documents\dev\onii\project\onii\detail\settings\base.hpp
 	<map>
 	<vector>
 	<string>
@@ -1751,13 +1751,35 @@
 	"string/to_string.hpp"
 	"string/trim.hpp"
 
-1384292265 f:\documents\dev\onii\project\onii\string\from_string.hpp
+1384357945 f:\documents\dev\onii\project\onii\string\from_string.hpp
+	<sstream>
 	<string>
 
-1384353782 f:\documents\dev\onii\project\onii\string\to_string.hpp
+1384357837 f:\documents\dev\onii\project\onii\string\to_string.hpp
+	<sstream>
 	<string>
 
 1384292265 f:\documents\dev\onii\project\onii\string\trim.hpp
 	<string>
 	<cctype>
+
+1384360903 f:\documents\dev\onii\project\onii\big_number.hpp
+	"big_number/integer.hpp"
+	"big_number/real.hpp"
+
+1384360754 f:\documents\dev\onii\project\onii\big_number\int.hpp
+	"detail/type.hpp"
+
+1384359049 f:\documents\dev\onii\project\onii\big_number\real.hpp
+
+1384365936 f:\documents\dev\onii\project\onii\big_number\detail\type.hpp
+	<vector>
+	<limits>
+
+1384368365 f:\documents\dev\onii\project\onii\big_number\integer.hpp
+	<iostream>
+	<vector>
+	<limits>
+	<string>
+	<cmath>
 

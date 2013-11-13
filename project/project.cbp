@@ -48,7 +48,7 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="onii/big_number.hpp" />
-		<Unit filename="onii/big_number/int.hpp" />
+		<Unit filename="onii/big_number/integer.hpp" />
 		<Unit filename="onii/big_number/real.hpp" />
 		<Unit filename="onii/config.hpp" />
 		<Unit filename="onii/config/architectures.hpp" />
