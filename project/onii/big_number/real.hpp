@@ -1,8 +1,0 @@
-#ifndef ONII_BIG_NUMBER_REAL_HPP
-#define ONII_BIG_NUMBER_REAL_HPP
-
-/////////////////////////////////////////////////
-/// @file onii/big_number/real.hpp
-/////////////////////////////////////////////////
-
-#endif // ONII_BIG_NUMBER_REAL_HPP
