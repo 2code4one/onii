@@ -47,11 +47,11 @@ public:
         if(number[0] == '-')
             flip_compl2();
 
-        log::debug(hex().c_str()) << bin() << " (" << bin().size() << "b)";
+        log::debug(hex().c_str()) << log::container(m_bits);
     }
 
-    big_int(sinteger number) :
-        big_int(to_hex_string(number)) // use the string ctor
+    big_int(uinteger number, bool positive = true) :
+        big_int(to_hex_string(number, positive)) // use the string ctor
     {}
 
     big_int(big_real const &number); // defined after the class big_real
@@ -80,6 +80,11 @@ public:
         return *this;
     }
 
+    big_int operator+() const
+    {
+        return big_int(*this);
+    }
+
     big_int operator-() const
     {
         // use the two's complement to inverse number
@@ -90,19 +95,19 @@ public:
 
     big_int &operator++()
     {
-        // loop begin at right
-        uinteger i = m_bits.size() - 1;
+        // loop begin at left
+        uinteger i = 1;
         while(true)
         {
             // flip the bit
             m_bits[i].flip();
 
             // if it's 1, we break
-            if(m_bits[i--])
+            if(m_bits[i++])
                 break;
 
-            // else if it's the last bit at left
-            if(i == 0)
+            // out of range
+            if(i == m_bits.size())
             {
                 // if it's a negative number, we flip (-1 -> 0)
                 if(m_bits[0])
@@ -110,7 +115,7 @@ public:
 
                 // else we add a new bit
                 else
-                    m_bits.insert(m_bits.begin() + 1, 1);
+                    m_bits.push_back(1);
 
                 // end
                 break;
@@ -144,10 +149,51 @@ public:
     big_int &operator/=(big_int const &rhs) {}
     big_int &operator%=(big_int const &rhs) {}
 
-    big_int &operator~() {}
-    big_int &operator^=(big_int const &rhs) {}
-    big_int &operator&=(big_int const &rhs) {}
-    big_int &operator|=(big_int const &rhs) {}
+    big_int &operator~()
+    {
+        m_bits.flip();
+        return *this;
+    }
+
+    big_int &operator^=(big_int const &rhs)
+    {
+        // have the good size
+        if(rhs.m_bits.size() > m_bits.size())
+            pad_zeros_add(rhs.m_bits.size() - m_bits.size());
+
+        // xor
+        for(uinteger i = 0; i < m_bits.size(); ++i)
+            m_bits[i] = !(m_bits[i] == rhs.m_bits[i]);
+
+        return *this;
+    }
+
+    big_int &operator&=(big_int const &rhs)
+    {
+        // have the good size
+        if(rhs.m_bits.size() > m_bits.size())
+            pad_zeros_add(rhs.m_bits.size() - m_bits.size());
+
+        // xor
+        for(uinteger i = 0; i < m_bits.size(); ++i)
+            m_bits[i] = m_bits[i] && rhs.m_bits[i];
+
+        return *this;
+    }
+
+    big_int &operator|=(big_int const &rhs)
+    {
+        // have the good size
+        if(rhs.m_bits.size() > m_bits.size())
+            pad_zeros_add(rhs.m_bits.size() - m_bits.size());
+
+        // xor
+        for(uinteger i = 0; i < m_bits.size(); ++i)
+            m_bits[i] = m_bits[i] || rhs.m_bits[i];
+
+        return *this;
+    }
+
     big_int &operator<<=(big_int const &rhs) {}
     big_int &operator>>=(big_int const &rhs) {}
 
@@ -158,14 +204,6 @@ public:
     }
 
     bool less_than(big_int const &rhs) const {}
-
-    std::string bin() const
-    {
-        std::string tmp;
-        for(uinteger i = 0; i < m_bits.size(); ++i)
-            tmp.append(1, m_bits[i] ? '1' : '0');
-        return tmp;
-    }
 
     std::string hex() const
     {
@@ -178,23 +216,23 @@ public:
         {
             tmp.append(1, '-');
 
-            // we get a prositive number
+            // we get a positive number
             bi.m_bits = m_bits;
             bi.flip_compl2();
             flip = true;
         }
 
         // loop on nimble
-        for(uinteger i = 1; i < m_bits.size(); i += 4)
+        for(sinteger i = m_bits.size() - 1; i >= 4; i -= 4)
         {
             // get the 4-bits chunck
-            bool b1 = flip ? bi.m_bits[i + 0] : m_bits[i + 0];
-            bool b2 = flip ? bi.m_bits[i + 1] : m_bits[i + 1];
-            bool b3 = flip ? bi.m_bits[i + 2] : m_bits[i + 2];
-            bool b4 = flip ? bi.m_bits[i + 3] : m_bits[i + 3];
+            bool b1 = flip ? bi.m_bits[i - 0] : m_bits[i - 0];
+            bool b2 = flip ? bi.m_bits[i - 1] : m_bits[i - 1];
+            bool b3 = flip ? bi.m_bits[i - 2] : m_bits[i - 2];
+            bool b4 = flip ? bi.m_bits[i - 3] : m_bits[i - 3];
 
             // not write '0' for first
-            if(flip && i == 1 && !b1 && !b2 && !b3 && !b4)
+            if(flip && i == m_bits.size() - 1 && !b1 && !b2 && !b3 && !b4)
                 continue;
 
             // write the good hex character
@@ -240,11 +278,11 @@ private:
     }
 
     // transform an integer into a hex string
-    std::string to_hex_string(sinteger number) const
+    std::string to_hex_string(uinteger number, bool positive) const
     {
         std::ostringstream oss;
-        std::string neg = number < 0 ? "-" : "";
-        oss << std::hex << std::abs(number);
+        std::string neg = !positive ? "-" : "";
+        oss << std::hex << number;
         return neg + oss.str();
     }
 
@@ -253,22 +291,22 @@ private:
     {
         switch(std::tolower(c))
         {
-            case '0': m_bits.insert(m_bits.end(), {0, 0, 0, 0}); break;
-            case '1': m_bits.insert(m_bits.end(), {0, 0, 0, 1}); break;
-            case '2': m_bits.insert(m_bits.end(), {0, 0, 1, 0}); break;
-            case '3': m_bits.insert(m_bits.end(), {0, 0, 1, 1}); break;
-            case '4': m_bits.insert(m_bits.end(), {0, 1, 0, 0}); break;
-            case '5': m_bits.insert(m_bits.end(), {0, 1, 0, 1}); break;
-            case '6': m_bits.insert(m_bits.end(), {0, 1, 1, 0}); break;
-            case '7': m_bits.insert(m_bits.end(), {0, 1, 1, 1}); break;
-            case '8': m_bits.insert(m_bits.end(), {1, 0, 0, 0}); break;
-            case '9': m_bits.insert(m_bits.end(), {1, 0, 0, 1}); break;
-            case 'a': m_bits.insert(m_bits.end(), {1, 0, 1, 0}); break;
-            case 'b': m_bits.insert(m_bits.end(), {1, 0, 1, 1}); break;
-            case 'c': m_bits.insert(m_bits.end(), {1, 1, 0, 0}); break;
-            case 'd': m_bits.insert(m_bits.end(), {1, 1, 0, 1}); break;
-            case 'e': m_bits.insert(m_bits.end(), {1, 1, 1, 0}); break;
-            case 'f': m_bits.insert(m_bits.end(), {1, 1, 1, 1}); break;
+            case '0': m_bits.insert(m_bits.begin() + 1, {0, 0, 0, 0}); break;
+            case '1': m_bits.insert(m_bits.begin() + 1, {1, 0, 0, 0}); break;
+            case '2': m_bits.insert(m_bits.begin() + 1, {0, 1, 0, 0}); break;
+            case '3': m_bits.insert(m_bits.begin() + 1, {1, 1, 0, 0}); break;
+            case '4': m_bits.insert(m_bits.begin() + 1, {0, 0, 1, 0}); break;
+            case '5': m_bits.insert(m_bits.begin() + 1, {1, 0, 1, 0}); break;
+            case '6': m_bits.insert(m_bits.begin() + 1, {0, 1, 1, 0}); break;
+            case '7': m_bits.insert(m_bits.begin() + 1, {1, 1, 1, 0}); break;
+            case '8': m_bits.insert(m_bits.begin() + 1, {0, 0, 0, 1}); break;
+            case '9': m_bits.insert(m_bits.begin() + 1, {1, 0, 0, 1}); break;
+            case 'a': m_bits.insert(m_bits.begin() + 1, {0, 1, 0, 1}); break;
+            case 'b': m_bits.insert(m_bits.begin() + 1, {1, 1, 0, 1}); break;
+            case 'c': m_bits.insert(m_bits.begin() + 1, {0, 0, 1, 1}); break;
+            case 'd': m_bits.insert(m_bits.begin() + 1, {1, 0, 1, 1}); break;
+            case 'e': m_bits.insert(m_bits.begin() + 1, {0, 1, 1, 1}); break;
+            case 'f': m_bits.insert(m_bits.begin() + 1, {1, 1, 1, 1}); break;
         }
     }
 
@@ -276,25 +314,31 @@ private:
     void correct_bits()
     {
         remove_zeros();
-        pad_zeros();
+        pad_zeros_mul();
     }
 
-    // pad bits with zeros at the left
-    void pad_zeros(uinteger mul = 4)
+    // pad bits with zeros at the right
+    void pad_zeros_mul(uinteger mul = 4)
     {
         uinteger diff = (m_bits.size() - 1) % mul;
         if(diff > 0)
-            m_bits.insert(m_bits.begin() + 1, mul - diff, 0);
+            m_bits.insert(m_bits.end(), mul - diff, 0);
     }
 
-    // remove left zeros
+    // pad bits with zeros at the right
+    void pad_zeros_add(uinteger add)
+    {
+        m_bits.insert(m_bits.end(), add, 0);
+    }
+
+    // remove right zeros
     void remove_zeros()
     {
         if(m_bits.size() > 2)
         {
-            if(m_bits[1] == 0)
+            if(m_bits.back() == 0)
             {
-                m_bits.erase(m_bits.begin() + 1);
+                m_bits.pop_back();
                 remove_zeros();
             }
         }
@@ -303,16 +347,23 @@ private:
     // two's complement
     void flip_compl2()
     {
-        // find the first '1' from the right and keep it
-        auto it = ++std::find(m_bits.rbegin(), m_bits.rend(), 1);
+        // find the first '1' from the left and keep it
+        auto it = std::find(m_bits.begin() + 1, m_bits.end(), 1);
+
+        // don't forget the sign
+        if(it != m_bits.end())
+            m_bits[0].flip();
+        else
+            return;
 
         // flip all bits at the left
-        for(; it != m_bits.rend(); ++it)
+        ++it;
+        for(; it != m_bits.end(); ++it)
             (*it).flip();
     }
 
     // data members
-    std::vector<bool> m_bits; // big-endian, signed
+    std::vector<bool> m_bits; // little-endian, signed
 };
 
 big_int operator+(big_int const &lhs, big_int const &rhs)

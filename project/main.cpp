@@ -4,7 +4,7 @@
 int main()
 {
     int s = 16;
-    onii::big_int n(-s);
+    onii::big_int n(s, false);
     for(int i = -s; i < s; ++i)
         onii::big_int t = (++n).hex();
 
