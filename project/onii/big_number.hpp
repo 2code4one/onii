@@ -149,10 +149,12 @@ public:
     big_int &operator/=(big_int const &rhs) {}
     big_int &operator%=(big_int const &rhs) {}
 
-    big_int &operator~()
+    big_int operator~() const
     {
-        m_bits.flip();
-        return *this;
+        // use the one's complement
+        big_int tmp(*this);
+        tmp.m_bits.flip();
+        return tmp;
     }
 
     big_int &operator^=(big_int const &rhs)
@@ -165,6 +167,8 @@ public:
         for(uinteger i = 0; i < m_bits.size(); ++i)
             m_bits[i] = !(m_bits[i] == rhs.m_bits[i]);
 
+        // correct bits representation before returning
+        correct_bits();
         return *this;
     }
 
@@ -178,6 +182,8 @@ public:
         for(uinteger i = 0; i < m_bits.size(); ++i)
             m_bits[i] = m_bits[i] && rhs.m_bits[i];
 
+        // correct bits representation before returning
+        correct_bits();
         return *this;
     }
 
@@ -191,11 +197,32 @@ public:
         for(uinteger i = 0; i < m_bits.size(); ++i)
             m_bits[i] = m_bits[i] || rhs.m_bits[i];
 
+        // correct bits representation before returning
+        correct_bits();
         return *this;
     }
 
-    big_int &operator<<=(big_int const &rhs) {}
-    big_int &operator>>=(big_int const &rhs) {}
+    big_int &operator<<=(big_int const &shift)
+    {
+        // Add zeros at left
+        for(big_int i; i.less_than(shift); ++i)
+            m_bits.insert(m_bits.begin() + 1, 0);
+
+        // correct bits representation before returning
+        correct_bits();
+        return *this;
+    }
+
+    big_int &operator>>=(big_int const &shift)
+    {
+        // Remove bits at right
+        for(big_int i; m_bits.size() > 1 && i.less_than(shift); ++i)
+            m_bits.pop_back();
+
+        // correct bits representation before returning
+        correct_bits();
+        return *this;
+    }
 
     bool equal(big_int const &rhs) const
     {
@@ -203,7 +230,56 @@ public:
         return m_bits == rhs.m_bits;
     }
 
-    bool less_than(big_int const &rhs) const {}
+    bool less_than(big_int const &rhs) const
+    {
+        // same sign
+        if(m_bits[0] == rhs.m_bits[0])
+        {
+            // negative
+            if(m_bits[0] == 1)
+            {
+                // more bits -> smaller
+                if(m_bits.size() > rhs.m_bits.size())
+                    return true;
+
+                // less bits -> bigger
+                else if(m_bits.size() < rhs.m_bits.size())
+                    return false;
+            }
+
+            // positive
+            else
+            {
+                // more bits -> bigger
+                if(m_bits.size() > rhs.m_bits.size())
+                    return false;
+
+                // less bits -> smaller
+                else if(m_bits.size() < rhs.m_bits.size())
+                    return true;
+            }
+
+            // same number of bits
+            for(uinteger i = m_bits.size() - 1; i > 0; --i)
+            {
+                // first zero is lesser
+                if     (m_bits[i] == 1 && rhs.m_bits[i] == 0)
+                    return false;
+                else if(m_bits[i] == 0 && rhs.m_bits[i] == 1)
+                    return true;
+            }
+
+            // both are equal
+            return false;
+        }
+
+        // differents signs
+        else
+        {
+            // *this is negative
+            return m_bits[0] == 1;
+        }
+    }
 
     std::string hex() const
     {
@@ -274,7 +350,7 @@ private:
 
         // throw if error
         if(!check)
-            throw std::invalid_argument("big_int: the passed string number is not a valid integer");
+            throw std::invalid_argument("onii::big_int - the passed string number is not a valid integer");
     }
 
     // transform an integer into a hex string
@@ -461,6 +537,16 @@ std::istream &operator>>(std::istream &is, big_int &rhs)
 
 namespace big_number
 {
+big_int abs(big_int const &bi)
+{
+    return bi < 0 ? -bi : bi;
+}
+
+big_real abs(big_real const &br);
+
+big_int gcd(big_int const &a, big_int const &b) {}
+big_int lcm(big_int const &a, big_int const &b) {}
+
 big_int pow(big_int const &base, big_int const &exp) {}
 big_real pow(big_int const &base, big_real const &exp);
 big_real pow(big_real const &base, big_int const &exp);
