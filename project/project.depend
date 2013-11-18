@@ -541,7 +541,7 @@
 
 1370422659 c:\users\administrateur\desktop\onii-master\onii-master\project\onii\core\config\libraries.hpp
 
-1384776924 source:f:\documents\dev\onii\project\main.cpp
+1384789549 source:f:\documents\dev\onii\project\main.cpp
 	<iostream>
 	"onii/onii.hpp"
 
@@ -1763,14 +1763,13 @@
 	<string>
 	<cctype>
 
-1384777225 f:\documents\dev\onii\project\onii\big_number.hpp
+1384789481 f:\documents\dev\onii\project\onii\big_number.hpp
 	<vector>
 	<string>
 	<cctype>
 	<iostream>
 	<algorithm>
 	"string/from_string.hpp"
-	"log.hpp"
 
 1384360754 f:\documents\dev\onii\project\onii\big_number\int.hpp
 	"detail/type.hpp"

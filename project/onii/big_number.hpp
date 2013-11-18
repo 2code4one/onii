@@ -12,16 +12,11 @@
 #include <algorithm>
 #include "string/from_string.hpp"
 
-#include "log.hpp"
-
 /////////////////////////////////////////////////
 /// @namespace onii
 /////////////////////////////////////////////////
 namespace onii
 {
-// pre-declaration for big_int
-class big_real;
-
 class big_int
 {
 public:
@@ -59,8 +54,6 @@ public:
         big_int(std::abs(number), number >= 0) // use the uint ctor
     {}
 
-    big_int(big_real const &number); // defined after the class big_real
-
     big_int &operator=(std::string const &number)
     {
         // copy-swap idiom
@@ -70,14 +63,6 @@ public:
     }
 
     big_int &operator=(sinteger number)
-    {
-        // copy-swap idiom
-        big_int tmp(number);
-        std::swap(m_bits, tmp.m_bits);
-        return *this;
-    }
-
-    big_int &operator=(big_real const &number)
     {
         // copy-swap idiom
         big_int tmp(number);
@@ -194,8 +179,6 @@ public:
         // we flip? re-flip
         if(flip)
             flip_compl2();
-        else
-            correct_bits();
 
         return *this;
     }
@@ -205,9 +188,80 @@ public:
         return operator+=(-rhs);
     }
 
-    big_int &operator*=(big_int const &rhs) {}
-    big_int &operator/=(big_int const &rhs) {}
-    big_int &operator%=(big_int const &rhs) {}
+    big_int &operator*=(big_int const &rhs)
+    {
+        // if one number is negative
+        bool flip = false;
+        if(m_bits[0] ^ rhs.m_bits[0])
+            flip = true;
+
+        // current positive value
+        big_int tmp(m_bits[0] ? operator-() : *this);
+
+        // multiplication
+        operator=(zero);
+        for(big_int i; i.less_than(rhs.m_bits[0] ? -rhs : rhs); ++i)
+            operator+=(tmp);
+
+        // if it's negative
+        if(flip)
+            flip_compl2();
+
+        return *this;
+    }
+
+    big_int &operator/=(big_int const &rhs)
+    {
+        if(rhs.equal(zero))
+            throw std::domain_error("onii::big_int::operator/= - division by 0");
+
+        // if one number is negative
+        bool flip = false;
+        if(m_bits[0] ^ rhs.m_bits[0])
+            flip = true;
+
+        // current positive value
+        if(m_bits[0])
+            flip_compl2();
+
+        // division
+        big_int i;
+        for(; !less_than(rhs.m_bits[0] ? -rhs : rhs); ++i)
+            operator+=(rhs.m_bits[0] ? rhs : -rhs);
+        operator=(i);
+
+        // if it's negative
+        if(flip)
+            flip_compl2();
+
+        return *this;
+    }
+
+    big_int &operator%=(big_int const &rhs)
+    {
+        if(rhs.equal(zero))
+            throw std::domain_error("onii::big_int::operator%= - modulo 0");
+
+        // if left number is negative
+        bool flip = false;
+        if(m_bits[0])
+            flip = true;
+
+        // current positive value
+        if(m_bits[0])
+            flip_compl2();
+
+        // division
+        big_int i;
+        while(!less_than(rhs.m_bits[0] ? -rhs : rhs))
+            operator+=(rhs.m_bits[0] ? rhs : -rhs);
+
+        // if it's negative
+        if(flip)
+            flip_compl2();
+
+        return *this;
+    }
 
     big_int operator~() const
     {
@@ -372,7 +426,7 @@ public:
             bool b4 = flip ? bi.m_bits[i - 3] : m_bits[i - 3];
 
             // not write '0' for first
-            if(flip && i == m_bits.size() - 1 && !b1 && !b2 && !b3 && !b4)
+            if(flip && i == static_cast<sinteger>(m_bits.size() - 1) && !b1 && !b2 && !b3 && !b4)
                 continue;
 
             // write the good hex character
@@ -394,7 +448,7 @@ public:
             else if( b1 &&  b2 &&  b3 &&  b4) tmp.append(1, 'F');
         }
 
-        return tmp + " " + log::container(m_bits);
+        return tmp;
     }
 
 private:
@@ -445,6 +499,7 @@ private:
             case 'd': m_bits.insert(m_bits.begin() + 1, {1, 0, 1, 1}); break;
             case 'e': m_bits.insert(m_bits.begin() + 1, {0, 1, 1, 1}); break;
             case 'f': m_bits.insert(m_bits.begin() + 1, {1, 1, 1, 1}); break;
+            default: break;
         }
     }
 
@@ -607,20 +662,45 @@ big_int abs(big_int const &bi)
     return bi < 0 ? -bi : bi;
 }
 
-big_real abs(big_real const &br);
+big_int gcd(big_int const &a, big_int const &b)
+{
+    // a must be greater than b
+    if(a < b)
+        return gcd(b, a);
 
-big_int gcd(big_int const &a, big_int const &b) {}
-big_int lcm(big_int const &a, big_int const &b) {}
+    // use the Euclidean algorithm
+    if(b == big_int::zero)
+        return a;
+    else
+        return gcd(b, a % b);
+}
 
-big_int pow(big_int const &base, big_int const &exp) {}
-big_real pow(big_int const &base, big_real const &exp);
-big_real pow(big_real const &base, big_int const &exp);
-big_real pow(big_real const &base, big_real const &exp);
+big_int lcm(big_int const &a, big_int const &b)
+{
+    // zero case
+    if(a == big_int::zero || b == big_int::zero)
+        return big_int::zero;
 
-big_real root(big_int const &num, big_int const &nth);
-big_real root(big_int const &num, big_real const &nth);
-big_real root(big_real const &num, big_int const &nth);
-big_real root(big_real const &num, big_real const &nth);
+    // use the Euclidean algorithm
+    return abs(a * b) / gcd(a, b);
+}
+
+big_int pow(big_int const &base, big_int const &exp)
+{
+    // zero case
+    if(exp == big_int::zero)
+        return big_int::one;
+
+    // negative case
+    if(exp < 0)
+        return big_int::zero;
+
+    // else pow
+    big_int tmp = big_int::one;
+    for(big_int i; i < exp; ++i)
+        tmp *= base;
+    return tmp;
+}
 }
 }
 

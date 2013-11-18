@@ -3,8 +3,10 @@
 
 int main()
 {
-    for(onii::big_int i = -0x10; i <= 0x10; i -= -1)
-        std::cout << i << std::endl;
+    std::cout << onii::big_number::lcm(0x3, 0x6) << std::endl;
+    std::cout << onii::big_number::lcm(0x2, 0x6) << std::endl;
+    std::cout << onii::big_number::lcm(0x9, 0x3) << std::endl;
+    std::cout << onii::big_number::lcm(0x3, 0x4) << std::endl;
 
     return 0;
 }
