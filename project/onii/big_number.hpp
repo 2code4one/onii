@@ -29,6 +29,9 @@ public:
     typedef int64_t  sinteger;
     typedef uint64_t uinteger;
 
+    static big_int const zero;
+    static big_int const one;
+
     big_int() :
         m_bits(5, 0) // to not call pad_zeros()
     {}
@@ -46,12 +49,14 @@ public:
         // if it's a negative number, do the two's complement
         if(number[0] == '-')
             flip_compl2();
-
-        log::debug(hex().c_str()) << log::container(m_bits);
     }
 
-    big_int(uinteger number, bool positive = true) :
+    big_int(uinteger number, bool positive) :
         big_int(to_hex_string(number, positive)) // use the string ctor
+    {}
+
+    big_int(sinteger number) :
+        big_int(std::abs(number), number >= 0) // use the uint ctor
     {}
 
     big_int(big_real const &number); // defined after the class big_real
@@ -134,7 +139,14 @@ public:
         return tmp;
     }
 
-    big_int &operator--() {}
+    big_int &operator--()
+    {
+        flip_compl2();
+        ++(*this);
+        flip_compl2();
+        correct_bits();
+        return *this;
+    }
 
     big_int operator--(int)
     {
@@ -143,8 +155,56 @@ public:
         return tmp;
     }
 
-    big_int &operator+=(big_int const &rhs) {}
-    big_int &operator-=(big_int const &rhs) {}
+    big_int &operator+=(big_int const &rhs)
+    {
+        // if it's a substration
+        big_int sub;
+        bool flip = false;
+        if(rhs.m_bits[0])
+        {
+            flip_compl2();
+            sub = rhs;
+            sub.flip_compl2();
+            flip = true;
+        }
+
+        // have the good size
+        if((flip ? sub.m_bits.size() : rhs.m_bits.size()) > m_bits.size())
+            pad_zeros_add((flip ? sub.m_bits.size() : rhs.m_bits.size()) - m_bits.size());
+
+        // loop from left
+        bool a, b, r = false;
+        for(uinteger i = 1; i < m_bits.size(); ++i)
+        {
+            a = m_bits[i];
+            b = flip ? sub.m_bits[i] : rhs.m_bits[i];
+            m_bits[i] = a ^ b ^ r;
+            r = a & b || a & r || b & r;
+        }
+
+        // rest
+        if(m_bits[0] && r)
+            m_bits[0] = 0;
+        else if(r)
+            m_bits.push_back(1);
+
+        // correct bits
+        correct_bits();
+
+        // we flip? re-flip
+        if(flip)
+            flip_compl2();
+        else
+            correct_bits();
+
+        return *this;
+    }
+
+    big_int &operator-=(big_int const &rhs)
+    {
+        return operator+=(-rhs);
+    }
+
     big_int &operator*=(big_int const &rhs) {}
     big_int &operator/=(big_int const &rhs) {}
     big_int &operator%=(big_int const &rhs) {}
@@ -218,6 +278,10 @@ public:
         // Remove bits at right
         for(big_int i; m_bits.size() > 1 && i.less_than(shift); ++i)
             m_bits.pop_back();
+
+        // no more bit
+        if(m_bits.size() == 1)
+            m_bits[0] = 0;
 
         // correct bits representation before returning
         correct_bits();
@@ -330,10 +394,8 @@ public:
             else if( b1 &&  b2 &&  b3 &&  b4) tmp.append(1, 'F');
         }
 
-        return tmp;
+        return tmp + " " + log::container(m_bits);
     }
-
-    std::string dec() const {}
 
 private:
 
@@ -432,15 +494,18 @@ private:
         else
             return;
 
-        // flip all bits at the left
+        // flip all bits at the right
         ++it;
         for(; it != m_bits.end(); ++it)
             (*it).flip();
     }
 
     // data members
-    std::vector<bool> m_bits; // little-endian, signed
+    std::vector<bool> m_bits; // little-endian, signed (first bit)
 };
+
+big_int const big_int::zero = 0x0;
+big_int const big_int::one  = 0x1;
 
 big_int operator+(big_int const &lhs, big_int const &rhs)
 {
