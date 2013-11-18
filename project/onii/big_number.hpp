@@ -17,6 +17,14 @@
 /////////////////////////////////////////////////
 namespace onii
 {
+// pre-declaration
+class big_int;
+namespace big_number
+{
+template<typename T>
+T cast(big_int const&);
+}
+
 class big_int
 {
 public:
@@ -129,7 +137,6 @@ public:
         flip_compl2();
         ++(*this);
         flip_compl2();
-        correct_bits();
         return *this;
     }
 
@@ -148,14 +155,13 @@ public:
         if(rhs.m_bits[0])
         {
             flip_compl2();
-            sub = rhs;
-            sub.flip_compl2();
+            sub = -rhs;
             flip = true;
         }
 
         // have the good size
-        if((flip ? sub.m_bits.size() : rhs.m_bits.size()) > m_bits.size())
-            pad_zeros_add((flip ? sub.m_bits.size() : rhs.m_bits.size()) - m_bits.size());
+        if(rhs.m_bits.size() > m_bits.size())
+            pad_zeros_add(rhs.m_bits.size() - m_bits.size());
 
         // loop from left
         bool a, b, r = false;
@@ -318,20 +324,49 @@ public:
 
     big_int &operator<<=(big_int const &shift)
     {
+        // negative shift
+        if(shift.m_bits[0])
+            return operator>>=(-shift);
+
+        // negative work the same as positive
+        bool flip = false;
+        if(m_bits[0])
+        {
+            flip_compl2();
+            flip = true;
+        }
+
         // Add zeros at left
         for(big_int i; i.less_than(shift); ++i)
             m_bits.insert(m_bits.begin() + 1, 0);
 
         // correct bits representation before returning
         correct_bits();
+
+        // reflip if needed
+        if(flip)
+            flip_compl2();
+
         return *this;
     }
 
     big_int &operator>>=(big_int const &shift)
     {
-        // Remove bits at right
+        // negative shift
+        if(shift.m_bits[0])
+            return operator<<=(-shift);
+
+        // negative work the same as positive
+        bool flip = false;
+        if(m_bits[0])
+        {
+            flip_compl2();
+            flip = true;
+        }
+
+        // Remove bits at left
         for(big_int i; m_bits.size() > 1 && i.less_than(shift); ++i)
-            m_bits.pop_back();
+            m_bits.erase(m_bits.begin() + 1);
 
         // no more bit
         if(m_bits.size() == 1)
@@ -339,6 +374,11 @@ public:
 
         // correct bits representation before returning
         correct_bits();
+
+        // reflip if needed
+        if(flip)
+            flip_compl2();
+
         return *this;
     }
 
@@ -555,6 +595,42 @@ private:
             (*it).flip();
     }
 
+    // cast to int
+    template<typename T>
+    T do_cast() const
+    {
+        // dst type must be an integer
+        static_assert(std::is_signed<T>::value || std::is_unsigned<T>::value,
+                      "onii::big_number::cast - T must be an integer type");
+
+        // negative number cannot go in unsigned
+        if(m_bits[0] && std::is_unsigned<T>::value)
+            throw std::underflow_error("onii::big_number::cast - cannot cast a negative number to an unsigned integer");
+
+        // good number of bits ?
+        if(std::is_signed<T>::value && 8 * sizeof(T) < m_bits.size())
+            throw std::overflow_error("onii::big_number::cast - sizeof(T) is too small");
+        else if(std::is_unsigned<T>::value && 8 * sizeof(T) < m_bits.size() - 1)
+            throw std::overflow_error("onii::big_number::cast - sizeof(T) is too small");
+
+        // cast
+        T tmp = 0;
+        big_int sub(*this);
+        bool flip = false;
+        if(m_bits[0])
+        {
+            sub.flip_compl2();
+            flip = true;
+        }
+        for(uinteger i = 1; i < sub.m_bits.size(); ++i)
+            tmp |= sub.m_bits[i] << (i - 1);
+        return flip ? -tmp : tmp;
+    }
+
+    // friend function for cast
+    template<typename T>
+    friend T big_number::cast(big_int const&);
+
     // data members
     std::vector<bool> m_bits; // little-endian, signed (first bit)
 };
@@ -664,6 +740,10 @@ big_int abs(big_int const &bi)
 
 big_int gcd(big_int const &a, big_int const &b)
 {
+    // a and b must be positive
+    if(a < big_int::zero || b < big_int::zero)
+        return gcd(abs(a), abs(b));
+
     // a must be greater than b
     if(a < b)
         return gcd(b, a);
@@ -696,10 +776,16 @@ big_int pow(big_int const &base, big_int const &exp)
         return big_int::zero;
 
     // else pow
-    big_int tmp = big_int::one;
-    for(big_int i; i < exp; ++i)
+    big_int tmp = base;
+    for(big_int i = big_int::one; i < exp; ++i)
         tmp *= base;
     return tmp;
+}
+
+template<typename T>
+T cast(big_int const &bi)
+{
+    return bi.do_cast<T>();
 }
 }
 }
