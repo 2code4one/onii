@@ -25,20 +25,47 @@ template<typename T>
 T cast(big_int const&);
 }
 
+/////////////////////////////////////////////////
+/// @class big_int
+/// @brief Represent arbitrary large signed integer
+/////////////////////////////////////////////////
 class big_int
 {
 public:
 
+    /////////////////////////////////////////////////
+    /// @brief C++ large signed integer
+    /////////////////////////////////////////////////
     typedef int64_t  sinteger;
+
+    /////////////////////////////////////////////////
+    /// @brief C++ large unsigned integer
+    /////////////////////////////////////////////////
     typedef uint64_t uinteger;
 
+    /////////////////////////////////////////////////
+    /// @brief zero constant
+    /////////////////////////////////////////////////
     static big_int const zero;
+
+    /////////////////////////////////////////////////
+    /// @brief one constant
+    /////////////////////////////////////////////////
     static big_int const one;
 
+    /////////////////////////////////////////////////
+    /// @brief Constructor
+    /// @remarks The default value is big_int::zero
+    /////////////////////////////////////////////////
     big_int() :
         m_bits(5, 0) // to not call pad_zeros()
     {}
 
+    /////////////////////////////////////////////////
+    /// @brief Constructor
+    ///
+    /// @param number - the hexadecimal number
+    /////////////////////////////////////////////////
     big_int(std::string const &number) :
         m_bits(1, 0) // the sign is always allocated
     {
@@ -54,14 +81,31 @@ public:
             flip_compl2();
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Constructor
+    ///
+    /// @param number - number to assign
+    /// @param positive - is the number positive
+    /////////////////////////////////////////////////
     big_int(uinteger number, bool positive) :
         big_int(to_hex_string(number, positive)) // use the string ctor
     {}
 
+    /////////////////////////////////////////////////
+    /// @brief Constructor
+    ///
+    /// @param number - number to assign
+    /////////////////////////////////////////////////
     big_int(sinteger number) :
         big_int(std::abs(number), number >= 0) // use the uint ctor
     {}
 
+    /////////////////////////////////////////////////
+    /// @brief Assign operator
+    ///
+    /// @param number - the hexadecimal number
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator=(std::string const &number)
     {
         // copy-swap idiom
@@ -70,6 +114,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Assign operator
+    ///
+    /// @param number - the number to assign
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator=(sinteger number)
     {
         // copy-swap idiom
@@ -78,11 +128,21 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Unary plus operator
+    ///
+    /// @return A copy of *this
+    /////////////////////////////////////////////////
     big_int operator+() const
     {
         return big_int(*this);
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Unary minus operator
+    ///
+    /// @return The inverse number
+    /////////////////////////////////////////////////
     big_int operator-() const
     {
         // use the two's complement to inverse number
@@ -91,6 +151,11 @@ public:
         return tmp;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Pre-Increment operator
+    ///
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator++()
     {
         // loop begin at left
@@ -125,6 +190,11 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Post-Increment operator
+    ///
+    /// @return A copy of *this before the increment
+    /////////////////////////////////////////////////
     big_int operator++(int)
     {
         big_int tmp(*this);
@@ -132,6 +202,11 @@ public:
         return tmp;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Pre-Decrement operator
+    ///
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator--()
     {
         flip_compl2();
@@ -140,6 +215,11 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Post-Decrement operator
+    ///
+    /// @return A copy of *this before the decrement
+    /////////////////////////////////////////////////
     big_int operator--(int)
     {
         big_int tmp(*this);
@@ -147,6 +227,12 @@ public:
         return tmp;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Addition operator
+    ///
+    /// @param rhs - the number to add
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator+=(big_int const &rhs)
     {
         // if it's a substration
@@ -189,11 +275,23 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Substraction operator
+    ///
+    /// @param rhs - the number to sub
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator-=(big_int const &rhs)
     {
         return operator+=(-rhs);
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Multiplication operator
+    ///
+    /// @param rhs - number to multiply by
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator*=(big_int const &rhs)
     {
         // if one number is negative
@@ -216,6 +314,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Division operator
+    ///
+    /// @param rhs - number to divise by
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator/=(big_int const &rhs)
     {
         if(rhs.equal(zero))
@@ -243,6 +347,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Modulo operator
+    ///
+    /// @param rhs - number to divise by
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator%=(big_int const &rhs)
     {
         if(rhs.equal(zero))
@@ -269,6 +379,11 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise NOT operator
+    ///
+    /// @return A copy of *this with bits flipped
+    /////////////////////////////////////////////////
     big_int operator~() const
     {
         // use the one's complement
@@ -277,6 +392,12 @@ public:
         return tmp;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise XOR operator
+    ///
+    /// @param rhs - right number
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator^=(big_int const &rhs)
     {
         // have the good size
@@ -292,6 +413,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise AND operator
+    ///
+    /// @param rhs - right number
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator&=(big_int const &rhs)
     {
         // have the good size
@@ -307,6 +434,12 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise OR operator
+    ///
+    /// @param rhs - right number
+    /// @return *this
+    /////////////////////////////////////////////////
     big_int &operator|=(big_int const &rhs)
     {
         // have the good size
@@ -322,6 +455,13 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise LEFT-SHIFT operator
+    ///
+    /// @param shift - number of shift
+    /// @return *this
+    /// @remarks Bits are not lost, the sign is not affected
+    /////////////////////////////////////////////////
     big_int &operator<<=(big_int const &shift)
     {
         // negative shift
@@ -350,6 +490,13 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Bitwise RIGHT-SHIFT operator
+    ///
+    /// @param shift - number of shift
+    /// @return *this
+    /// @remarks Bits at right are lost, if there is no more bits: *this == big_int::zero
+    /////////////////////////////////////////////////
     big_int &operator>>=(big_int const &shift)
     {
         // negative shift
@@ -382,12 +529,24 @@ public:
         return *this;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Check if two number are equal
+    ///
+    /// @param rhs - right number
+    /// @return true if *this and rhs are equal
+    /////////////////////////////////////////////////
     bool equal(big_int const &rhs) const
     {
         // use the vector op==
         return m_bits == rhs.m_bits;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Check if two number are less than
+    ///
+    /// @param rhs - right number
+    /// @return true if *this is lesser than rhs
+    /////////////////////////////////////////////////
     bool less_than(big_int const &rhs) const
     {
         // same sign
@@ -439,6 +598,11 @@ public:
         }
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get a hexadecimal string
+    ///
+    /// @return The number as a hex-string
+    /////////////////////////////////////////////////
     std::string hex() const
     {
         big_int bi;
@@ -627,9 +791,13 @@ private:
         return flip ? -tmp : tmp;
     }
 
+    /////////////////////////////////////////////////
+    /// @cond IGNORE
     // friend function for cast
     template<typename T>
     friend T big_number::cast(big_int const&);
+    /// @endcond
+    /////////////////////////////////////////////////
 
     // data members
     std::vector<bool> m_bits; // little-endian, signed (first bit)
@@ -638,91 +806,219 @@ private:
 big_int const big_int::zero = 0x0;
 big_int const big_int::one  = 0x1;
 
+/////////////////////////////////////////////////
+/// @brief Addition operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs + rhs
+/////////////////////////////////////////////////
 big_int operator+(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) += rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Substration operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs - rhs
+/////////////////////////////////////////////////
 big_int operator-(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) -= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Multiplication operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs * rhs
+/////////////////////////////////////////////////
 big_int operator*(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) *= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Division operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs / rhs
+/////////////////////////////////////////////////
 big_int operator/(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) /= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Mudulo operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs % rhs
+/////////////////////////////////////////////////
 big_int operator%(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) %= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Bitwise XOR operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs ^ rhs
+/////////////////////////////////////////////////
 big_int operator^(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) ^= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Bitwise AND operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs & rhs
+/////////////////////////////////////////////////
 big_int operator&(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) &= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Bitwise AND operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs | rhs
+/////////////////////////////////////////////////
 big_int operator|(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) |= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Bitwise LEFT-SHIFT operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs << rhs
+/////////////////////////////////////////////////
 big_int operator<<(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) <<= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Bitwise RIGHT-SHIFT operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return lhs >> rhs
+/////////////////////////////////////////////////
 big_int operator>>(big_int const &lhs, big_int const &rhs)
 {
     return big_int(lhs) >>= rhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Equality operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs and rhs are equal
+/////////////////////////////////////////////////
 bool operator==(big_int const &lhs, big_int const &rhs)
 {
     return lhs.equal(rhs);
 }
 
+/////////////////////////////////////////////////
+/// @brief Different operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs and rhs are different
+/////////////////////////////////////////////////
 bool operator!=(big_int const &lhs, big_int const &rhs)
 {
     return !(lhs == rhs);
 }
 
+/////////////////////////////////////////////////
+/// @brief Less than operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs is lesser than rhs
+/////////////////////////////////////////////////
 bool operator<(big_int const &lhs, big_int const &rhs)
 {
     return lhs.less_than(rhs);
 }
 
+/////////////////////////////////////////////////
+/// @brief Greater than operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs is greater than rhs
+/////////////////////////////////////////////////
 bool operator>(big_int const &lhs, big_int const &rhs)
 {
     return rhs < lhs;
 }
 
+/////////////////////////////////////////////////
+/// @brief Less or equal than operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs is lesser or equal than rhs
+/////////////////////////////////////////////////
 bool operator<=(big_int const &lhs, big_int const &rhs)
 {
     return !(rhs < lhs);
 }
 
+/////////////////////////////////////////////////
+/// @brief Greater or equal than operator
+///
+/// @param lhs - left number
+/// @param rhs - right number
+/// @return true if lhs is greater or equal than rhs
+/////////////////////////////////////////////////
 bool operator>=(big_int const &lhs, big_int const &rhs)
 {
     return !(lhs < rhs);
 }
 
+/////////////////////////////////////////////////
+/// @brief Stream output operator
+///
+/// @param os - the output stream
+/// @param rhs - the number
+/// @return os
+/// @remarks the output number is hexadecimal
+/////////////////////////////////////////////////
 std::ostream &operator<<(std::ostream &os, big_int const &rhs)
 {
     return os << rhs.hex();
 }
 
+/////////////////////////////////////////////////
+/// @brief Stream input operator
+///
+/// @param is - the input stream
+/// @param rhs - the number
+/// @return is
+/// @remarks the input number must be hexadecimal
+/////////////////////////////////////////////////
 std::istream &operator>>(std::istream &is, big_int &rhs)
 {
     std::string buf;
@@ -731,13 +1027,29 @@ std::istream &operator>>(std::istream &is, big_int &rhs)
     return is;
 }
 
+/////////////////////////////////////////////////
+/// @namespace onii::big_number
+/////////////////////////////////////////////////
 namespace big_number
 {
+/////////////////////////////////////////////////
+/// @brief Absolute
+///
+/// @param bi - number
+/// @return bi if bi is positive, otherwise return -bi
+/////////////////////////////////////////////////
 big_int abs(big_int const &bi)
 {
     return bi < 0 ? -bi : bi;
 }
 
+/////////////////////////////////////////////////
+/// @brief Greatest common divisor
+///
+/// @param a - first number
+/// @param b - second number
+/// @return the GCD of a and b
+/////////////////////////////////////////////////
 big_int gcd(big_int const &a, big_int const &b)
 {
     // a and b must be positive
@@ -755,6 +1067,13 @@ big_int gcd(big_int const &a, big_int const &b)
         return gcd(b, a % b);
 }
 
+/////////////////////////////////////////////////
+/// @brief Lowest common mutiple
+///
+/// @param a - first number
+/// @param b - second number
+/// @return the LCM of a and b
+/////////////////////////////////////////////////
 big_int lcm(big_int const &a, big_int const &b)
 {
     // zero case
@@ -765,6 +1084,14 @@ big_int lcm(big_int const &a, big_int const &b)
     return abs(a * b) / gcd(a, b);
 }
 
+/////////////////////////////////////////////////
+/// @brief Power
+///
+/// @param base - the base number
+/// @param exp - the exposant
+/// @return base pow exp
+/// @remarks if exp < 0, return big_int::zero
+/////////////////////////////////////////////////
 big_int pow(big_int const &base, big_int const &exp)
 {
     // zero case
@@ -782,6 +1109,12 @@ big_int pow(big_int const &base, big_int const &exp)
     return tmp;
 }
 
+/////////////////////////////////////////////////
+/// @brief Cast a big_int into a C++ integer
+///
+/// @param bi - the number to cast
+/// @return bi casted to T
+/////////////////////////////////////////////////
 template<typename T>
 T cast(big_int const &bi)
 {

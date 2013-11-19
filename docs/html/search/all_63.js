@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['cast',['cast',['../d5/d27/namespaceonii_1_1big__number.html#ab1be5cc2aa16d6b475fbac9192b22eed',1,'onii::big_number']]],
   ['cc65_2ehpp',['cc65.hpp',['../d0/df7/cc65_8hpp.html',1,'']]],
   ['clang_2ehpp',['clang.hpp',['../d7/d81/clang_8hpp.html',1,'']]],
   ['clear',['clear',['../da/d65/classonii_1_1settings.html#a1b9da3eac6357cee85cfedfb17bc0417',1,'onii::settings']]],

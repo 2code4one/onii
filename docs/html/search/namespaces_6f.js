@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['big_5fnumber',['big_number',['../d5/d27/namespaceonii_1_1big__number.html',1,'onii']]],
   ['constant',['constant',['../df/d30/namespaceonii_1_1physic_1_1constant.html',1,'onii::physic']]],
   ['detail',['detail',['../d8/d43/namespaceonii_1_1physic_1_1unit_1_1detail.html',1,'onii::physic::unit']]],
   ['hash',['hash',['../d2/dce/namespaceonii_1_1hash.html',1,'onii']]],
