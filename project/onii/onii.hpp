@@ -5,6 +5,7 @@
 /// @file onii/onii.hpp
 /////////////////////////////////////////////////
 
+#include "ai.hpp"
 #include "config.hpp"
 #include "hash.hpp"
 #include "log.hpp"
