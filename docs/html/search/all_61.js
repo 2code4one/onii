@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['abs',['abs',['../d5/d27/namespaceonii_1_1big__number.html#aa20f83d83f263b809abfe4289a97bcc2',1,'onii::big_number']]],
   ['acc_2ehpp',['acc.hpp',['../d4/d86/acc_8hpp.html',1,'']]],
   ['aix_2ehpp',['aix.hpp',['../d9/d37/aix_8hpp.html',1,'']]],
   ['alpha_2ehpp',['alpha.hpp',['../d8/db5/alpha_8hpp.html',1,'']]],

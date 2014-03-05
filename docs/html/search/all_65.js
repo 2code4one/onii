@@ -8,7 +8,6 @@ var searchData=
   ['emx_2ehpp',['emx.hpp',['../d0/d30/emx_8hpp.html',1,'']]],
   ['environments_2ehpp',['environments.hpp',['../d2/df5/environments_8hpp.html',1,'']]],
   ['epiphany_2ehpp',['epiphany.hpp',['../df/d89/epiphany_8hpp.html',1,'']]],
-  ['equal',['equal',['../d4/dbf/classonii_1_1big__int.html#ab6a194bb3e93f111e8bbd56a95a7b032',1,'onii::big_int']]],
   ['erase',['erase',['../da/d65/classonii_1_1settings.html#a1f6ec0b7ded913ca5ccc7c3273251f4d',1,'onii::settings']]],
   ['error',['error',['../d2/d10/classonii_1_1log_1_1error.html',1,'onii::log']]]
 ];

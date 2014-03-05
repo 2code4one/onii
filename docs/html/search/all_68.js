@@ -1,7 +1,6 @@
 var searchData=
 [
   ['hash_2ehpp',['hash.hpp',['../d9/d04/hash_8hpp.html',1,'']]],
-  ['hex',['hex',['../d4/dbf/classonii_1_1big__int.html#a47e7a3a925ce811fe17217a33fd49050',1,'onii::big_int']]],
   ['hiux_5fmpp_2ehpp',['hiux_mpp.hpp',['../d7/d6e/hiux__mpp_8hpp.html',1,'']]],
   ['hp_5facpp_2ehpp',['hp_acpp.hpp',['../d3/d62/hp__acpp_8hpp.html',1,'']]],
   ['hp_5fansi_2ehpp',['hp_ansi.hpp',['../d6/d44/hp__ansi_8hpp.html',1,'']]],

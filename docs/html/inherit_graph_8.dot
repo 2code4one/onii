@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="onii::physic::unit\l::detail::unit_base",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d85/classonii_1_1physic_1_1unit_1_1detail_1_1unit__base.html",tooltip="Base-class for units. "];
+}

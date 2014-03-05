@@ -5,7 +5,6 @@
 /// @file onii/onii.hpp
 /////////////////////////////////////////////////
 
-#include "big_number.hpp"
 #include "config.hpp"
 #include "hash.hpp"
 #include "log.hpp"

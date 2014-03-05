@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['uinteger',['uinteger',['../d4/dbf/classonii_1_1big__int.html#afcf992965e21bee968f48c3206158e29',1,'onii::big_int']]],
   ['ultimate_2ehpp',['ultimate.hpp',['../d7/df7/ultimate_8hpp.html',1,'']]],
   ['ultrix_2ehpp',['ultrix.hpp',['../d9/d09/ultrix_8hpp.html',1,'']]],
   ['unicos_2ehpp',['unicos.hpp',['../d1/dcf/unicos_8hpp.html',1,'']]],
