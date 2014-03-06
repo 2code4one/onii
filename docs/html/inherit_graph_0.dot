@@ -3,5 +3,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="onii::global_timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d03/classonii_1_1global__timer.html",tooltip="Program global time chronometer. "];
+  Node1 [label="onii::ai::fsm::detail\l::base_state\< EntityT \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/ded/classonii_1_1ai_1_1fsm_1_1detail_1_1base__state.html",tooltip="Base class for state implementation. "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="onii::ai::fsm::state\l\< EntityT, StateT \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d3b/classonii_1_1ai_1_1fsm_1_1state.html",tooltip="Base class for state implementation. "];
 }

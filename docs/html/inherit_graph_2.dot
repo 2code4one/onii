@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="onii::log::error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d10/classonii_1_1log_1_1error.html",tooltip="Log level for errors. "];
+  Node1 [label="onii::ai::fsm::state\l_machine\< EntityT, DynamicState \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/da1/classonii_1_1ai_1_1fsm_1_1state__machine.html",tooltip="Base class for state machine implementation. "];
 }

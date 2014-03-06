@@ -3,7 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node1 [label="onii::physic::unit\l::detail::unit_base\l\< angle, int \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d85/classonii_1_1physic_1_1unit_1_1detail_1_1unit__base.html"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="onii::physic::unit\l::angle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d94/classonii_1_1physic_1_1unit_1_1angle.html"];
+  Node1 [label="onii::physic::constant\l::density",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dc7/classonii_1_1physic_1_1constant_1_1density.html",tooltip="Some density constants. "];
 }
