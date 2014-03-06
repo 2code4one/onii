@@ -4,12 +4,11 @@
 class bot;
 
 class walk :
-    public onii::ai::fsm::state<bot>
+    public onii::ai::fsm::state<bot, walk>
 {
 public:
 
     virtual void execute(bot *b);
-    static walk *instance();
 };
 
 class rest :
@@ -43,12 +42,6 @@ void walk::execute(bot *b)
     b->fsm()->set_state(rest::instance());
 }
 
-walk *walk::instance()
-{
-    static walk w;
-    return &w;
-}
-
 void rest::execute(bot *b)
 {
     std::cout << "rest" << std::endl;
@@ -61,6 +54,7 @@ int main()
     while(1)
     {
         a.update();
+        onii::sleep(0.2);
     }
 
     return 0;

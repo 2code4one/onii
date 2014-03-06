@@ -48,7 +48,6 @@
 		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="onii/ai.hpp" />
-		<Unit filename="onii/ai/detail/fsm.hpp" />
 		<Unit filename="onii/ai/fsm.hpp" />
 		<Unit filename="onii/config.hpp" />
 		<Unit filename="onii/config/architectures.hpp" />
