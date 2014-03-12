@@ -75,6 +75,16 @@ public:
     }
 
     /////////////////////////////////////////////////
+    /// @brief Get the time in hours
+    ///
+    /// @return The time in hours
+    /////////////////////////////////////////////////
+    time_type hour() const
+    {
+        return s() / 3600.f;
+    }
+
+    /////////////////////////////////////////////////
     /// @brief Create a time instance from milliseconds
     ///
     /// @param millisecond - the time in milliseconds
@@ -105,6 +115,17 @@ public:
     static time min(time_type minute)
     {
         return s(minute * 60.f);
+    }
+
+    /////////////////////////////////////////////////
+    /// @brief Create a time instance from hours
+    ///
+    /// @param hour - the time in hours
+    /// @return The new time instance
+    /////////////////////////////////////////////////
+    static time hour(time_type hour)
+    {
+        return s(hour * 3600.f);
     }
 };
 } // namespace unit
