@@ -33,6 +33,16 @@
 /// U = S * U
 /// U = U / S
 /// @endcode
+///
+/// Comparaison operators:
+/// @code
+/// U == U
+/// U != U
+/// U < U
+/// U <= U
+/// U > U
+/// U >= U
+/// @endcode
 /////////////////////////////////////////////////
 
 #endif // ONII_PHYSIC_UNIT_HPP

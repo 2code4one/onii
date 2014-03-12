@@ -1,9 +1,0 @@
-digraph "ai" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_6a5a666f5be25294cbe6b41bfc58ecc6 {
-    graph [ bgcolor="#ddddee", pencolor="black", label="onii" fontname="Helvetica", fontsize="10", URL="dir_6a5a666f5be25294cbe6b41bfc58ecc6.html"]
-  dir_95949c4249ed89c738e983da185b5dd9 [shape=box, label="ai", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_95949c4249ed89c738e983da185b5dd9.html"];
-  }
-}

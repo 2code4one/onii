@@ -5,7 +5,7 @@
 int main()
 {
     assert(
-        onii::physic::unit::time::min(1.1)
+        60
             >=
         onii::physic::unit::time::s(60)
     );

@@ -1,9 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="onii::timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dc8/classonii_1_1timer.html",tooltip="Time chronometer. "];
-  Node1 -> Node2 [dir="back",color="firebrick4",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="onii::scoped_timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d63/classonii_1_1scoped__timer.html",tooltip="Scoped time chronometer. "];
-}
