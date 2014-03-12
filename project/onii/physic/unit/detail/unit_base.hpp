@@ -50,6 +50,14 @@ protected:
     {}
 
     ValueType m_value;
+
+private:
+
+    template<typename T, typename U>
+    friend bool operator==(unit_base<T, U> const &, unit_base<T, U> const &);
+
+    template<typename T, typename U>
+    friend bool operator<(unit_base<T, U> const &, unit_base<T, U> const &);
 };
 
 template<typename DerivedClass, typename ValueType>
@@ -80,6 +88,42 @@ template<typename DerivedClass, typename ValueType>
 DerivedClass operator/(unit_base<DerivedClass, ValueType> const &a, typename unit_base<DerivedClass, ValueType>::scalar_type s)
 {
     return unit_base<DerivedClass, ValueType>(a) /= s;
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator==(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return a.m_value == b.m_value;
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator!=(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return !(a == b);
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator<(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return a.m_value < b.m_value;
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator<=(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return !(b < a);
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator>(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return b < a;
+}
+
+template<typename DerivedClass, typename ValueType>
+bool operator>=(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedClass, ValueType> const &b)
+{
+    return !(a < b);
 }
 } // namespace detail
 } // namespace unit
