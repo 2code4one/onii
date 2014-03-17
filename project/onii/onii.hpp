@@ -9,6 +9,7 @@
 #include "config.hpp"
 #include "hash.hpp"
 #include "log.hpp"
+#include "percentage.hpp"
 #include "physic.hpp"
 #include "random.hpp"
 #include "settings.hpp"

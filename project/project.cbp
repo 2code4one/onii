@@ -234,6 +234,7 @@
 		<Unit filename="onii/hash/sha1.hpp" />
 		<Unit filename="onii/log.hpp" />
 		<Unit filename="onii/onii.hpp" />
+		<Unit filename="onii/percentage.hpp" />
 		<Unit filename="onii/physic.hpp" />
 		<Unit filename="onii/physic/constant.hpp" />
 		<Unit filename="onii/physic/constant/density.hpp" />

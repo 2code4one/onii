@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['split_5fresults',['split_results',['../d3/d31/namespaceonii.html#a9c637bd99071a4fd1fe8367f9ac1f8c5',1,'onii']]]
+  ['split_5fresults',['split_results',['../dc/d52/classonii_1_1splitter.html#aa64ebd5f3762a3ad5f8b0ddc51900c01',1,'onii::splitter']]]
 ];

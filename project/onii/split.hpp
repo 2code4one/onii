@@ -16,6 +16,7 @@ namespace onii
 {
 /////////////////////////////////////////////////
 /// @brief Results of a splitted string
+/// @relates splitter
 /////////////////////////////////////////////////
 typedef std::vector<std::string> split_results;
 
