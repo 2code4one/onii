@@ -219,6 +219,9 @@
 		<Unit filename="onii/detail/settings/ini.hpp" />
 		<Unit filename="onii/detail/settings/json.hpp" />
 		<Unit filename="onii/detail/thread_safe/mutex.hpp" />
+		<Unit filename="onii/float.hpp" />
+		<Unit filename="onii/float/equal.hpp" />
+		<Unit filename="onii/float/round.hpp" />
 		<Unit filename="onii/hash.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/to_uint.hpp" />
@@ -245,6 +248,7 @@
 		<Unit filename="onii/physic/unit/length.hpp" />
 		<Unit filename="onii/physic/unit/mass.hpp" />
 		<Unit filename="onii/physic/unit/time.hpp" />
+		<Unit filename="onii/physic/vector.hpp" />
 		<Unit filename="onii/random.hpp" />
 		<Unit filename="onii/settings.hpp" />
 		<Unit filename="onii/sleep.hpp" />
