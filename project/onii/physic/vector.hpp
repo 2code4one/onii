@@ -142,7 +142,7 @@ public:
     ///          of the computed cross product, because this class
     ///          is only a 2D vector
     /////////////////////////////////////////////////
-    static float cross_product(vector const &lhs, vector const &rhs)
+    static float cross_product_z(vector const &lhs, vector const &rhs)
     {
         return lhs.x * rhs.y - lhs.y * rhs.x;
     }
@@ -155,9 +155,22 @@ public:
     /// @remarks The orthogonal vector is computed
     ///          like this: @code (v.y -v.x) @endcode
     /////////////////////////////////////////////////
-    static vector orthogonal(vector const &v)
+    static vector orthogonal_x(vector const &v)
     {
         return vector(v.y, -v.x);
+    }
+
+    /////////////////////////////////////////////////
+    /// @brief Get the orthogonal vector
+    ///
+    /// @param[in] v - the vector
+    /// @return A orthogonal vector of v
+    /// @remarks The orthogonal vector is computed
+    ///          like this: @code (-v.y v.x) @endcode
+    /////////////////////////////////////////////////
+    static vector orthogonal_y(vector const &v)
+    {
+        return vector(-v.y, v.x);
     }
 
     /////////////////////////////////////////////////

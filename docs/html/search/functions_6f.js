@@ -15,5 +15,6 @@ var searchData=
   ['operator_3d_3d',['operator==',['../d3/d7e/classonii_1_1percentage.html#a72bea4b6c3dbaabdb9a0672c0cad3fcf',1,'onii::percentage::operator==()'],['../d6/dfd/classonii_1_1physic_1_1vector.html#a33679563540934e4c3e487aa12a63424',1,'onii::physic::vector::operator==()']]],
   ['operator_3e',['operator&gt;',['../d3/d7e/classonii_1_1percentage.html#a14c345def6b7a7b01fcdd974b79aba45',1,'onii::percentage']]],
   ['operator_3e_3d',['operator&gt;=',['../d3/d7e/classonii_1_1percentage.html#aa6384376065a1c3ad2a90f1510ec2166',1,'onii::percentage']]],
-  ['orthogonal',['orthogonal',['../d6/dfd/classonii_1_1physic_1_1vector.html#ab13be2979e934fefbf1bc78ddfd6f679',1,'onii::physic::vector']]]
+  ['orthogonal_5fx',['orthogonal_x',['../d6/dfd/classonii_1_1physic_1_1vector.html#a4be8920c87aff46fb15392d2fc6b8187',1,'onii::physic::vector']]],
+  ['orthogonal_5fy',['orthogonal_y',['../d6/dfd/classonii_1_1physic_1_1vector.html#add45e24ee59fed5defec6e94dd8948dc',1,'onii::physic::vector']]]
 ];
