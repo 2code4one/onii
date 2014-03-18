@@ -7,6 +7,7 @@
 
 #include "ai.hpp"
 #include "config.hpp"
+#include "float.hpp"
 #include "hash.hpp"
 #include "log.hpp"
 #include "percentage.hpp"
