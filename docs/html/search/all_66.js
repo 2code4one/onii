@@ -1,6 +1,7 @@
 var searchData=
 [
   ['fatal',['fatal',['../d8/d52/classonii_1_1log_1_1fatal.html',1,'onii::log']]],
+  ['float_2ehpp',['float.hpp',['../dd/d09/float_8hpp.html',1,'']]],
   ['format',['format',['../da/d65/classonii_1_1settings.html#a8646a5d3e1af38ecf89b0ce59bf645d8',1,'onii::settings']]],
   ['freebsd_2ehpp',['freebsd.hpp',['../d6/d2f/freebsd_8hpp.html',1,'']]],
   ['from_5fstring',['from_string',['../d3/d31/namespaceonii.html#a5d7465cbf850ced390474fc5eaa13580',1,'onii']]],

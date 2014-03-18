@@ -5,5 +5,7 @@ var searchData=
   ['read',['read',['../da/d65/classonii_1_1settings.html#ac0de16b042e814231abb55493a147d51',1,'onii::settings']]],
   ['real',['real',['../d3/d7e/classonii_1_1percentage.html#a76783c0e7b9e0aef1529f1eecdc248cb',1,'onii::percentage']]],
   ['remove_5fempty',['remove_empty',['../dc/d52/classonii_1_1splitter.html#ad6fe0c33f05ea1fe0a79160f2218cee7',1,'onii::splitter']]],
-  ['results',['results',['../dc/d52/classonii_1_1splitter.html#aa7cd473edb24549a664e5bce4a2bc348',1,'onii::splitter']]]
+  ['results',['results',['../dc/d52/classonii_1_1splitter.html#aa7cd473edb24549a664e5bce4a2bc348',1,'onii::splitter']]],
+  ['rotate',['rotate',['../d6/dfd/classonii_1_1physic_1_1vector.html#a011589d5667765ab106c63abdc5f9012',1,'onii::physic::vector']]],
+  ['round',['round',['../d3/d31/namespaceonii.html#a93fdfc308ac81afb2b70a76e04dc8dac',1,'onii']]]
 ];

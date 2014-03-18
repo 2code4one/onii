@@ -124,6 +124,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a2da124eb915852f628573a12b12275da"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a2da124eb915852f628573a12b12275da"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d31/namespaceonii.html#a2da124eb915852f628573a12b12275da">equal</a> (FloatT lhs, FloatT rhs, unsigned int ulp=1)</td></tr>
+<tr class="memdesc:a2da124eb915852f628573a12b12275da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two floating point values with epsilon.  <a href="#a2da124eb915852f628573a12b12275da">More...</a><br/></td></tr>
+<tr class="separator:a2da124eb915852f628573a12b12275da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fdfc308ac81afb2b70a76e04dc8dac"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a93fdfc308ac81afb2b70a76e04dc8dac"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d3/d31/namespaceonii.html#a93fdfc308ac81afb2b70a76e04dc8dac">round</a> (FloatT number, unsigned int precision=3)</td></tr>
+<tr class="memdesc:a93fdfc308ac81afb2b70a76e04dc8dac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round a floating point number.  <a href="#a93fdfc308ac81afb2b70a76e04dc8dac">More...</a><br/></td></tr>
+<tr class="separator:a93fdfc308ac81afb2b70a76e04dc8dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33edf0971d34a58898c0e210e3de6467"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d31/namespaceonii.html#a33edf0971d34a58898c0e210e3de6467">do_hash</a> (std::string const &amp;message, std::string(*hash_function)(std::string const &amp;))</td></tr>
 <tr class="memdesc:a33edf0971d34a58898c0e210e3de6467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the hash of a string.  <a href="#a33edf0971d34a58898c0e210e3de6467">More...</a><br/></td></tr>
 <tr class="separator:a33edf0971d34a58898c0e210e3de6467"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,6 +169,89 @@ Functions</h2></td></tr>
 <tr class="separator:a6a93aaaee2087353895e8c50e05c7350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2da124eb915852f628573a12b12275da"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool onii::equal </td>
+          <td>(</td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>ulp</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two floating point values with epsilon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">lhs</td><td>- floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rhs</td><td>- floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ulp</td><td>- desired precision in ULPs (units in the last place) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if lhs and rhs are almost equal </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a93fdfc308ac81afb2b70a76e04dc8dac"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT onii::round </td>
+          <td>(</td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>number</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>precision</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Round a floating point number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">number</td><td>- The floating point number to round </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">precision</td><td>- The rounding precision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The rounded number </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a33edf0971d34a58898c0e210e3de6467"></a>
 <div class="memitem">
 <div class="memproto">
@@ -462,7 +553,7 @@ Boolean values will be converted to "false" and "true" </dd></dl>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 17 2014 17:48:31 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 18 2014 17:14:46 for 2code4one/onii by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.4
 </small></address>

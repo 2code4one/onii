@@ -10,5 +10,8 @@ var searchData=
   ['remove_5fempty',['remove_empty',['../dc/d52/classonii_1_1splitter.html#ad6fe0c33f05ea1fe0a79160f2218cee7',1,'onii::splitter']]],
   ['renesas_2ehpp',['renesas.hpp',['../d0/dc3/renesas_8hpp.html',1,'']]],
   ['results',['results',['../dc/d52/classonii_1_1splitter.html#aa7cd473edb24549a664e5bce4a2bc348',1,'onii::splitter']]],
+  ['rotate',['rotate',['../d6/dfd/classonii_1_1physic_1_1vector.html#a011589d5667765ab106c63abdc5f9012',1,'onii::physic::vector']]],
+  ['round',['round',['../d3/d31/namespaceonii.html#a93fdfc308ac81afb2b70a76e04dc8dac',1,'onii']]],
+  ['round_2ehpp',['round.hpp',['../d7/dbd/round_8hpp.html',1,'']]],
   ['rs6000_2ehpp',['rs6000.hpp',['../d8/d52/rs6000_8hpp.html',1,'']]]
 ];

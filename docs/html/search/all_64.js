@@ -14,6 +14,7 @@ var searchData=
   ['djgpp_2ehpp',['djgpp.hpp',['../d3/d9a/djgpp_8hpp.html',1,'']]],
   ['do_5fhash',['do_hash',['../d3/d31/namespaceonii.html#a33edf0971d34a58898c0e210e3de6467',1,'onii']]],
   ['do_5fhash_2ehpp',['do_hash.hpp',['../d8/deb/do__hash_8hpp.html',1,'']]],
+  ['dot_5fproduct',['dot_product',['../d6/dfd/classonii_1_1physic_1_1vector.html#a7418023b61591b189ac8472c1f920af0',1,'onii::physic::vector']]],
   ['dragonfly_2ehpp',['dragonfly.hpp',['../de/d93/dragonfly_8hpp.html',1,'']]],
   ['dynixptx_2ehpp',['dynixptx.hpp',['../d4/dee/dynixptx_8hpp.html',1,'']]]
 ];

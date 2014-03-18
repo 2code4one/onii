@@ -14,6 +14,7 @@ var searchData=
   ['convexos_2ehpp',['convexos.hpp',['../de/d48/convexos_8hpp.html',1,'']]],
   ['count',['count',['../da/d65/classonii_1_1settings.html#a66b7496e7b1fbd2038fb349384bffd9c',1,'onii::settings']]],
   ['cray_5fc_2ehpp',['cray_c.hpp',['../d1/d58/cray__c_8hpp.html',1,'']]],
+  ['cross_5fproduct',['cross_product',['../d6/dfd/classonii_1_1physic_1_1vector.html#a71ae02699fb3c5202bc0341bd9054e87',1,'onii::physic::vector']]],
   ['cygwin_2ehpp',['cygwin.hpp',['../db/d6c/cygwin_8hpp.html',1,'']]],
   ['sco_5fopenserver_2ehpp',['sco_openserver.hpp',['../d9/d4f/compilers_2sco__openserver_8hpp.html',1,'']]]
 ];
