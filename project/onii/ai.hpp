@@ -6,5 +6,6 @@
 /////////////////////////////////////////////////
 
 #include "ai/fsm.hpp"
+#include "ai/fuzzy.hpp"
 
 #endif // ONII_AI_HPP

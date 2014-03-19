@@ -1797,14 +1797,15 @@
 1384428298 f:\documents\dev\onii\project\onii\detail\big_number\base.hpp
 	<limits>
 
-1394726329 source:/home/chlablak/Documents/onii/project/main.cpp
+1395244970 source:/home/chlablak/Documents/onii/project/main.cpp
 	<cassert>
 	<iostream>
 	"onii/onii.hpp"
 
-1395072271 /home/chlablak/Documents/onii/project/onii/onii.hpp
+1395160325 /home/chlablak/Documents/onii/project/onii/onii.hpp
 	"ai.hpp"
 	"config.hpp"
+	"float.hpp"
 	"hash.hpp"
 	"log.hpp"
 	"percentage.hpp"
@@ -1817,8 +1818,9 @@
 	"thread_safe.hpp"
 	"timer.hpp"
 
-1394468211 /home/chlablak/Documents/onii/project/onii/ai.hpp
+1395233980 /home/chlablak/Documents/onii/project/onii/ai.hpp
 	"ai/fsm.hpp"
+	"ai/fuzzy.hpp"
 
 1394468211 /home/chlablak/Documents/onii/project/onii/ai/fsm.hpp
 
@@ -2384,9 +2386,10 @@
 1386435752 /home/chlablak/Documents/onii/project/onii/detail/thread_safe/mutex.hpp
 	<mutex>
 
-1386435752 /home/chlablak/Documents/onii/project/onii/physic.hpp
+1395160325 /home/chlablak/Documents/onii/project/onii/physic.hpp
 	"physic/constant.hpp"
 	"physic/unit.hpp"
+	"physic/vector.hpp"
 
 1386435752 /home/chlablak/Documents/onii/project/onii/physic/constant.hpp
 	"constant/density.hpp"
@@ -2440,7 +2443,7 @@
 	<string>
 	<fstream>
 
-1386435752 /home/chlablak/Documents/onii/project/onii/split.hpp
+1395075188 /home/chlablak/Documents/onii/project/onii/split.hpp
 	<vector>
 	<string>
 	<algorithm>
@@ -2475,5 +2478,38 @@
 	<chrono>
 	"physic/unit/time.hpp"
 
-1395074047 /home/chlablak/Documents/onii/project/onii/percentage.hpp
+1395156538 /home/chlablak/Documents/onii/project/onii/percentage.hpp
+
+1395241157 /home/chlablak/Documents/onii/project/onii/ai/fuzzy.hpp
+	"fuzzy/set.hpp"
+
+1395244882 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set.hpp
+	"set/triangle.hpp"
+	"set/left_shoulder.hpp"
+	"set/right_shoulder.hpp"
+
+1395244215 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/triangle.hpp
+	"abstract_set.hpp"
+
+1395243749 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/abstract_set.hpp
+
+1395244790 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/left_shoulder.hpp
+	"abstract_set.hpp"
+
+1395244988 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/right_shoulder.hpp
+	"abstract_set.hpp"
+
+1395160325 /home/chlablak/Documents/onii/project/onii/float.hpp
+	"float/equal.hpp"
+	"float/round.hpp"
+
+1395160325 /home/chlablak/Documents/onii/project/onii/float/equal.hpp
+	<cmath>
+	<limits>
+
+1395160325 /home/chlablak/Documents/onii/project/onii/float/round.hpp
+	<cmath>
+
+1395160325 /home/chlablak/Documents/onii/project/onii/physic/vector.hpp
+	<cmath>
 
