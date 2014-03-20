@@ -5,10 +5,10 @@
 int main()
 {
     onii::ai::fuzzy::set::abstract_set const &set =
-        onii::ai::fuzzy::set::rectangle(2, 3)
-        && !onii::ai::fuzzy::set::triangle(1, 2, 4);
+        onii::ai::fuzzy::hedge::very(
+            onii::ai::fuzzy::set::triangle(1, 2, 3));
 
-    for(float i = 0.f; i < 4.f; i += 0.5f)
+    for(float i = 0.f; i < 4.f; i += 0.1f)
         std::cout << "i = " << onii::round(i) << " -> "
             << onii::round(set.membership(i)) << std::endl;
 

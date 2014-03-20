@@ -50,6 +50,10 @@
 		<Unit filename="onii/ai.hpp" />
 		<Unit filename="onii/ai/fsm.hpp" />
 		<Unit filename="onii/ai/fuzzy.hpp" />
+		<Unit filename="onii/ai/fuzzy/hedge.hpp" />
+		<Unit filename="onii/ai/fuzzy/hedge/abstract_hedge.hpp" />
+		<Unit filename="onii/ai/fuzzy/hedge/fairly.hpp" />
+		<Unit filename="onii/ai/fuzzy/hedge/very.hpp" />
 		<Unit filename="onii/ai/fuzzy/set.hpp" />
 		<Unit filename="onii/ai/fuzzy/set/abstract_set.hpp" />
 		<Unit filename="onii/ai/fuzzy/set/left_shoulder.hpp" />

@@ -6,5 +6,6 @@
 /////////////////////////////////////////////////
 
 #include "fuzzy/set.hpp"
+#include "fuzzy/hedge.hpp"
 
 #endif // ONII_AI_FUZZY_HPP
