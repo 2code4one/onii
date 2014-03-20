@@ -5,6 +5,8 @@
 /// @file onii/ai/fuzzy/set/abstract_set.hpp
 /////////////////////////////////////////////////
 
+#include <string>
+
 /////////////////////////////////////////////////
 /// @namespace onii
 /////////////////////////////////////////////////
@@ -34,6 +36,13 @@ class abstract_set
 public:
 
     /////////////////////////////////////////////////
+    /// @brief Default constructor
+    /////////////////////////////////////////////////
+    abstract_set() :
+        m_name()
+    {}
+
+    /////////////////////////////////////////////////
     /// @brief Virtual destructor
     /////////////////////////////////////////////////
     virtual ~abstract_set()
@@ -54,6 +63,39 @@ public:
     /// @remarks The degree of membership is a value between 0 and 1
     /////////////////////////////////////////////////
     virtual float membership(float crisp) const = 0;
+
+    /////////////////////////////////////////////////
+    /// @brief Get the representative value
+    ///
+    /// @return The representative value of the set
+    /// @remarks This is for the centroid defuzzification
+    /////////////////////////////////////////////////
+    virtual float representative() const = 0;
+
+    /////////////////////////////////////////////////
+    /// @brief Set the set name
+    ///
+    /// @param[in] name_ - the set name
+    /////////////////////////////////////////////////
+    void set_name(std::string const &name_)
+    {
+        m_name = name_;
+    }
+
+    /////////////////////////////////////////////////
+    /// @brief Get the set name
+    ///
+    /// @return The set name, if any
+    /////////////////////////////////////////////////
+    std::string const &name() const
+    {
+        return m_name;
+    }
+
+private:
+
+    // data member
+    std::string m_name;
 
 }; // class abstract_set
 } // namespace set

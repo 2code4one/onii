@@ -66,6 +66,11 @@ public:
         return 1.f - m_set->membership(crisp);
     }
 
+    virtual float representative() const
+    {
+        return 1.f - m_set->representative();
+    }
+
 private:
 
     // data members

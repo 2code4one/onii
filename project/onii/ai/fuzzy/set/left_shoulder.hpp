@@ -85,6 +85,17 @@ public:
             return 1.f;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get the representative value
+    ///
+    /// @return The representative value of the set
+    /// @remarks This is for the centroid defuzzification
+    /////////////////////////////////////////////////
+    virtual float representative() const
+    {
+        return (m_left_offset + m_peak) / 2.f;
+    }
+
 private:
 
     // data members

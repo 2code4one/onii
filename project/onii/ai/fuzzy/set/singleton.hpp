@@ -74,6 +74,17 @@ public:
         return onii::equal(crisp, m_peak);
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get the representative value
+    ///
+    /// @return The representative value of the set
+    /// @remarks This is for the centroid defuzzification
+    /////////////////////////////////////////////////
+    virtual float representative() const
+    {
+        return m_peak;
+    }
+
 private:
 
     // data members

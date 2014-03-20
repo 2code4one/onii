@@ -75,6 +75,17 @@ public:
         return crisp >= m_left_peak && crisp <= m_right_peak;
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get the representative value
+    ///
+    /// @return The representative value of the set
+    /// @remarks This is for the centroid defuzzification
+    /////////////////////////////////////////////////
+    virtual float representative() const
+    {
+        return (m_left_peak + m_right_peak) / 2.f;
+    }
+
 private:
 
     // data members

@@ -87,6 +87,17 @@ public:
         return m_set->membership(crisp);
     }
 
+    /////////////////////////////////////////////////
+    /// @brief Get the representative value
+    ///
+    /// @return The representative value of the set
+    /// @remarks This is for the centroid defuzzification
+    /////////////////////////////////////////////////
+    virtual float representative() const
+    {
+        return m_set->representative();
+    }
+
 private:
 
     // data members

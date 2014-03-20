@@ -72,6 +72,11 @@ public:
         return std::max(m_lhs->membership(crisp), m_rhs->membership(crisp));
     }
 
+    virtual float representative() const
+    {
+        return std::max(m_lhs->representative(), m_rhs->representative());
+    }
+
 private:
 
     // data members

@@ -72,6 +72,11 @@ public:
         return std::min(m_lhs->membership(crisp), m_rhs->membership(crisp));
     }
 
+    virtual float representative() const
+    {
+        return std::min(m_lhs->representative(), m_rhs->representative());
+    }
+
 private:
 
     // data members
