@@ -31,5 +31,16 @@ int main()
     float centroid = onii::ai::fuzzy::defuzzify::centroid(m, desirability);
     std::cout << "centroid -> " << centroid << std::endl;
 
+    onii::timer timer;
+    unsigned int max_av_count = 0;
+    for(timer.restart(); timer.elapsed().s() < 1.f; ++max_av_count)
+        float c = onii::ai::fuzzy::defuzzify::max_av(m);
+    std::cout << "In 1s, max_av runs " << max_av_count << " times" << std::endl;
+    unsigned int centroid_count = 0;
+    for(timer.restart(); timer.elapsed().s() < 1.f; ++centroid_count)
+        float c = onii::ai::fuzzy::defuzzify::centroid(m, desirability);
+    std::cout << "In 1s, centroid runs " << centroid_count << " times" << std::endl;
+    std::cout << "max_av is " << (max_av_count / centroid_count) << " times faster than centroid" << std::endl;
+
     return 0;
 }
