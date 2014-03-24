@@ -50,11 +50,13 @@
 		<Unit filename="onii/ai.hpp" />
 		<Unit filename="onii/ai/fsm.hpp" />
 		<Unit filename="onii/ai/fuzzy.hpp" />
+		<Unit filename="onii/ai/fuzzy/defuzzify.hpp" />
+		<Unit filename="onii/ai/fuzzy/defuzzify/centroid.hpp" />
+		<Unit filename="onii/ai/fuzzy/defuzzify/max_av.hpp" />
 		<Unit filename="onii/ai/fuzzy/hedge.hpp" />
 		<Unit filename="onii/ai/fuzzy/hedge/abstract_hedge.hpp" />
 		<Unit filename="onii/ai/fuzzy/hedge/fairly.hpp" />
 		<Unit filename="onii/ai/fuzzy/hedge/very.hpp" />
-		<Unit filename="onii/ai/fuzzy/manifold.hpp" />
 		<Unit filename="onii/ai/fuzzy/set.hpp" />
 		<Unit filename="onii/ai/fuzzy/set/abstract_set.hpp" />
 		<Unit filename="onii/ai/fuzzy/set/left_shoulder.hpp" />

@@ -8,7 +8,6 @@
 #include <map>
 #include <string>
 #include "set/abstract_set.hpp"
-#include "manifold.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -34,11 +33,39 @@ class variable
 public:
 
     /////////////////////////////////////////////////
+    /// @struct manifold
+    /// @brief Fuzzy variable manifold
+    /////////////////////////////////////////////////
+    struct manifold
+    {
+        /////////////////////////////////////////////////
+        /// @struct set_manifold
+        /// @brief Fuzzy set manifold
+        /////////////////////////////////////////////////
+        struct set_manifold
+        {
+            float membership;     ///< Set membership value
+            float representative; ///< Set representative value
+
+        }; // struct set_manifold
+
+        std::string variable;     ///< Variable name
+        float left_range;         ///< Variable min range
+        float right_range;        ///< Variable max range
+        std::map<std::string, set_manifold> sets; ///< Variable sets
+
+    }; // struct manifold
+
+    /////////////////////////////////////////////////
     /// @brief Constructor
     ///
     /// @param[in] name - The variable name
+    /// @param[in] left_range - The variable min range
+    /// @param[in] right_range - The variable max range
     /////////////////////////////////////////////////
-    variable(std::string const &name) :
+    variable(std::string const &name, float left_range, float right_range) :
+        m_left_range(left_range),
+        m_right_range(right_range),
         m_name(name),
         m_sets()
     {}
@@ -49,6 +76,8 @@ public:
     /// @param[in] rhs - The variable to copy
     /////////////////////////////////////////////////
     variable(variable const &rhs) :
+        m_left_range(rhs.m_left_range),
+        m_right_range(rhs.m_right_range),
         m_name(rhs.m_name),
         m_sets()
     {
@@ -65,6 +94,9 @@ public:
     /////////////////////////////////////////////////
     variable &operator=(variable const &rhs)
     {
+        m_left_range = rhs.m_left_range;
+        m_right_range = rhs.m_right_range;
+        m_name = rhs.m_name;
         auto it = m_sets.begin();
         for(; it != m_sets.end(); ++it)
             delete it->second;
@@ -119,16 +151,27 @@ public:
     /////////////////////////////////////////////////
     manifold operator()(float crisp) const
     {
-        std::map<std::string, float> set_values;
-        auto it = m_sets.cbegin();
-        for(; it != m_sets.cend(); ++it)
-            set_values[it->first] = it->second->membership(crisp);
-        return manifold(m_name, set_values);
+        std::map<std::string, manifold::set_manifold> sets;
+        auto it = m_sets.begin();
+        if(crisp >= m_left_range && crisp <= m_right_range)
+        {
+            for(; it != m_sets.end(); ++it)
+                sets[it->first] = {it->second->membership(crisp),
+                                   it->second->representative()};
+        }
+        else
+        {
+            for(; it != m_sets.end(); ++it)
+                sets[it->first] = {0.f, it->second->representative()};
+        }
+        return {m_name, m_left_range, m_right_range, sets};
     }
 
 private:
 
     // data members
+    float m_left_range;
+    float m_right_range;
     std::string m_name;
     std::map<std::string, set::abstract_set*> m_sets;
 
