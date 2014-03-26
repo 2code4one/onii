@@ -9,38 +9,35 @@ int main()
     desirability("Desirable", onii::ai::fuzzy::set::triangle(25, 50, 75));
     desirability("Very Desirable", onii::ai::fuzzy::set::right_shoulder(50, 75, 100));
 
-    onii::ai::fuzzy::variable::manifold m = desirability(-1);
-    m.sets["Undesirable"].membership = 0.33f;
-    m.sets["Desirable"].membership = 0.2f;
-    m.sets["Very Desirable"].membership = 0.67f;
+    onii::ai::fuzzy::variable distance("Distance to Target", 0, 400);
+    distance("Close", onii::ai::fuzzy::set::left_shoulder(0, 25, 150));
+    distance("Medium", onii::ai::fuzzy::set::triangle(25, 150, 300));
+    distance("Far", onii::ai::fuzzy::set::right_shoulder(150, 300, 400));
 
-    std::cout << m.variable << " "
-              << m.left_range << " "
-              << m.right_range << " "
-              << m.sets["Undesirable"].membership << " "
-              << m.sets["Desirable"].membership << " "
-              << m.sets["Very Desirable"].membership << " "
-              << m.sets["Undesirable"].representative << " "
-              << m.sets["Desirable"].representative << " "
-              << m.sets["Very Desirable"].representative << " "
+    onii::ai::fuzzy::variable ammo("Ammo Status", 0, 40);
+    ammo("Low", onii::ai::fuzzy::set::left_shoulder(0, 0, 10));
+    ammo("Okay", onii::ai::fuzzy::set::triangle(0, 10, 30));
+    ammo("Loads", onii::ai::fuzzy::set::right_shoulder(10, 30, 40));
+
+    onii::ai::fuzzy::rules rules(desirability);
+    rules(distance("Far") & ammo("Loads"), "Desirable");
+    rules(distance("Far") & ammo("Okay"), "Undesirable");
+    rules(distance("Far") & ammo("Low"), "Undesirable");
+    rules(distance("Medium") & ammo("Loads"), "Very Desirable");
+    rules(distance("Medium") & ammo("Okay"), "Very Desirable");
+    rules(distance("Medium") & ammo("Low"), "Desirable");
+    rules(distance("Close") & ammo("Loads"), "Undesirable");
+    rules(distance("Close") & ammo("Okay"), "Undesirable");
+    rules(distance("Close") & ammo("Low"), "Undesirable");
+
+    onii::ai::fuzzy::manifold m = rules({distance(200), ammo(8)});
+
+    std::cout << "max_av -> "
+              << onii::ai::fuzzy::defuzzify::max_av(m)
               << std::endl;
-
-    float max_av = onii::ai::fuzzy::defuzzify::max_av(m);
-    std::cout << "max_av -> " << max_av << std::endl;
-
-    float centroid = onii::ai::fuzzy::defuzzify::centroid(m, desirability);
-    std::cout << "centroid -> " << centroid << std::endl;
-
-    onii::timer timer;
-    unsigned int max_av_count = 0;
-    for(timer.restart(); timer.elapsed().s() < 1.f; ++max_av_count)
-        float c = onii::ai::fuzzy::defuzzify::max_av(m);
-    std::cout << "In 1s, max_av runs " << max_av_count << " times" << std::endl;
-    unsigned int centroid_count = 0;
-    for(timer.restart(); timer.elapsed().s() < 1.f; ++centroid_count)
-        float c = onii::ai::fuzzy::defuzzify::centroid(m, desirability);
-    std::cout << "In 1s, centroid runs " << centroid_count << " times" << std::endl;
-    std::cout << "max_av is " << (max_av_count / centroid_count) << " times faster than centroid" << std::endl;
+    std::cout << "centroid -> "
+              << onii::ai::fuzzy::defuzzify::centroid(m, desirability)
+              << std::endl;
 
     return 0;
 }

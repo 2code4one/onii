@@ -8,6 +8,7 @@
 #include <map>
 #include <string>
 #include "set/abstract_set.hpp"
+#include "manifold.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -31,30 +32,6 @@ namespace fuzzy
 class variable
 {
 public:
-
-    /////////////////////////////////////////////////
-    /// @struct manifold
-    /// @brief Fuzzy variable manifold
-    /////////////////////////////////////////////////
-    struct manifold
-    {
-        /////////////////////////////////////////////////
-        /// @struct set_manifold
-        /// @brief Fuzzy set manifold
-        /////////////////////////////////////////////////
-        struct set_manifold
-        {
-            float membership;     ///< Set membership value
-            float representative; ///< Set representative value
-
-        }; // struct set_manifold
-
-        std::string variable;     ///< Variable name
-        float left_range;         ///< Variable min range
-        float right_range;        ///< Variable max range
-        std::map<std::string, set_manifold> sets; ///< Variable sets
-
-    }; // struct manifold
 
     /////////////////////////////////////////////////
     /// @brief Constructor
@@ -94,16 +71,11 @@ public:
     /////////////////////////////////////////////////
     variable &operator=(variable const &rhs)
     {
-        m_left_range = rhs.m_left_range;
-        m_right_range = rhs.m_right_range;
-        m_name = rhs.m_name;
-        auto it = m_sets.begin();
-        for(; it != m_sets.end(); ++it)
-            delete it->second;
-        m_sets.clear();
-        auto it2 = rhs.m_sets.cbegin();
-        for(; it2 != rhs.m_sets.cend(); ++it)
-            m_sets[it2->first] = it2->second->clone();
+        variable tmp(rhs);
+        std::swap(m_left_range, tmp.m_left_range);
+        std::swap(m_right_range, tmp.m_right_range);
+        std::swap(m_name, tmp.m_name);
+        std::swap(m_sets, tmp.m_sets);
         return *this;
     }
 
@@ -129,6 +101,7 @@ public:
             delete m_sets[name];
         m_sets[name] = set.clone();
         m_sets[name]->set_name(name);
+        m_sets[name]->set_variable(m_name);
     }
 
     /////////////////////////////////////////////////
@@ -164,7 +137,7 @@ public:
             for(; it != m_sets.end(); ++it)
                 sets[it->first] = {0.f, it->second->representative()};
         }
-        return {m_name, m_left_range, m_right_range, sets};
+        return {m_name, m_left_range, m_right_range, crisp, sets};
     }
 
 private:

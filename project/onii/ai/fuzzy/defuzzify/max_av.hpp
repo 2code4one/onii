@@ -5,7 +5,7 @@
 /// @file onii/ai/fuzzy/defuzzify/max_av.hpp
 /////////////////////////////////////////////////
 
-#include "../variable.hpp"
+#include "../manifold.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -33,7 +33,7 @@ namespace defuzzify
 /// @param[in] m - the variable manifold
 /// @return a crisp value of the manifold
 /////////////////////////////////////////////////
-float max_av(variable::manifold const &m)
+float max_av(manifold const &m)
 {
     float nom = 0.f;
     float den = 0.f;
@@ -43,7 +43,7 @@ float max_av(variable::manifold const &m)
         nom += it->second.membership * it->second.representative;
         den += it->second.membership;
     }
-    return nom / den;
+    return den != 0.f ? nom / den : m.left_range;
 }
 } // namespace defuzzify
 } // namespace fuzzy

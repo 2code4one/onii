@@ -49,10 +49,9 @@ public:
 
     and_operator &operator=(and_operator const &rhs)
     {
-        delete m_lhs;
-        delete m_rhs;
-        m_lhs = rhs.m_lhs->clone();
-        m_rhs = rhs.m_rhs->clone();
+        and_operator tmp(rhs);
+        std::swap(m_lhs, tmp.m_lhs);
+        std::swap(m_rhs, tmp.m_rhs);
         return *this;
     }
 
@@ -70,6 +69,11 @@ public:
     virtual float membership(float crisp) const
     {
         return std::min(m_lhs->membership(crisp), m_rhs->membership(crisp));
+    }
+
+    virtual float membership(std::vector<manifold> const &m) const
+    {
+        return std::min(m_lhs->membership(m), m_rhs->membership(m));
     }
 
     virtual float representative() const
@@ -95,7 +99,7 @@ private:
 /// @param[in] rhs - second fuzzy set
 /// @return A special "AND" fuzzy set
 /////////////////////////////////////////////////
-detail::and_operator operator&&(abstract_set const &lhs, abstract_set const &rhs)
+detail::and_operator operator&(abstract_set const &lhs, abstract_set const &rhs)
 {
     return detail::and_operator(lhs, rhs);
 }

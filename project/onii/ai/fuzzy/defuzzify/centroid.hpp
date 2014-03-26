@@ -7,6 +7,7 @@
 
 #include <algorithm>
 #include "../variable.hpp"
+#include "../manifold.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -36,7 +37,7 @@ namespace defuzzify
 /// @param[in] samples - how many samples to use
 /// @return a crisp value of the manifold
 /////////////////////////////////////////////////
-float centroid(variable::manifold const &m, variable const &var, unsigned int samples = 20)
+float centroid(manifold const &m, variable const &var, unsigned int samples = 20)
 {
     float nom = 0.f;
     float den = 0.f;
@@ -51,7 +52,7 @@ float centroid(variable::manifold const &m, variable const &var, unsigned int sa
         nom += sum * value;
         den += sum;
     }
-    return nom / den;
+    return den != 0.f ? nom / den : m.left_range;
 }
 } // namespace defuzzify
 } // namespace fuzzy

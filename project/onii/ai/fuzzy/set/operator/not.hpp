@@ -46,8 +46,8 @@ public:
 
     not_operator &operator=(not_operator const &rhs)
     {
-        delete m_set;
-        m_set = rhs.m_set->clone();
+        not_operator tmp(rhs);
+        std::swap(m_set, tmp.m_set);
         return *this;
     }
 
@@ -64,6 +64,11 @@ public:
     virtual float membership(float crisp) const
     {
         return 1.f - m_set->membership(crisp);
+    }
+
+    virtual float membership(std::vector<manifold> const &m) const
+    {
+        return 1.f - m_set->membership(m);
     }
 
     virtual float representative() const
