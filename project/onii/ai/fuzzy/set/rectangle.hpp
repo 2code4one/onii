@@ -79,7 +79,7 @@ public:
     /// @brief Get the representative value
     ///
     /// @return The representative value of the set
-    /// @remarks This is for the centroid defuzzification
+    /// @remarks This is for the max_av defuzzification
     /////////////////////////////////////////////////
     virtual float representative() const
     {

@@ -90,7 +90,7 @@ private:
 /// @brief NOT operator for fuzzy set
 ///
 /// @param[in] set - fuzzy set
-/// @return A special "OR" fuzzy set
+/// @return A special "NOT" fuzzy set
 /////////////////////////////////////////////////
 detail::not_operator operator!(abstract_set const &set)
 {

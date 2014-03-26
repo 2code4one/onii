@@ -10,6 +10,7 @@ var searchData=
   ['tms320_2ehpp',['tms320.hpp',['../d9/ded/tms320_8hpp.html',1,'']]],
   ['tms470_2ehpp',['tms470.hpp',['../da/dcb/tms470_8hpp.html',1,'']]],
   ['to_5fstring_2ehpp',['to_string.hpp',['../de/d56/to__string_8hpp.html',1,'']]],
+  ['triangle_2ehpp',['triangle.hpp',['../d9/d6c/triangle_8hpp.html',1,'']]],
   ['trim_2ehpp',['trim.hpp',['../d7/d2f/trim_8hpp.html',1,'']]],
   ['tru64_2ehpp',['tru64.hpp',['../db/de9/tru64_8hpp.html',1,'']]],
   ['turbo_2ehpp',['turbo.hpp',['../d9/dae/turbo_8hpp.html',1,'']]]

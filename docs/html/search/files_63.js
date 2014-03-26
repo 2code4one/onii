@@ -1,6 +1,7 @@
 var searchData=
 [
   ['cc65_2ehpp',['cc65.hpp',['../d0/df7/cc65_8hpp.html',1,'']]],
+  ['centroid_2ehpp',['centroid.hpp',['../d1/da7/centroid_8hpp.html',1,'']]],
   ['clang_2ehpp',['clang.hpp',['../d7/d81/clang_8hpp.html',1,'']]],
   ['comeau_2ehpp',['comeau.hpp',['../d1/ded/comeau_8hpp.html',1,'']]],
   ['compaq_2ehpp',['compaq.hpp',['../d5/d59/compaq_8hpp.html',1,'']]],

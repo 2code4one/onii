@@ -1,7 +1,9 @@
 var searchData=
 [
   ['macos_2ehpp',['macos.hpp',['../db/d00/macos_8hpp.html',1,'']]],
+  ['manifold_2ehpp',['manifold.hpp',['../da/df3/manifold_8hpp.html',1,'']]],
   ['mass_2ehpp',['mass.hpp',['../d1/d99/mass_8hpp.html',1,'']]],
+  ['max_5fav_2ehpp',['max_av.hpp',['../d7/d8c/max__av_8hpp.html',1,'']]],
   ['md5_2ehpp',['md5.hpp',['../d4/d0f/md5_8hpp.html',1,'']]],
   ['metaware_5fhigh_2ehpp',['metaware_high.hpp',['../df/daf/metaware__high_8hpp.html',1,'']]],
   ['metrowerks_5fcodewarrior_2ehpp',['metrowerks_codewarrior.hpp',['../d4/d17/metrowerks__codewarrior_8hpp.html',1,'']]],
