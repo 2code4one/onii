@@ -37,5 +37,19 @@ int main()
           onii::hash::sha256
     );
 
+    // SHA224 Check
+    check("",
+          "d14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f",
+          onii::hash::sha224
+    );
+    check("The quick brown fox jumps over the lazy dog",
+          "730e109bd7a8a32b1cb9d9a09aa2325d2430587ddbc0c38bad911525",
+          onii::hash::sha224
+    );
+    check("The quick brown fox jumps over the lazy dog.",
+          "619cba8e8e05826e9b8c519c0a5c68f4fb653e8a3d8aa04bb2c8cd4c",
+          onii::hash::sha224
+    );
+
     return 0;
 }

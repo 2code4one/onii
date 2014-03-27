@@ -257,6 +257,8 @@
 		<Unit filename="onii/hash/do_hash.hpp" />
 		<Unit filename="onii/hash/md5.hpp" />
 		<Unit filename="onii/hash/sha1.hpp" />
+		<Unit filename="onii/hash/sha224.hpp" />
+		<Unit filename="onii/hash/sha256.hpp" />
 		<Unit filename="onii/log.hpp" />
 		<Unit filename="onii/onii.hpp" />
 		<Unit filename="onii/percentage.hpp" />
