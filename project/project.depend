@@ -1797,7 +1797,7 @@
 1384428298 f:\documents\dev\onii\project\onii\detail\big_number\base.hpp
 	<limits>
 
-1395837213 source:/home/chlablak/Documents/onii/project/main.cpp
+1395934187 source:/home/chlablak/Documents/onii/project/main.cpp
 	<cassert>
 	<iostream>
 	"onii/onii.hpp"
@@ -1818,7 +1818,7 @@
 	"thread_safe.hpp"
 	"timer.hpp"
 
-1395339544 /home/chlablak/Documents/onii/project/onii/ai.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai.hpp
 	"ai/fsm.hpp"
 	"ai/fuzzy.hpp"
 
@@ -2312,9 +2312,10 @@
 
 1386435752 /home/chlablak/Documents/onii/project/onii/config/standards/xopen.hpp
 
-1386435752 /home/chlablak/Documents/onii/project/onii/hash.hpp
+1395933686 /home/chlablak/Documents/onii/project/onii/hash.hpp
 	"hash/md5.hpp"
 	"hash/sha1.hpp"
+	"hash/sha256.hpp"
 
 1386435752 /home/chlablak/Documents/onii/project/onii/hash/md5.hpp
 	"detail/little_endian/add_bytes.hpp"
@@ -2474,13 +2475,13 @@
 	<windows.h>
 	<unistd.h>
 
-1395683947 /home/chlablak/Documents/onii/project/onii/timer.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/timer.hpp
 	<chrono>
 	"physic/unit/time.hpp"
 
 1395156538 /home/chlablak/Documents/onii/project/onii/percentage.hpp
 
-1395835545 /home/chlablak/Documents/onii/project/onii/ai/fuzzy.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy.hpp
 	"fuzzy/set.hpp"
 	"fuzzy/hedge.hpp"
 	"fuzzy/variable.hpp"
@@ -2488,7 +2489,7 @@
 	"fuzzy/rules.hpp"
 	"fuzzy/defuzzify.hpp"
 
-1395339544 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set.hpp
 	"set/triangle.hpp"
 	"set/left_shoulder.hpp"
 	"set/right_shoulder.hpp"
@@ -2496,19 +2497,18 @@
 	"set/rectangle.hpp"
 	"set/operator.hpp"
 
-1395835962 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/triangle.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/triangle.hpp
 	"abstract_set.hpp"
 
-1395837656 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/abstract_set.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/abstract_set.hpp
 	<string>
 	<vector>
 	"../manifold.hpp"
-	"../../../log.hpp"
 
-1395835961 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/left_shoulder.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/left_shoulder.hpp
 	"abstract_set.hpp"
 
-1395835962 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/right_shoulder.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/right_shoulder.hpp
 	"abstract_set.hpp"
 
 1395160325 /home/chlablak/Documents/onii/project/onii/float.hpp
@@ -2525,70 +2525,78 @@
 1395160325 /home/chlablak/Documents/onii/project/onii/physic/vector.hpp
 	<cmath>
 
-1395835962 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/singleton.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/singleton.hpp
 	"abstract_set.hpp"
 	"../../../float/equal.hpp"
 
-1395835962 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/rectangle.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/rectangle.hpp
 	"abstract_set.hpp"
 
-1395339544 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator.hpp
 	"operator/or.hpp"
 	"operator/and.hpp"
 	"operator/not.hpp"
 
-1395836866 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/or.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/or.hpp
 	<algorithm>
 	"../abstract_set.hpp"
 
-1395836800 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/and.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/and.hpp
 	<algorithm>
 	"../abstract_set.hpp"
 
-1395836853 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/not.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/set/operator/not.hpp
 	"../abstract_set.hpp"
 
-1395339558 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge.hpp
 	"hedge/very.hpp"
 	"hedge/fairly.hpp"
 
-1395339558 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/very.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/very.hpp
 	"abstract_hedge.hpp"
 
-1395339567 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/abstract_hedge.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/abstract_hedge.hpp
 	"../set/abstract_set.hpp"
 
-1395339558 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/fairly.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/hedge/fairly.hpp
 	<cmath>
 	"abstract_hedge.hpp"
 
-1395835585 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/variable.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/variable.hpp
 	<map>
 	<string>
 	"set/abstract_set.hpp"
 	"manifold.hpp"
 
-1395836211 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/manifold.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/manifold.hpp
 	<map>
 	<string>
 
-1395680459 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify.hpp
 	"defuzzify/max_av.hpp"
 	"defuzzify/centroid.hpp"
 
-1395835679 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify/max_av.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify/max_av.hpp
 	"../manifold.hpp"
 
-1395835679 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify/centroid.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/defuzzify/centroid.hpp
 	<algorithm>
 	"../variable.hpp"
 	"../manifold.hpp"
 
-1395835585 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/rules.hpp
+1395839880 /home/chlablak/Documents/onii/project/onii/ai/fuzzy/rules.hpp
 	<map>
 	<vector>
-	<limits>
 	"variable.hpp"
 	"manifold.hpp"
 	"set/abstract_set.hpp"
+
+1395937139 /home/chlablak/Documents/onii/project/onii/hash/sha256.hpp
+	"detail/big_endian/add_bytes.hpp"
+	"detail/big_endian/to_uint.hpp"
+	"detail/circular_shift.hpp"
+	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/maj.hpp"
+	"do_hash.hpp"
 

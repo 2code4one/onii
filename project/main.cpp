@@ -2,42 +2,40 @@
 #include <iostream>
 #include "onii/onii.hpp"
 
+template<typename FuncT>
+void check(std::string const &msg, std::string const &exp, FuncT F)
+{
+    std::cout << "\nmessage : '" << msg << "'" << std::endl;
+    auto digest = onii::do_hash(msg, F);
+    std::cout << "hash    : " << digest << std::endl;
+    std::cout << "expected: " << exp << std::endl;
+    if(digest != exp) {
+        std::cout << "errors  : ";
+        for(int i = 0; i < digest.size(); ++i) {
+            if(digest[i] != exp[i])
+                std::cout << '^';
+            else
+                std::cout << ' ';
+        }
+        std::cout << std::endl;
+    }
+}
+
 int main()
 {
-    onii::ai::fuzzy::variable desirability("Desirability", 0, 100);
-    desirability("Undesirable", onii::ai::fuzzy::set::left_shoulder(0, 25, 50));
-    desirability("Desirable", onii::ai::fuzzy::set::triangle(25, 50, 75));
-    desirability("Very Desirable", onii::ai::fuzzy::set::right_shoulder(50, 75, 100));
-
-    onii::ai::fuzzy::variable distance("Distance to Target", 0, 400);
-    distance("Close", onii::ai::fuzzy::set::left_shoulder(0, 25, 150));
-    distance("Medium", onii::ai::fuzzy::set::triangle(25, 150, 300));
-    distance("Far", onii::ai::fuzzy::set::right_shoulder(150, 300, 400));
-
-    onii::ai::fuzzy::variable ammo("Ammo Status", 0, 40);
-    ammo("Low", onii::ai::fuzzy::set::left_shoulder(0, 0, 10));
-    ammo("Okay", onii::ai::fuzzy::set::triangle(0, 10, 30));
-    ammo("Loads", onii::ai::fuzzy::set::right_shoulder(10, 30, 40));
-
-    onii::ai::fuzzy::rules rules(desirability);
-    rules(distance("Far") & ammo("Loads"), "Desirable");
-    rules(distance("Far") & ammo("Okay"), "Undesirable");
-    rules(distance("Far") & ammo("Low"), "Undesirable");
-    rules(distance("Medium") & ammo("Loads"), "Very Desirable");
-    rules(distance("Medium") & ammo("Okay"), "Very Desirable");
-    rules(distance("Medium") & ammo("Low"), "Desirable");
-    rules(distance("Close") & ammo("Loads"), "Undesirable");
-    rules(distance("Close") & ammo("Okay"), "Undesirable");
-    rules(distance("Close") & ammo("Low"), "Undesirable");
-
-    onii::ai::fuzzy::manifold m = rules({distance(200), ammo(8)});
-
-    std::cout << "max_av -> "
-              << onii::ai::fuzzy::defuzzify::max_av(m)
-              << std::endl;
-    std::cout << "centroid -> "
-              << onii::ai::fuzzy::defuzzify::centroid(m, desirability)
-              << std::endl;
+    // SHA256 Check
+    check("",
+          "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          onii::hash::sha256
+    );
+    check("The quick brown fox jumps over the lazy dog",
+          "d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592",
+          onii::hash::sha256
+    );
+    check("The quick brown fox jumps over the lazy dog.",
+          "ef537f25c895bfa782526529a9b63d97aa631564d5d789c2b765448c8635fb6c",
+          onii::hash::sha256
+    );
 
     return 0;
 }
