@@ -9,6 +9,8 @@ var searchData=
   ['set_5fvariable',['set_variable',['../d8/d35/classonii_1_1ai_1_1fuzzy_1_1set_1_1abstract__set.html#ac8e3f0ad8fd6edf62d9d87865162fdc0',1,'onii::ai::fuzzy::set::abstract_set']]],
   ['settings',['settings',['../da/d65/classonii_1_1settings.html#a8c86364ec7aa9d34cb0688aabefe261b',1,'onii::settings::settings(format file_format)'],['../da/d65/classonii_1_1settings.html#a66f5ea9d8cf8b1d6b30208006ac2850b',1,'onii::settings::settings(settings const &amp;)=delete']]],
   ['sha1',['sha1',['../d2/dce/namespaceonii_1_1hash.html#a920fb1bcbbb4a6d59eacedd1e25a910e',1,'onii::hash']]],
+  ['sha224',['sha224',['../d2/dce/namespaceonii_1_1hash.html#a0dbd1624105fdd1fbd8007c07c4fb2a1',1,'onii::hash']]],
+  ['sha256',['sha256',['../d2/dce/namespaceonii_1_1hash.html#a463a39ec343ef4fc293130245cea45bd',1,'onii::hash']]],
   ['singleton',['singleton',['../d9/dda/classonii_1_1ai_1_1fuzzy_1_1set_1_1singleton.html#a12b9164ac5d4be9fbcbaa78934a44285',1,'onii::ai::fuzzy::set::singleton']]],
   ['sleep',['sleep',['../d3/d31/namespaceonii.html#a1bbfd043a69c5386e0c615a4eaec1956',1,'onii']]],
   ['splitter',['splitter',['../dc/d52/classonii_1_1splitter.html#a9db6792f1b241aff6b9b7bbc8e3f132b',1,'onii::splitter']]],
