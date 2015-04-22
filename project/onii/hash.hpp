@@ -9,5 +9,6 @@
 #include "hash/sha1.hpp"
 #include "hash/sha256.hpp"
 #include "hash/sha224.hpp"
+#include "hash/sha512.hpp"
 
 #endif // ONII_HASH_HPP

@@ -10,7 +10,7 @@ namespace detail
 template<typename UintT>
 UintT maj(UintT x, UintT y, UintT z)
 {
-    return ((x & y) | (x & z) | (y & z));
+    return ((x & y) ^ (x & z) ^ (y & z));
 }
 }
 }
