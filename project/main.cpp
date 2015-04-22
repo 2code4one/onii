@@ -79,5 +79,14 @@ int main()
           onii::hash::sha512
     );
 
+    // SHA384 Check
+          onii::hash::sha384
+    );
+    check("The quick brown fox jumps over the lazy dog",
+          onii::hash::sha384
+    );
+    check("The quick brown fox jumps over the lazy dog.",
+          onii::hash::sha384
+
     return 0;
 }

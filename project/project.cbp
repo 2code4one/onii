@@ -248,7 +248,8 @@
 		<Unit filename="onii/hash/detail/big_endian/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/big_endian/to_uint.hpp" />
 		<Unit filename="onii/hash/detail/ch.hpp" />
-		<Unit filename="onii/hash/detail/circular_shift.hpp" />
+		<Unit filename="onii/hash/detail/circular_shift_left.hpp" />
+		<Unit filename="onii/hash/detail/circular_shift_right.hpp" />
 		<Unit filename="onii/hash/detail/little_endian/add_bytes.hpp" />
 		<Unit filename="onii/hash/detail/little_endian/to_uint.hpp" />
 		<Unit filename="onii/hash/detail/maj.hpp" />
@@ -259,6 +260,8 @@
 		<Unit filename="onii/hash/sha1.hpp" />
 		<Unit filename="onii/hash/sha224.hpp" />
 		<Unit filename="onii/hash/sha256.hpp" />
+		<Unit filename="onii/hash/sha384.hpp" />
+		<Unit filename="onii/hash/sha512.hpp" />
 		<Unit filename="onii/log.hpp" />
 		<Unit filename="onii/onii.hpp" />
 		<Unit filename="onii/percentage.hpp" />
