@@ -7,7 +7,7 @@
 
 #include "detail/big_endian/add_bytes.hpp"
 #include "detail/big_endian/to_uint.hpp"
-#include "detail/circular_shift.hpp"
+#include "detail/circular_shift_right.hpp"
 #include "detail/to_string.hpp"
 #include "detail/ch.hpp"
 #include "detail/maj.hpp"
@@ -93,11 +93,11 @@ std::string sha256(std::string const &message)
         // extend the sixteen 32-bit words into sixties 32-bit words
         for(uint32_t j = 16; j < 64; ++j)
         {
-            uint32_t s0 = detail::circular_shift(w[j-15], -7)
-                        ^ detail::circular_shift(w[j-15], -18)
+            uint32_t s0 = detail::circular_shift_right(w[j-15], 7)
+                        ^ detail::circular_shift_right(w[j-15], 18)
                         ^ (w[j-15] >> 3);
-            uint32_t s1 = detail::circular_shift(w[j-2], -17)
-                        ^ detail::circular_shift(w[j-2], -19)
+            uint32_t s1 = detail::circular_shift_right(w[j-2], 17)
+                        ^ detail::circular_shift_right(w[j-2], 19)
                         ^ (w[j-2] >> 10);
             w[j] = w[j-16] + s0 + w[j-7] + s1;
         }
@@ -115,12 +115,12 @@ std::string sha256(std::string const &message)
         // main loop
         for(uint32_t i = 0; i < 64; ++i)
         {
-            uint32_t S0 = detail::circular_shift(a, -2)
-                        ^ detail::circular_shift(a, -13)
-                        ^ detail::circular_shift(a, -22);
-            uint32_t S1 = detail::circular_shift(e, -6)
-                        ^ detail::circular_shift(e, -11)
-                        ^ detail::circular_shift(e, -25);
+            uint32_t S0 = detail::circular_shift_right(a, 2)
+                        ^ detail::circular_shift_right(a, 13)
+                        ^ detail::circular_shift_right(a, 22);
+            uint32_t S1 = detail::circular_shift_right(e, 6)
+                        ^ detail::circular_shift_right(e, 11)
+                        ^ detail::circular_shift_right(e, 25);
             uint32_t T1 = h + S1 + detail::ch(e, f, g) + k[i] + w[i];
             uint32_t T2 = S0 + detail::maj(a, b, c);
 

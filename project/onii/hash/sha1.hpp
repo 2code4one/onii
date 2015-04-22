@@ -7,7 +7,7 @@
 
 #include "detail/big_endian/add_bytes.hpp"
 #include "detail/big_endian/to_uint.hpp"
-#include "detail/circular_shift.hpp"
+#include "detail/circular_shift_left.hpp"
 #include "detail/to_string.hpp"
 #include "detail/ch.hpp"
 #include "detail/parity.hpp"
@@ -80,7 +80,7 @@ std::string sha1(std::string const &message)
 
         // extend the sixteen 32-bit words into eighty 32-bit words
         for(uint32_t j = 16; j < 80; ++j)
-            w[j] = detail::circular_shift(w[j-3] ^ w[j-8] ^ w[j-14] ^ w[j-16], 1);
+            w[j] = detail::circular_shift_left(w[j-3] ^ w[j-8] ^ w[j-14] ^ w[j-16], 1);
 
         // initialize hash value for this chunk
         uint32_t a = h0;
@@ -92,14 +92,14 @@ std::string sha1(std::string const &message)
         // main loop
         for(uint32_t i = 0; i < 80; ++i)
         {
-            uint32_t tmp = detail::circular_shift(a, 5)
+            uint32_t tmp = detail::circular_shift_left(a, 5)
                            + f[i/20](b, c, d)
                            + e
                            + k[i/20]
                            + w[i];
             e = d;
             d = c;
-            c = detail::circular_shift(b, 30);
+            c = detail::circular_shift_left(b, 30);
             b = a;
             a = tmp;
         }

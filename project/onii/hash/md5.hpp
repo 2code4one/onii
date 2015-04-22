@@ -7,7 +7,7 @@
 
 #include "detail/little_endian/add_bytes.hpp"
 #include "detail/little_endian/to_uint.hpp"
-#include "detail/circular_shift.hpp"
+#include "detail/circular_shift_left.hpp"
 #include "detail/to_string.hpp"
 #include "detail/ch.hpp"
 #include "detail/parity.hpp"
@@ -130,7 +130,7 @@ std::string md5(std::string const &message)
             uint32_t tmp = d;
             d = c;
             c = b;
-            b = b + detail::circular_shift(a + f + k[i] + w[g], r[i]);
+            b = b + detail::circular_shift_left(a + f + k[i] + w[g], r[i]);
             a = tmp;
         }
 

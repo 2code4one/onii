@@ -2600,3 +2600,86 @@
 	"detail/maj.hpp"
 	"do_hash.hpp"
 
+1429733910 source:c:\users\chlablak\documents\github\onii\project\main.cpp
+	<cassert>
+	<iostream>
+	"onii/hash.hpp"
+
+1396105216 c:\users\chlablak\documents\github\onii\project\onii\hash.hpp
+	"hash/md5.hpp"
+	"hash/sha1.hpp"
+	"hash/sha256.hpp"
+	"hash/sha224.hpp"
+
+1429734543 c:\users\chlablak\documents\github\onii\project\onii\hash\md5.hpp
+	"detail/little_endian/add_bytes.hpp"
+	"detail/little_endian/to_uint.hpp"
+	"detail/circular_shift_left.hpp"
+	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/parity.hpp"
+	"do_hash.hpp"
+
+1384171028 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\little_endian\add_bytes.hpp
+	<vector>
+
+1384171028 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\little_endian\to_uint.hpp
+	<vector>
+	<cstdint>
+
+1429734468 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\circular_shift_left.hpp
+	<cstdint>
+
+1382186393 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\to_string.hpp
+	<sstream>
+	<iomanip>
+	<string>
+	<vector>
+	<cstdint>
+
+1382186393 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\ch.hpp
+
+1382186393 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\parity.hpp
+
+1384171028 c:\users\chlablak\documents\github\onii\project\onii\hash\do_hash.hpp
+
+1429734543 c:\users\chlablak\documents\github\onii\project\onii\hash\sha1.hpp
+	"detail/big_endian/add_bytes.hpp"
+	"detail/big_endian/to_uint.hpp"
+	"detail/circular_shift_left.hpp"
+	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/parity.hpp"
+	"detail/maj.hpp"
+	"do_hash.hpp"
+
+1384171028 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\big_endian\add_bytes.hpp
+	<vector>
+
+1384171028 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\big_endian\to_uint.hpp
+	<vector>
+	<cstdint>
+
+1382186393 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\maj.hpp
+
+1429734684 c:\users\chlablak\documents\github\onii\project\onii\hash\sha256.hpp
+	"detail/big_endian/add_bytes.hpp"
+	"detail/big_endian/to_uint.hpp"
+	"detail/circular_shift_right.hpp"
+	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/maj.hpp"
+	"do_hash.hpp"
+
+1429734639 c:\users\chlablak\documents\github\onii\project\onii\hash\sha224.hpp
+	"detail/big_endian/add_bytes.hpp"
+	"detail/big_endian/to_uint.hpp"
+	"detail/circular_shift_right.hpp"
+	"detail/to_string.hpp"
+	"detail/ch.hpp"
+	"detail/maj.hpp"
+	"do_hash.hpp"
+
+1429734426 c:\users\chlablak\documents\github\onii\project\onii\hash\detail\circular_shift_right.hpp
+	<cstdint>
+
