@@ -5,6 +5,7 @@
 /// @file onii/random.hpp
 /////////////////////////////////////////////////
 
+#include <ctime>
 #include "detail/random/type.hpp"
 
 /////////////////////////////////////////////////
@@ -23,7 +24,7 @@ namespace onii
 template<typename T>
 T random(T min_value, T max_value)
 {
-    static typename detail::random::generator<T>::type generator;
+    static typename detail::random::generator<T>::type generator(std::time(nullptr));
     return typename detail::random::distribution<T>::type(min_value, max_value)(generator);
 }
 
