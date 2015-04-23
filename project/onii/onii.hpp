@@ -20,6 +20,6 @@
 #include "thread_safe.hpp"
 #include "timer.hpp"
 #include "unit.hpp"
-#include "vector.hpp"
+#include "vector2d.hpp"
 
 #endif // ONII_ONII_HPP

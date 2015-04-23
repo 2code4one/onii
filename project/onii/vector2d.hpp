@@ -1,8 +1,8 @@
-#ifndef ONII_VECTOR_HPP
-#define ONII_VECTOR_HPP
+#ifndef ONII_VECTOR2D_HPP
+#define ONII_VECTOR2D_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/vector.hpp
+/// @file onii/vector2d.hpp
 /////////////////////////////////////////////////
 
 #include <cmath>
@@ -14,10 +14,10 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @class vector
+/// @class vector2d
 /// @brief Class representing a 2D vector
 /////////////////////////////////////////////////
-class vector
+class vector2d
 {
 public:
 
@@ -27,7 +27,7 @@ public:
     /////////////////////////////////////////////////
     /// @brief Default constructor
     /////////////////////////////////////////////////
-    vector() :
+    vector2d() :
         x(0.f),
         y(0.f)
     {}
@@ -38,7 +38,7 @@ public:
     /// @param[in] x_ - x component
     /// @param[in] y_ - y component
     /////////////////////////////////////////////////
-    vector(float x_, float y_) :
+    vector2d(float x_, float y_) :
         x(x_),
         y(y_)
     {}
@@ -46,10 +46,10 @@ public:
     /////////////////////////////////////////////////
     /// @brief Addition
     ///
-    /// @param[in] rhs - The vector to add
+    /// @param[in] rhs - The vector2d to add
     /// @return *this
     /////////////////////////////////////////////////
-    vector &operator+=(vector const &rhs)
+    vector2d &operator+=(vector2d const &rhs)
     {
         x += rhs.x;
         y += rhs.y;
@@ -59,10 +59,10 @@ public:
     /////////////////////////////////////////////////
     /// @brief Substraction
     ///
-    /// @param[in] rhs - The vector to substract
+    /// @param[in] rhs - The vector2d to substract
     /// @return *this
     /////////////////////////////////////////////////
-    vector &operator-=(vector const &rhs)
+    vector2d &operator-=(vector2d const &rhs)
     {
         x -= rhs.x;
         y -= rhs.y;
@@ -75,7 +75,7 @@ public:
     /// @param[in] scalar - The scalar value
     /// @return *this
     /////////////////////////////////////////////////
-    vector &operator*=(float scalar)
+    vector2d &operator*=(float scalar)
     {
         x *= scalar;
         y *= scalar;
@@ -85,10 +85,10 @@ public:
     /////////////////////////////////////////////////
     /// @brief Get the squared length
     ///
-    /// @param[in] v - vector to compute
+    /// @param[in] v - vector2d to compute
     /// @return The squared length value
     /////////////////////////////////////////////////
-    static float squared_lenght(vector const &v)
+    static float squared_lenght(vector2d const &v)
     {
         return v.x * v.x + v.y * v.y;
     }
@@ -96,181 +96,181 @@ public:
     /////////////////////////////////////////////////
     /// @brief Get the length
     ///
-    /// @param[in] v - vector to compute
+    /// @param[in] v - vector2d to compute
     /// @return The length value
     /////////////////////////////////////////////////
-    static float lenght(vector const &v)
+    static float lenght(vector2d const &v)
     {
         return std::sqrt(squared_lenght(v));
     }
 
     /////////////////////////////////////////////////
-    /// @brief Get a normalized vector
+    /// @brief Get a normalized vector2d
     ///
-    /// @param[in] v - vector to normalize
-    /// @return The normalized vector
+    /// @param[in] v - vector2d to normalize
+    /// @return The normalized vector2d
     /////////////////////////////////////////////////
-    static vector normalize(vector const &v)
+    static vector2d normalize(vector2d const &v)
     {
         float len = lenght(v);
-        return vector(v.x / len, v.y / len);
+        return vector2d(v.x / len, v.y / len);
     }
 
     /////////////////////////////////////////////////
-    /// @brief Compute the dot product of two vectors
+    /// @brief Compute the dot product of two vector2ds
     ///
-    /// @param[in] lhs - first vector
-    /// @param[in] rhs - second vector
+    /// @param[in] lhs - first vector2d
+    /// @param[in] rhs - second vector2d
     /// @return The computed dot product
     /////////////////////////////////////////////////
-    static float dot_product(vector const &lhs, vector const &rhs)
+    static float dot_product(vector2d const &lhs, vector2d const &rhs)
     {
         return lhs.x * rhs.x + lhs.y * rhs.y;
     }
 
     /////////////////////////////////////////////////
-    /// @brief Compute the cross product of two vector
+    /// @brief Compute the cross product of two vector2d
     ///
-    /// @param[in] lhs - first vector
-    /// @param[in] rhs - second vector
+    /// @param[in] lhs - first vector2d
+    /// @param[in] rhs - second vector2d
     /// @return The computed cross product
     /// @remarks This function return only the z component value
     ///          of the computed cross product, because this class
-    ///          is only a 2D vector
+    ///          is only a 2D vector2d
     /////////////////////////////////////////////////
-    static float cross_product_z(vector const &lhs, vector const &rhs)
+    static float cross_product_z(vector2d const &lhs, vector2d const &rhs)
     {
         return lhs.x * rhs.y - lhs.y * rhs.x;
     }
 
     /////////////////////////////////////////////////
-    /// @brief Get the orthogonal vector
+    /// @brief Get the orthogonal vector2d
     ///
-    /// @param[in] v - the vector
-    /// @return A orthogonal vector of v
-    /// @remarks The orthogonal vector is computed
+    /// @param[in] v - the vector2d
+    /// @return A orthogonal vector2d of v
+    /// @remarks The orthogonal vector2d is computed
     ///          like this: @code (v.y -v.x) @endcode
     /////////////////////////////////////////////////
-    static vector orthogonal_x(vector const &v)
+    static vector2d orthogonal_x(vector2d const &v)
     {
-        return vector(v.y, -v.x);
+        return vector2d(v.y, -v.x);
     }
 
     /////////////////////////////////////////////////
-    /// @brief Get the orthogonal vector
+    /// @brief Get the orthogonal vector2d
     ///
-    /// @param[in] v - the vector
-    /// @return A orthogonal vector of v
-    /// @remarks The orthogonal vector is computed
+    /// @param[in] v - the vector2d
+    /// @return A orthogonal vector2d of v
+    /// @remarks The orthogonal vector2d is computed
     ///          like this: @code (-v.y v.x) @endcode
     /////////////////////////////////////////////////
-    static vector orthogonal_y(vector const &v)
+    static vector2d orthogonal_y(vector2d const &v)
     {
-        return vector(-v.y, v.x);
+        return vector2d(-v.y, v.x);
     }
 
     /////////////////////////////////////////////////
-    /// @brief Rotate a vector with a given angle
+    /// @brief Rotate a vector2d with a given angle
     ///
-    /// @param[in] v - vector to rotate
+    /// @param[in] v - vector2d to rotate
     /// @param[in] angle - the rotation angle
-    /// @return the rotated vector
+    /// @return the rotated vector2d
     /// @remarks The rotation is counter-clockwise
     /////////////////////////////////////////////////
-    static vector rotate(vector const &v, unit::angle angle)
+    static vector2d rotate(vector2d const &v, unit::angle const &angle)
     {
         float c = std::cos(angle.rad());
         float s = std::sin(angle.rad());
-        return vector(v.x * c - v.y * s, v.x * s + v.y * c);
+        return vector2d(v.x * c - v.y * s, v.x * s + v.y * c);
     }
 
-}; // class vector
+}; // class vector2d
 
 /////////////////////////////////////////////////
-/// @brief Get a positive vector
+/// @brief Get a positive vector2d
 ///
-/// @param[in] v - vector
-/// @return The same vector as v
-/// @relates vector
+/// @param[in] v - vector2d
+/// @return The same vector2d as v
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator+(vector const &v)
+vector2d operator+(vector2d const &v)
 {
-    return vector(v);
+    return vector2d(v);
 }
 
 /////////////////////////////////////////////////
-/// @brief Get a negative vector
+/// @brief Get a negative vector2d
 ///
-/// @param[in] v - vector
-/// @return The negative vector of v
-/// @relates vector
+/// @param[in] v - vector2d
+/// @return The negative vector2d of v
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator-(vector const &v)
+vector2d operator-(vector2d const &v)
 {
-    return vector(-v.x, -v.y);
+    return vector2d(-v.x, -v.y);
 }
 
 /////////////////////////////////////////////////
-/// @brief Addition of two vector
+/// @brief Addition of two vector2d
 ///
-/// @param[in] lhs - first vector
-/// @param[in] rhs - second vector
+/// @param[in] lhs - first vector2d
+/// @param[in] rhs - second vector2d
 /// @return The addition of lhs and rhs
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator+(vector const &lhs, vector const &rhs)
+vector2d operator+(vector2d const &lhs, vector2d const &rhs)
 {
-    return vector(lhs) += rhs;
+    return vector2d(lhs) += rhs;
 }
 
 /////////////////////////////////////////////////
-/// @brief Substraction of two vector
+/// @brief Substraction of two vector2d
 ///
-/// @param[in] lhs - first vector
-/// @param[in] rhs - second vector
+/// @param[in] lhs - first vector2d
+/// @param[in] rhs - second vector2d
 /// @return The substraction of lhs and rhs
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator-(vector const &lhs, vector const &rhs)
+vector2d operator-(vector2d const &lhs, vector2d const &rhs)
 {
-    return vector(lhs) -= rhs;
+    return vector2d(lhs) -= rhs;
 }
 
 /////////////////////////////////////////////////
-/// @brief Multiplication of a vector by a scalar
+/// @brief Multiplication of a vector2d by a scalar
 ///
-/// @param[in] lhs - vector
+/// @param[in] lhs - vector2d
 /// @param[in] scalar - scalar value
 /// @return The multiplication of lhs by scalar
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator*(vector const &lhs, float scalar)
+vector2d operator*(vector2d const &lhs, float scalar)
 {
-    return vector(lhs) *= scalar;
+    return vector2d(lhs) *= scalar;
 }
 
 /////////////////////////////////////////////////
-/// @brief Multiplication of a vector by a scalar
+/// @brief Multiplication of a vector2d by a scalar
 ///
 /// @param[in] scalar - scalar value
-/// @param[in] rhs - vector
+/// @param[in] rhs - vector2d
 /// @return The multiplication of rhs by scalar
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-vector operator*(float scalar, vector const &rhs)
+vector2d operator*(float scalar, vector2d const &rhs)
 {
-    return vector(rhs) *= scalar;
+    return vector2d(rhs) *= scalar;
 }
 
 /////////////////////////////////////////////////
 /// @brief Equality operator
 ///
-/// @param[in] lhs - first vector
-/// @param[in] rhs - second vector
+/// @param[in] lhs - first vector2d
+/// @param[in] rhs - second vector2d
 /// @return true if lhs is equal to rhs
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-bool operator==(const vector &lhs, const vector &rhs)
+bool operator==(const vector2d &lhs, const vector2d &rhs)
 {
     return equal(lhs.x, rhs.x) and equal(lhs.y, rhs.y);
 }
@@ -278,15 +278,15 @@ bool operator==(const vector &lhs, const vector &rhs)
 /////////////////////////////////////////////////
 /// @brief Not equal operator
 ///
-/// @param[in] lhs - first vector
-/// @param[in] rhs - second vector
+/// @param[in] lhs - first vector2d
+/// @param[in] rhs - second vector2d
 /// @return true if lhs is not equal to rhs
-/// @relates vector
+/// @relates vector2d
 /////////////////////////////////////////////////
-bool operator!=(const vector &lhs, const vector &rhs)
+bool operator!=(const vector2d &lhs, const vector2d &rhs)
 {
     return !(lhs == rhs);
 }
 } // namespace onii
 
-#endif // ONII_VECTOR_HPP
+#endif // ONII_VECTOR2D_HPP
