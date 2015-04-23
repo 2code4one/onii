@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['length_5ftype',['length_type',['../d1/d23/classonii_1_1physic_1_1unit_1_1length.html#ab65822d7a49313c5a70d913118f5b90c',1,'onii::physic::unit::length']]]
+  ['mass_5ftype',['mass_type',['../d8/d4a/classonii_1_1unit_1_1mass.html#a4c690fcf7e16996935e369f192886f02',1,'onii::unit::mass']]]
 ];

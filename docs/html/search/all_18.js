@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y',['y',['../d6/dfd/classonii_1_1physic_1_1vector.html#a5ef4d095019082409e7674c41ceec1b1',1,'onii::physic::vector']]]
+  ['y',['y',['../d2/d85/classonii_1_1vector2d.html#a27392764c4a94f475a59b2cbcf8cae29',1,'onii::vector2d']]]
 ];

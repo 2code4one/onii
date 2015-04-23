@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mass_5ftype',['mass_type',['../d9/d63/classonii_1_1physic_1_1unit_1_1mass.html#a2ac9f79f7d61234ad0695159405e6ec9',1,'onii::physic::unit::mass']]]
+  ['radian_5ftype',['radian_type',['../de/de4/classonii_1_1unit_1_1angle.html#aadaf79b875e89156630e5a5dc7fda0d5',1,'onii::unit::angle']]]
 ];

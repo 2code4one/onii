@@ -80,7 +80,7 @@ public:
     /////////////////////////////////////////////////
     /// @brief Create a new rule
     ///
-    /// @param[in] antecendents - the condition
+    /// @param[in] antecedents - the condition
     /// @param[in] consequent - the consequent set
     /// @see rules::rules(variable const&)
     /////////////////////////////////////////////////

@@ -1,0 +1,10 @@
+<map id="onii::fuzzy::set::abstract_set" name="onii::fuzzy::set::abstract_set">
+<area shape="rect" id="node2" href="$d2/dfb/classonii_1_1fuzzy_1_1hedge_1_1abstract__hedge.html" title="Base class for fuzzy set hedge. " alt="" coords="262,37,386,79"/>
+<area shape="rect" id="node5" href="$d7/ddc/classonii_1_1fuzzy_1_1set_1_1left__shoulder.html" title="Left shoulder shape fuzzy set. " alt="" coords="258,103,390,144"/>
+<area shape="rect" id="node6" href="$da/dbf/classonii_1_1fuzzy_1_1set_1_1rectangle.html" title="Rectangular shape fuzzy set. " alt="" coords="240,169,408,195"/>
+<area shape="rect" id="node7" href="$d0/db0/classonii_1_1fuzzy_1_1set_1_1right__shoulder.html" title="Right shoulder shape fuzzy set. " alt="" coords="254,220,394,261"/>
+<area shape="rect" id="node8" href="$d5/d11/classonii_1_1fuzzy_1_1set_1_1singleton.html" title="Discrete shape fuzzy set. " alt="" coords="241,286,407,313"/>
+<area shape="rect" id="node9" href="$df/db5/classonii_1_1fuzzy_1_1set_1_1triangle.html" title="Triangular shape fuzzy set. " alt="" coords="245,337,403,363"/>
+<area shape="rect" id="node3" href="$d6/dea/classonii_1_1fuzzy_1_1hedge_1_1fairly.html" title="&quot;fairly&quot; fuzzy set hedge " alt="" coords="456,5,580,47"/>
+<area shape="rect" id="node4" href="$d5/de8/classonii_1_1fuzzy_1_1hedge_1_1very.html" title="&quot;very&quot; fuzzy set hedge " alt="" coords="456,71,580,112"/>
+</map>

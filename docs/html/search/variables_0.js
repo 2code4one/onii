@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aluminium',['aluminium',['../d1/dc7/classonii_1_1physic_1_1constant_1_1density.html#abd83eb342aec870d0842e9c53ab7f063',1,'onii::physic::constant::density']]]
+  ['crisp',['crisp',['../d6/d77/structonii_1_1fuzzy_1_1manifold.html#adba905c57076819b4ea6b52784f8dae1',1,'onii::fuzzy::manifold']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hour',['hour',['../d5/de3/classonii_1_1physic_1_1unit_1_1time.html#aa044fc9e1a43f238efeca0c106c0043a',1,'onii::physic::unit::time::hour() const '],['../d5/de3/classonii_1_1physic_1_1unit_1_1time.html#a4b5a71b41dddbc3f6679140a6563440b',1,'onii::physic::unit::time::hour(time_type hour)']]]
+  ['hour',['hour',['../dd/d27/classonii_1_1unit_1_1time.html#abe96116085e8007d64778898594e7030',1,'onii::unit::time::hour() const '],['../dd/d27/classonii_1_1unit_1_1time.html#ace886649f192dcfe0fdcc888676a497d',1,'onii::unit::time::hour(time_type hour)']]]
 ];

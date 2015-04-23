@@ -24,7 +24,7 @@ namespace onii
 ///
 /// @param time - sleeping time
 /////////////////////////////////////////////////
-void sleep(unit::time time)
+void sleep(unit::time const &time)
 {
     #ifdef ONII_OS_WINDOWS
         Sleep(time.ms());

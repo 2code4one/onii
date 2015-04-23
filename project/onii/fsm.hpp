@@ -43,7 +43,7 @@ public:
     ///
     /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
-    virtual void enter(EntityT *)
+    virtual void enter(EntityT *entity)
     {}
 
     /////////////////////////////////////////////////
@@ -51,7 +51,7 @@ public:
     ///
     /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
-    virtual void exit(EntityT *)
+    virtual void exit(EntityT *entity)
     {}
 
     /////////////////////////////////////////////////
@@ -59,7 +59,7 @@ public:
     ///
     /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
-    virtual void execute(EntityT *) = 0;
+    virtual void execute(EntityT *entity) = 0;
 
 };
 

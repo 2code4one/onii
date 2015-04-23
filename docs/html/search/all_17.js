@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['x',['x',['../d6/dfd/classonii_1_1physic_1_1vector.html#a40c7ef4fdf383eae3aa7ae3153be720c',1,'onii::physic::vector']]],
+  ['x',['x',['../d2/d85/classonii_1_1vector2d.html#a6ff056c9e3e6f37ce81249005863f53a',1,'onii::vector2d']]],
   ['xopen_2ehpp',['xopen.hpp',['../dc/d75/xopen_8hpp.html',1,'']]]
 ];

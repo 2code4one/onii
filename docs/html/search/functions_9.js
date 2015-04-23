@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kg',['kg',['../d9/d63/classonii_1_1physic_1_1unit_1_1mass.html#a4063cff0e253e47817863fec1ec6ce81',1,'onii::physic::unit::mass::kg() const '],['../d9/d63/classonii_1_1physic_1_1unit_1_1mass.html#ad2263a053edb3f6f49c4f6fd9699ccc2',1,'onii::physic::unit::mass::kg(mass_type kilogram)']]],
-  ['km',['km',['../d1/d23/classonii_1_1physic_1_1unit_1_1length.html#a242cf40ac127634862dd977eca26f2bf',1,'onii::physic::unit::length::km() const '],['../d1/d23/classonii_1_1physic_1_1unit_1_1length.html#acdc2220b4e825a34ed4fa033fc1aede6',1,'onii::physic::unit::length::km(length_type kilometre)']]]
+  ['kg',['kg',['../d8/d4a/classonii_1_1unit_1_1mass.html#a6be89f3dc597fc84d3ba4d1074922a6b',1,'onii::unit::mass::kg() const '],['../d8/d4a/classonii_1_1unit_1_1mass.html#a0dc49f3f588b15a3872ae307e8a8a633',1,'onii::unit::mass::kg(mass_type kilogram)']]],
+  ['km',['km',['../d9/dd7/classonii_1_1unit_1_1length.html#a9477e87aae8f21020982aa5909b82486',1,'onii::unit::length::km() const '],['../d9/dd7/classonii_1_1unit_1_1length.html#a2938bb7885fd0666ec9d03330857c72d',1,'onii::unit::length::km(length_type kilometre)']]]
 ];

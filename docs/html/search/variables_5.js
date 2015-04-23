@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['left_5frange',['left_range',['../dc/d1b/structonii_1_1ai_1_1fuzzy_1_1manifold.html#af73213e9388c69d3d309ecba7f0eb1ed',1,'onii::ai::fuzzy::manifold']]]
+  ['sets',['sets',['../d6/d77/structonii_1_1fuzzy_1_1manifold.html#af1ef78bed05bc617b21456f7f1009d0e',1,'onii::fuzzy::manifold']]]
 ];

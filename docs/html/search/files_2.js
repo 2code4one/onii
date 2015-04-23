@@ -7,7 +7,6 @@ var searchData=
   ['compaq_2ehpp',['compaq.hpp',['../d5/d59/compaq_8hpp.html',1,'']]],
   ['compilers_2ehpp',['compilers.hpp',['../da/dc3/compilers_8hpp.html',1,'']]],
   ['config_2ehpp',['config.hpp',['../d8/dfd/config_8hpp.html',1,'']]],
-  ['constant_2ehpp',['constant.hpp',['../d8/dbf/constant_8hpp.html',1,'']]],
   ['convex_2ehpp',['convex.hpp',['../da/db2/compilers_2convex_8hpp.html',1,'']]],
   ['convexos_2ehpp',['convexos.hpp',['../de/d48/convexos_8hpp.html',1,'']]],
   ['cray_5fc_2ehpp',['cray_c.hpp',['../d1/d58/cray__c_8hpp.html',1,'']]],
