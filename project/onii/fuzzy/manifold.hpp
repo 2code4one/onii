@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_MANIFOLD_HPP
-#define ONII_AI_FUZZY_MANIFOLD_HPP
+#ifndef ONII_FUZZY_MANIFOLD_HPP
+#define ONII_FUZZY_MANIFOLD_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/manifold.hpp
+/// @file onii/fuzzy/manifold.hpp
 /////////////////////////////////////////////////
 
 #include <map>
@@ -14,12 +14,7 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
@@ -48,7 +43,6 @@ struct manifold
 
 }; // struct manifold
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_MANIFOLD_HPP
+#endif // ONII_FUZZY_MANIFOLD_HPP

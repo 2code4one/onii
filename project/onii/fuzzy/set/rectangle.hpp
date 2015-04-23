@@ -1,11 +1,11 @@
-#ifndef ONII_AI_FUZZY_HEDGE_ABSTRACT_HEDGE_HPP
-#define ONII_AI_FUZZY_HEDGE_ABSTRACT_HEDGE_HPP
+#ifndef ONII_FUZZY_SET_RECTANGLE_HPP
+#define ONII_FUZZY_SET_RECTANGLE_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/hedge/abstract_hedge.hpp
+/// @file onii/fuzzy/set/rectangle.hpp
 /////////////////////////////////////////////////
 
-#include "../set/abstract_set.hpp"
+#include "abstract_set.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -13,66 +13,49 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::hedge
+/// @namespace onii::fuzzy::set
 /////////////////////////////////////////////////
-namespace hedge
+namespace set
 {
 /////////////////////////////////////////////////
-/// @class abstract_hedge
-/// @brief Base class for fuzzy set hedge
+/// @class rectangle
+/// @brief Rectangular shape fuzzy set
 /////////////////////////////////////////////////
-class abstract_hedge :
-    public set::abstract_set
+class rectangle :
+    public abstract_set
 {
 public:
 
     /////////////////////////////////////////////////
     /// @brief Constructor
     ///
-    /// @param[in] set - fuzzy set to hedge
+    /// @param[in] left_peak - left peak
+    /// @param[in] right_peak - right peak
     /////////////////////////////////////////////////
-    abstract_hedge(abstract_set const &set) :
-        m_set(set.clone())
+    rectangle(float left_peak, float right_peak) :
+        m_left_peak(left_peak),
+        m_right_peak(right_peak)
     {}
 
     /////////////////////////////////////////////////
-    /// @brief Copy constructor
-    ///
-    /// @param[in] rhs - an other hedge
+    /// @brief Virtual destructor
     /////////////////////////////////////////////////
-    abstract_hedge(abstract_hedge const &rhs) :
-        m_set(rhs.m_set->clone())
+    virtual ~rectangle()
     {}
 
     /////////////////////////////////////////////////
-    /// @brief Assign operator
+    /// @brief Clone idiom
     ///
-    /// @param[in] rhs - other hedge to copy
-    /// @return *this
+    /// @return A dynamic clone of the current instance
     /////////////////////////////////////////////////
-    abstract_hedge &operator=(abstract_hedge const &rhs)
+    virtual abstract_set *clone() const
     {
-        delete m_set;
-        m_set = rhs.m_set->clone();
-        return *this;
-    }
-
-    /////////////////////////////////////////////////
-    /// @brief Destructor
-    /////////////////////////////////////////////////
-    virtual ~abstract_hedge()
-    {
-        delete m_set;
+        return new rectangle(*this);
     }
 
     /////////////////////////////////////////////////
@@ -84,7 +67,7 @@ public:
     /////////////////////////////////////////////////
     virtual float membership(float crisp) const
     {
-        return m_set->membership(crisp);
+        return crisp >= m_left_peak && crisp <= m_right_peak;
     }
 
     /////////////////////////////////////////////////
@@ -95,18 +78,18 @@ public:
     /////////////////////////////////////////////////
     virtual float representative() const
     {
-        return m_set->representative();
+        return (m_left_peak + m_right_peak) / 2.f;
     }
 
 private:
 
     // data members
-    abstract_set *m_set;
+    float m_left_peak;
+    float m_right_peak;
 
-}; // class abstract_hedge
-} // namespace hedge
+}; // class rectangle
+} // namespace set
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_HEDGE_ABSTRACT_HEDGE_HPP
+#endif // ONII_FUZZY_SET_RECTANGLE_HPP

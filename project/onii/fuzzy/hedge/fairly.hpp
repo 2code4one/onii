@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_HEDGE_FAIRLY_HPP
-#define ONII_AI_FUZZY_HEDGE_FAIRLY_HPP
+#ifndef ONII_FUZZY_HEDGE_FAIRLY_HPP
+#define ONII_FUZZY_HEDGE_FAIRLY_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/hedge/fairly.hpp
+/// @file onii/fuzzy/hedge/fairly.hpp
 /////////////////////////////////////////////////
 
 #include <cmath>
@@ -14,17 +14,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::hedge
+/// @namespace onii::fuzzy::hedge
 /////////////////////////////////////////////////
 namespace hedge
 {
@@ -78,7 +73,6 @@ public:
 }; // class fairly
 } // namespace hedge
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_HEDGE_FAIRLY_HPP
+#endif // ONII_FUZZY_HEDGE_FAIRLY_HPP

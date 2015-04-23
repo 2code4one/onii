@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FSM_HPP
-#define ONII_AI_FSM_HPP
+#ifndef ONII_FSM_HPP
+#define ONII_FSM_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fsm.hpp
+/// @file onii/fsm.hpp
 /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
@@ -11,17 +11,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fsm
+/// @namespace onii::fsm
 /////////////////////////////////////////////////
 namespace fsm
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fsm::detail
+/// @namespace onii::fsm::detail
 /// @remarks This namespace is not intended to be used by users
 /////////////////////////////////////////////////
 namespace detail
@@ -30,7 +25,7 @@ namespace detail
 /// @class base_state
 /// @brief Base class for state implementation
 /// @remarks This class is not intended to be used by users
-/// @see onii::ai::fsm::state instead
+/// @see onii::fsm::state instead
 /////////////////////////////////////////////////
 template<typename EntityT>
 class base_state
@@ -46,7 +41,7 @@ public:
     /////////////////////////////////////////////////
     /// @brief Function called at state entrance
     ///
-    /// @param[in,out] entity - Derived class of onii::ai::fsm::state_machine
+    /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
     virtual void enter(EntityT *)
     {}
@@ -54,7 +49,7 @@ public:
     /////////////////////////////////////////////////
     /// @brief Function called at state exit
     ///
-    /// @param[in,out] entity - Derived class of onii::ai::fsm::state_machine
+    /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
     virtual void exit(EntityT *)
     {}
@@ -62,7 +57,7 @@ public:
     /////////////////////////////////////////////////
     /// @brief Function called at each entity update
     ///
-    /// @param[in,out] entity - Derived class of onii::ai::fsm::state_machine
+    /// @param[in,out] entity - Derived class of onii::fsm::state_machine
     /////////////////////////////////////////////////
     virtual void execute(EntityT *) = 0;
 
@@ -72,7 +67,7 @@ public:
 /// @class state_machine_impl
 /// @brief Base class for state machine implementation
 /// @remarks This class is not intended to be used by users
-/// @see onii::ai::fsm::state_machine instead
+/// @see onii::fsm::state_machine instead
 /////////////////////////////////////////////////
 template<typename EntityT, bool DynamicState>
 class state_machine_impl
@@ -243,7 +238,7 @@ public:
     /// @brief Get the internal state machine
     ///
     /// @return A pointer to the internal state machine
-    /// @see onii::ai::fsm::detail::state_machine_impl
+    /// @see onii::fsm::detail::state_machine_impl
     /////////////////////////////////////////////////
     detail::state_machine_impl<EntityT, DynamicState> *fsm()
     {
@@ -256,7 +251,7 @@ private:
     detail::state_machine_impl<EntityT, DynamicState> m_impl;
 }; // class state_machine
 } // namespace fsm
-} // namespace ai
+
 } // namespace onii
 
-#endif // ONII_AI_FSM_HPP
+#endif // ONII_FSM_HPP

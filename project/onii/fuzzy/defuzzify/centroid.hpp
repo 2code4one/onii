@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_DEFUZZIFY_CENTROID_HPP
-#define ONII_AI_FUZZY_DEFUZZIFY_CENTROID_HPP
+#ifndef ONII_FUZZY_DEFUZZIFY_CENTROID_HPP
+#define ONII_FUZZY_DEFUZZIFY_CENTROID_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/defuzzify/centroid.hpp
+/// @file onii/fuzzy/defuzzify/centroid.hpp
 /////////////////////////////////////////////////
 
 #include <algorithm>
@@ -15,17 +15,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::defuzzify
+/// @namespace onii::fuzzy::defuzzify
 /////////////////////////////////////////////////
 namespace defuzzify
 {
@@ -56,7 +51,6 @@ float centroid(manifold const &m, variable const &var, unsigned int samples = 20
 }
 } // namespace defuzzify
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_DEFUZZIFY_CENTROID_HPP
+#endif // ONII_FUZZY_DEFUZZIFY_CENTROID_HPP

@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_SET_OPERATOR_NOT_HPP
-#define ONII_AI_FUZZY_SET_OPERATOR_NOT_HPP
+#ifndef ONII_FUZZY_SET_OPERATOR_NOT_HPP
+#define ONII_FUZZY_SET_OPERATOR_NOT_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/set/operator/not.hpp
+/// @file onii/fuzzy/set/operator/not.hpp
 /////////////////////////////////////////////////
 
 #include "../abstract_set.hpp"
@@ -13,17 +13,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::set
+/// @namespace onii::fuzzy::set
 /////////////////////////////////////////////////
 namespace set
 {
@@ -98,7 +93,6 @@ detail::not_operator operator!(abstract_set const &set)
 }
 } // namespace set
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_SET_OPERATOR_NOT_HPP
+#endif // ONII_FUZZY_SET_OPERATOR_NOT_HPP

@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_SET_ABSTRACT_SET_HPP
-#define ONII_AI_FUZZY_SET_ABSTRACT_SET_HPP
+#ifndef ONII_FUZZY_SET_ABSTRACT_SET_HPP
+#define ONII_FUZZY_SET_ABSTRACT_SET_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/set/abstract_set.hpp
+/// @file onii/fuzzy/set/abstract_set.hpp
 /////////////////////////////////////////////////
 
 #include <string>
@@ -15,17 +15,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::set
+/// @namespace onii::fuzzy::set
 /////////////////////////////////////////////////
 namespace set
 {
@@ -144,7 +139,6 @@ private:
 }; // class abstract_set
 } // namespace set
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_SET_ABSTRACT_SET_HPP
+#endif // ONII_FUZZY_SET_ABSTRACT_SET_HPP

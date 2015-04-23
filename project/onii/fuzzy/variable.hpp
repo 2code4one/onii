@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_VARIABLE_HPP
-#define ONII_AI_FUZZY_VARIABLE_HPP
+#ifndef ONII_FUZZY_VARIABLE_HPP
+#define ONII_FUZZY_VARIABLE_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/variable.hpp
+/// @file onii/fuzzy/variable.hpp
 /////////////////////////////////////////////////
 
 #include <map>
@@ -16,12 +16,7 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
@@ -150,7 +145,6 @@ private:
 
 }; // class variable
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_VARIABLE_HPP
+#endif // ONII_FUZZY_VARIABLE_HPP

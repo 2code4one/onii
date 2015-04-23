@@ -1,12 +1,11 @@
-#ifndef ONII_AI_FUZZY_SET_SINGLETON_HPP
-#define ONII_AI_FUZZY_SET_SINGLETON_HPP
+#ifndef ONII_FUZZY_SET_LEFT_SHOULDER_HPP
+#define ONII_FUZZY_SET_LEFT_SHOULDER_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/set/singleton.hpp
+/// @file onii/fuzzy/set/left_shoulder.hpp
 /////////////////////////////////////////////////
 
 #include "abstract_set.hpp"
-#include "../../../float/equal.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -14,25 +13,20 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::set
+/// @namespace onii::fuzzy::set
 /////////////////////////////////////////////////
 namespace set
 {
 /////////////////////////////////////////////////
-/// @class singleton
-/// @brief Discrete shape fuzzy set
+/// @class left_shoulder
+/// @brief Left shoulder shape fuzzy set
 /////////////////////////////////////////////////
-class singleton :
+class left_shoulder :
     public abstract_set
 {
 public:
@@ -40,16 +34,23 @@ public:
     /////////////////////////////////////////////////
     /// @brief Constructor
     ///
+    /// @param[in] left_offset - left offset
     /// @param[in] peak - peak
+    /// @param[in] right_offset - right offset
+    /// @remarks The right offset must not be equal with peak!
+    ///          If you want that, please look:
+    ///          onii::fuzzy::set::right_shoulder
     /////////////////////////////////////////////////
-    singleton(float peak) :
-        m_peak(peak)
+    left_shoulder(float left_offset, float peak, float right_offset) :
+        m_left_offset(left_offset),
+        m_peak(peak),
+        m_right_offset(right_offset)
     {}
 
     /////////////////////////////////////////////////
     /// @brief Virtual destructor
     /////////////////////////////////////////////////
-    virtual ~singleton()
+    virtual ~left_shoulder()
     {}
 
     /////////////////////////////////////////////////
@@ -59,7 +60,7 @@ public:
     /////////////////////////////////////////////////
     virtual abstract_set *clone() const
     {
-        return new singleton(*this);
+        return new left_shoulder(*this);
     }
 
     /////////////////////////////////////////////////
@@ -71,7 +72,12 @@ public:
     /////////////////////////////////////////////////
     virtual float membership(float crisp) const
     {
-        return onii::equal(crisp, m_peak);
+        if(crisp < m_left_offset || crisp >= m_right_offset)
+            return 0.f;
+        else if(crisp > m_peak)
+            return 1.f - ((crisp - m_peak) / (m_right_offset - m_peak));
+        else
+            return 1.f;
     }
 
     /////////////////////////////////////////////////
@@ -82,18 +88,19 @@ public:
     /////////////////////////////////////////////////
     virtual float representative() const
     {
-        return m_peak;
+        return (m_left_offset + m_peak) / 2.f;
     }
 
 private:
 
     // data members
+    float m_left_offset;
     float m_peak;
+    float m_right_offset;
 
-}; // class singleton
+}; // class left_shoulder
 } // namespace set
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_SET_SINGLETON_HPP
+#endif // ONII_FUZZY_SET_LEFT_SHOULDER_HPP

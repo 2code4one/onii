@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_DEFUZZIFY_MAX_AV_HPP
-#define ONII_AI_FUZZY_DEFUZZIFY_MAX_AV_HPP
+#ifndef ONII_FUZZY_DEFUZZIFY_MAX_AV_HPP
+#define ONII_FUZZY_DEFUZZIFY_MAX_AV_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/defuzzify/max_av.hpp
+/// @file onii/fuzzy/defuzzify/max_av.hpp
 /////////////////////////////////////////////////
 
 #include "../manifold.hpp"
@@ -13,17 +13,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::defuzzify
+/// @namespace onii::fuzzy::defuzzify
 /////////////////////////////////////////////////
 namespace defuzzify
 {
@@ -47,7 +42,6 @@ float max_av(manifold const &m)
 }
 } // namespace defuzzify
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_DEFUZZIFY_MAX_AV_HPP
+#endif // ONII_FUZZY_DEFUZZIFY_MAX_AV_HPP

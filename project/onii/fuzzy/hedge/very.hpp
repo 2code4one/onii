@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_HEDGE_VERY_HPP
-#define ONII_AI_FUZZY_HEDGE_VERY_HPP
+#ifndef ONII_FUZZY_HEDGE_VERY_HPP
+#define ONII_FUZZY_HEDGE_VERY_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/hedge/very.hpp
+/// @file onii/fuzzy/hedge/very.hpp
 /////////////////////////////////////////////////
 
 #include "abstract_hedge.hpp"
@@ -13,17 +13,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::hedge
+/// @namespace onii::fuzzy::hedge
 /////////////////////////////////////////////////
 namespace hedge
 {
@@ -78,7 +73,6 @@ public:
 }; // class very
 } // namespace hedge
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_HEDGE_VERY_HPP
+#endif // ONII_FUZZY_HEDGE_VERY_HPP

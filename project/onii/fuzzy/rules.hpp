@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_RULES_HPP
-#define ONII_AI_FUZZY_RULES_HPP
+#ifndef ONII_FUZZY_RULES_HPP
+#define ONII_FUZZY_RULES_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/rules.hpp
+/// @file onii/fuzzy/rules.hpp
 /////////////////////////////////////////////////
 
 #include <map>
@@ -17,12 +17,7 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
@@ -129,7 +124,6 @@ private:
 
 }; // class rules
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_RULES_HPP
+#endif // ONII_FUZZY_RULES_HPP

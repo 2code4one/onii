@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_SET_OPERATOR_OR_HPP
-#define ONII_AI_FUZZY_SET_OPERATOR_OR_HPP
+#ifndef ONII_FUZZY_SET_OPERATOR_AND_HPP
+#define ONII_FUZZY_SET_OPERATOR_AND_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/set/operator/or.hpp
+/// @file onii/fuzzy/set/operator/and.hpp
 /////////////////////////////////////////////////
 
 #include <algorithm>
@@ -14,17 +14,12 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai
-/////////////////////////////////////////////////
-namespace ai
-{
-/////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy
+/// @namespace onii::fuzzy
 /////////////////////////////////////////////////
 namespace fuzzy
 {
 /////////////////////////////////////////////////
-/// @namespace onii::ai::fuzzy::set
+/// @namespace onii::fuzzy::set
 /////////////////////////////////////////////////
 namespace set
 {
@@ -32,30 +27,30 @@ namespace set
 /// @cond IGNORE
 namespace detail
 {
-class or_operator :
+class and_operator :
     public abstract_set
 {
 public:
 
-    or_operator(abstract_set const &lhs, abstract_set const &rhs) :
+    and_operator(abstract_set const &lhs, abstract_set const &rhs) :
         m_lhs(lhs.clone()),
         m_rhs(rhs.clone())
     {}
 
-    or_operator(or_operator const &rhs) :
+    and_operator(and_operator const &rhs) :
         m_lhs(rhs.m_lhs->clone()),
         m_rhs(rhs.m_rhs->clone())
     {}
 
-    or_operator &operator=(or_operator const &rhs)
+    and_operator &operator=(and_operator const &rhs)
     {
-        or_operator tmp(rhs);
+        and_operator tmp(rhs);
         std::swap(m_lhs, tmp.m_lhs);
         std::swap(m_rhs, tmp.m_rhs);
         return *this;
     }
 
-    virtual ~or_operator()
+    virtual ~and_operator()
     {
         delete m_lhs;
         delete m_rhs;
@@ -63,22 +58,22 @@ public:
 
     virtual abstract_set *clone() const
     {
-        return new or_operator(*this);
+        return new and_operator(*this);
     }
 
     virtual float membership(float crisp) const
     {
-        return std::max(m_lhs->membership(crisp), m_rhs->membership(crisp));
+        return std::min(m_lhs->membership(crisp), m_rhs->membership(crisp));
     }
 
     virtual float membership(std::vector<manifold> const &m) const
     {
-        return std::max(m_lhs->membership(m), m_rhs->membership(m));
+        return std::min(m_lhs->membership(m), m_rhs->membership(m));
     }
 
     virtual float representative() const
     {
-        return std::max(m_lhs->representative(), m_rhs->representative());
+        return std::min(m_lhs->representative(), m_rhs->representative());
     }
 
 private:
@@ -87,25 +82,24 @@ private:
     abstract_set *m_lhs;
     abstract_set *m_rhs;
 
-}; // class or_operator
+}; // class and_operator
 } // namespace detail
 /// @endcond
 /////////////////////////////////////////////////
 
 /////////////////////////////////////////////////
-/// @brief OR operator for two fuzzy set
+/// @brief AND operator for two fuzzy set
 ///
 /// @param[in] lhs - first fuzzy set
 /// @param[in] rhs - second fuzzy set
-/// @return A special "OR" fuzzy set
+/// @return A special "AND" fuzzy set
 /////////////////////////////////////////////////
-detail::or_operator operator|(abstract_set const &lhs, abstract_set const &rhs)
+detail::and_operator operator&(abstract_set const &lhs, abstract_set const &rhs)
 {
-    return detail::or_operator(lhs, rhs);
+    return detail::and_operator(lhs, rhs);
 }
 } // namespace set
 } // namespace fuzzy
-} // namespace ai
 } // namespace onii
 
-#endif // ONII_AI_FUZZY_SET_OPERATOR_OR_HPP
+#endif // ONII_FUZZY_SET_OPERATOR_AND_HPP

@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_SET_HPP
-#define ONII_AI_FUZZY_SET_HPP
+#ifndef ONII_FUZZY_SET_HPP
+#define ONII_FUZZY_SET_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy/set.hpp
+/// @file onii/fuzzy/set.hpp
 /////////////////////////////////////////////////
 
 #include "set/triangle.hpp"
@@ -12,4 +12,4 @@
 #include "set/rectangle.hpp"
 #include "set/operator.hpp"
 
-#endif // ONII_AI_FUZZY_SET_HPP
+#endif // ONII_FUZZY_SET_HPP

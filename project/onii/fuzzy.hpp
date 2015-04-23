@@ -1,8 +1,8 @@
-#ifndef ONII_AI_FUZZY_HPP
-#define ONII_AI_FUZZY_HPP
+#ifndef ONII_FUZZY_HPP
+#define ONII_FUZZY_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/ai/fuzzy.hpp
+/// @file onii/fuzzy.hpp
 /////////////////////////////////////////////////
 
 #include "fuzzy/set.hpp"
@@ -12,4 +12,4 @@
 #include "fuzzy/rules.hpp"
 #include "fuzzy/defuzzify.hpp"
 
-#endif // ONII_AI_FUZZY_HPP
+#endif // ONII_FUZZY_HPP

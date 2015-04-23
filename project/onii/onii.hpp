@@ -5,9 +5,10 @@
 /// @file onii/onii.hpp
 /////////////////////////////////////////////////
 
-#include "ai.hpp"
 #include "config.hpp"
 #include "float.hpp"
+#include "fsm.hpp"
+#include "fuzzy.hpp"
 #include "hash.hpp"
 #include "log.hpp"
 #include "percentage.hpp"
