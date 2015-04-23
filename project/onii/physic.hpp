@@ -5,7 +5,6 @@
 /// @file onii/physic.hpp
 /////////////////////////////////////////////////
 
-#include "physic/constant.hpp"
 #include "physic/unit.hpp"
 #include "physic/vector.hpp"
 
