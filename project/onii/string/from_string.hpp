@@ -8,6 +8,8 @@
 #include <sstream>
 #include <string>
 
+#include "../config/compilers/mingw.hpp"
+
 /////////////////////////////////////////////////
 /// @cond IGNORE
 #define ONII_FROM_STRING_SPEC(type, func)  \
@@ -43,14 +45,16 @@ NumericT from_string(std::string const &str)
 
 /////////////////////////////////////////////////
 /// @cond IGNORE
-ONII_FROM_STRING_SPEC(int, std::stoi)
-ONII_FROM_STRING_SPEC(long, std::stol)
-ONII_FROM_STRING_SPEC(long long, std::stoll)
-ONII_FROM_STRING_SPEC(unsigned long, std::stoul)
-ONII_FROM_STRING_SPEC(unsigned long long, std::stoull)
-ONII_FROM_STRING_SPEC(float, std::stof)
-ONII_FROM_STRING_SPEC(double, std::stod)
-ONII_FROM_STRING_SPEC(long double, std::stold)
+#if !defined(ONII_COMPILER_MINGW32)
+    ONII_FROM_STRING_SPEC(int, std::stoi)
+    ONII_FROM_STRING_SPEC(long, std::stol)
+    ONII_FROM_STRING_SPEC(long long, std::stoll)
+    ONII_FROM_STRING_SPEC(unsigned long, std::stoul)
+    ONII_FROM_STRING_SPEC(unsigned long long, std::stoull)
+    ONII_FROM_STRING_SPEC(float, std::stof)
+    ONII_FROM_STRING_SPEC(double, std::stod)
+    ONII_FROM_STRING_SPEC(long double, std::stold)
+#endif
 
 template<>
 bool from_string<bool>(std::string const &str)

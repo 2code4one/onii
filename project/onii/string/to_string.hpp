@@ -8,6 +8,8 @@
 #include <sstream>
 #include <string>
 
+#include "../config/compilers/mingw.hpp"
+
 /////////////////////////////////////////////////
 /// @cond IGNORE
 #define ONII_TO_STRING_SPEC(type)  \
@@ -36,19 +38,22 @@ template<typename NumericT>
 std::string to_string(NumericT value)
 {
     std::ostringstream oss;
-    return (oss << value).str();
+    oss << value;
+    return oss.str();
 }
 
 /////////////////////////////////////////////////
 /// @cond IGNORE
-ONII_TO_STRING_SPEC(int)
-ONII_TO_STRING_SPEC(long)
-ONII_TO_STRING_SPEC(long long)
-ONII_TO_STRING_SPEC(unsigned long)
-ONII_TO_STRING_SPEC(unsigned long long)
-ONII_TO_STRING_SPEC(float)
-ONII_TO_STRING_SPEC(double)
-ONII_TO_STRING_SPEC(long double)
+#if !defined(ONII_COMPILER_MINGW32)
+    ONII_TO_STRING_SPEC(int)
+    ONII_TO_STRING_SPEC(long)
+    ONII_TO_STRING_SPEC(long long)
+    ONII_TO_STRING_SPEC(unsigned long)
+    ONII_TO_STRING_SPEC(unsigned long long)
+    ONII_TO_STRING_SPEC(float)
+    ONII_TO_STRING_SPEC(double)
+    ONII_TO_STRING_SPEC(long double)
+#endif
 
 template<>
 std::string to_string<bool>(bool value)
