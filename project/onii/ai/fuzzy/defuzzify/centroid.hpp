@@ -52,7 +52,7 @@ float centroid(manifold const &m, variable const &var, unsigned int samples = 20
         nom += sum * value;
         den += sum;
     }
-    return den != 0.f ? nom / den : m.left_range;
+    return !equal(den, 0.f) ? nom / den : m.left_range;
 }
 } // namespace defuzzify
 } // namespace fuzzy

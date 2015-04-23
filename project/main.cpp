@@ -1,6 +1,6 @@
 #include <cassert>
 #include <iostream>
-#include "onii/random.hpp"
+#include "onii/onii.hpp"
 
 int main()
 {

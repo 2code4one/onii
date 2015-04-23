@@ -6,6 +6,7 @@
 /////////////////////////////////////////////////
 
 #include <cmath>
+#include "../float/equal.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -276,7 +277,7 @@ vector operator*(float scalar, vector const &rhs)
 /////////////////////////////////////////////////
 bool operator==(const vector &lhs, const vector &rhs)
 {
-    return lhs.x == rhs.x and lhs.y == rhs.y;
+    return equal(lhs.x, rhs.x) and equal(lhs.y, rhs.y);
 }
 
 /////////////////////////////////////////////////

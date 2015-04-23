@@ -43,7 +43,7 @@ float max_av(manifold const &m)
         nom += it->second.membership * it->second.representative;
         den += it->second.membership;
     }
-    return den != 0.f ? nom / den : m.left_range;
+    return !equal(den, 0.f) ? nom / den : m.left_range;
 }
 } // namespace defuzzify
 } // namespace fuzzy

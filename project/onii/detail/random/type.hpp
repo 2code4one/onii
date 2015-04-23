@@ -14,6 +14,8 @@ namespace random
 template<typename T>
 struct check_type
 {
+    virtual ~check_type() {} // warning -Weffc++
+
     static_assert(std::is_integral<T>::value || std::is_floating_point<T>::value,
                   "onii.random can only use integral or floating point types");
 };
