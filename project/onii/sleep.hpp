@@ -5,7 +5,7 @@
 /// @file onii/sleep.hpp
 /////////////////////////////////////////////////
 
-#include "physic/unit/time.hpp"
+#include "unit/time.hpp"
 #include "config/operating_systems/windows.hpp"
 
 #ifdef ONII_OS_WINDOWS
@@ -24,7 +24,7 @@ namespace onii
 ///
 /// @param time - sleeping time
 /////////////////////////////////////////////////
-void sleep(physic::unit::time time)
+void sleep(unit::time time)
 {
     #ifdef ONII_OS_WINDOWS
         Sleep(time.ms());

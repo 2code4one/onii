@@ -12,7 +12,6 @@
 #include "hash.hpp"
 #include "log.hpp"
 #include "percentage.hpp"
-#include "physic.hpp"
 #include "random.hpp"
 #include "settings.hpp"
 #include "sleep.hpp"
@@ -20,5 +19,7 @@
 #include "string.hpp"
 #include "thread_safe.hpp"
 #include "timer.hpp"
+#include "unit.hpp"
+#include "vector.hpp"
 
 #endif // ONII_ONII_HPP

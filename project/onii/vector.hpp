@@ -1,22 +1,17 @@
-#ifndef ONII_PHYSIC_VECTOR_HPP
-#define ONII_PHYSIC_VECTOR_HPP
+#ifndef ONII_VECTOR_HPP
+#define ONII_VECTOR_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/physic/vector.hpp
+/// @file onii/vector.hpp
 /////////////////////////////////////////////////
 
 #include <cmath>
-#include "../float/equal.hpp"
+#include "float/equal.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
 /////////////////////////////////////////////////
 namespace onii
-{
-/////////////////////////////////////////////////
-/// @namespace onii::physic
-/////////////////////////////////////////////////
-namespace physic
 {
 /////////////////////////////////////////////////
 /// @class vector
@@ -292,7 +287,6 @@ bool operator!=(const vector &lhs, const vector &rhs)
 {
     return !(lhs == rhs);
 }
-} // namespace physic
 } // namespace onii
 
-#endif // ONII_PHYSIC_VECTOR_HPP
+#endif // ONII_VECTOR_HPP

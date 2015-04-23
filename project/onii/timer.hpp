@@ -6,7 +6,7 @@
 /////////////////////////////////////////////////
 
 #include <chrono>
-#include "physic/unit/time.hpp"
+#include "unit/time.hpp"
 
 /////////////////////////////////////////////////
 /// @namespace onii
@@ -79,10 +79,10 @@ public:
     ///
     /// @return Time elapsed
     /////////////////////////////////////////////////
-    physic::unit::time elapsed() const
+    unit::time elapsed() const
     {
-        return physic::unit::time::s(
-            std::chrono::duration_cast<std::chrono::duration<physic::unit::time::time_type>>(
+        return unit::time::s(
+            std::chrono::duration_cast<std::chrono::duration<unit::time::time_type>>(
                 (m_running ? std::chrono::high_resolution_clock::now() : m_end) - m_start
             ).count()
         );
@@ -107,9 +107,9 @@ public:
     /////////////////////////////////////////////////
     /// @brief Constructor
     ///
-    /// @param[out] time - reference to a physic::unit::time object
+    /// @param[out] time - reference to a unit::time object
     /////////////////////////////////////////////////
-    scoped_timer(physic::unit::time &time) :
+    scoped_timer(unit::time &time) :
         timer(true),
         m_time(time)
     {}
@@ -126,7 +126,7 @@ public:
 
 private:
 
-    physic::unit::time &m_time;
+    unit::time &m_time;
 };
 
 /////////////////////////////////////////////////
@@ -142,7 +142,7 @@ public:
     ///
     /// @return Time elapsed since the program begin
     /////////////////////////////////////////////////
-    static physic::unit::time elapsed()
+    static unit::time elapsed()
     {
         return m_timer.elapsed();
     }

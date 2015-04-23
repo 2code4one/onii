@@ -1,8 +1,8 @@
-#ifndef ONII_PHYSIC_UNIT_HPP
-#define ONII_PHYSIC_UNIT_HPP
+#ifndef ONII_UNIT_HPP
+#define ONII_UNIT_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/physic/unit.hpp
+/// @file onii/unit.hpp
 /////////////////////////////////////////////////
 
 #include "unit/length.hpp"
@@ -11,14 +11,14 @@
 #include "unit/angle.hpp"
 
 /////////////////////////////////////////////////
-/// @class onii::physic::unit::detail::unit_base
+/// @class onii::unit::detail::unit_base
 /// @brief Base-class for units
 /// @remarks This class is not intended to be used by user
 ///
 /// This class provide operators for derived classes.
 ///
 /// In the next section:
-/// - U is an unit in onii::physic::unit
+/// - U is an unit in onii::unit
 /// - S is a scalar number (float)
 ///
 /// Artimethic operators:
@@ -45,4 +45,4 @@
 /// @endcode
 /////////////////////////////////////////////////
 
-#endif // ONII_PHYSIC_UNIT_HPP
+#endif // ONII_UNIT_HPP

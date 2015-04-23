@@ -1,8 +1,8 @@
-#ifndef ONII_PHYSIC_UNIT_MASS_HPP
-#define ONII_PHYSIC_UNIT_MASS_HPP
+#ifndef ONII_UNIT_MASS_HPP
+#define ONII_UNIT_MASS_HPP
 
 /////////////////////////////////////////////////
-/// @file onii/physic/unit/mass.hpp
+/// @file onii/unit/mass.hpp
 /////////////////////////////////////////////////
 
 #include "detail/unit_base.hpp"
@@ -13,12 +13,7 @@
 namespace onii
 {
 /////////////////////////////////////////////////
-/// @namespace onii::physic
-/////////////////////////////////////////////////
-namespace physic
-{
-/////////////////////////////////////////////////
-/// @namespace onii::physic::unit
+/// @namespace onii::unit
 /////////////////////////////////////////////////
 namespace unit
 {
@@ -108,7 +103,6 @@ public:
     }
 };
 } // namespace unit
-} // namespace physic
 } // namespace onii
 
-#endif // ONII_PHYSIC_UNIT_MASS_HPP
+#endif // ONII_UNIT_MASS_HPP

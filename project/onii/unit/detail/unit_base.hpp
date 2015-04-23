@@ -1,9 +1,7 @@
-#ifndef ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP
-#define ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP
+#ifndef ONII_UNIT_DETAIL_UNIT_BASE_HPP
+#define ONII_UNIT_DETAIL_UNIT_BASE_HPP
 
 namespace onii
-{
-namespace physic
 {
 namespace unit
 {
@@ -127,7 +125,6 @@ bool operator>=(unit_base<DerivedClass, ValueType> const &a, unit_base<DerivedCl
 }
 } // namespace detail
 } // namespace unit
-} // namespace physic
 } // namespace onii
 
-#endif // ONII_PHYSIC_UNIT_DETAIL_UNIT_BASE_HPP
+#endif // ONII_UNIT_DETAIL_UNIT_BASE_HPP
